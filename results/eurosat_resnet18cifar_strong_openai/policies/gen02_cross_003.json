@@ -1,0 +1,47 @@
+{
+  "policy_id": "gen02_cross_003",
+  "source": "openai_ranked_crossover",
+  "parent_ids": [
+    "seed_02_standard_color",
+    "gen01_mut_002",
+    "seed_03_standard_erasing"
+  ],
+  "notes": "Crossover favors the strongest standard_erasing parent while respecting the baseline prior that no augmentation is best. Keeps only mild crop/flip invariance plus rare light erasing, and adds a very small color jitter from the strong color parent; avoids rotation, blur, aggressive crops, and all sample mixing seen in weaker policies.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.85,
+        "magnitude": 0.22
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "VerticalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "RandomErasing",
+        "probability": 0.07,
+        "magnitude": 0.07
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.1,
+        "magnitude": 0.05
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0,
+    "mixup_alpha": 0
+  }
+}

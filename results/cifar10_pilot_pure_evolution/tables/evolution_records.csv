@@ -1,0 +1,6 @@
+method,policy_id,generation,source,valid,rough_val_accuracy,rough_val_macro_f1,full_val_accuracy,full_test_accuracy,full_test_macro_f1,runtime_sec
+pure_evolution,heuristic_init_000,0,heuristic,True,0.1,0.01834862385321101,,,,0.550678014755249
+pure_evolution,heuristic_init_001,0,heuristic,True,0.1,0.02997572815533981,,,,0.08274292945861816
+pure_evolution,heuristic_init_002,0,heuristic,True,0.08,0.028135152696556205,,,,0.09987187385559082
+pure_evolution,gen01_mut_000,1,pure_evolution_mutation,True,0.14,0.06276411760282728,,,,0.07180476188659668
+pure_evolution,gen01_mut_001,1,pure_evolution_mutation,True,0.22,0.13725660304607673,0.12,0.12,0.056574675324675326,0.1482861042022705

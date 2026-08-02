@@ -1,0 +1,28 @@
+{
+  "policy_id": "gen02_mut_004",
+  "source": "heuristic_feedback",
+  "parent_ids": [
+    "heuristic_init_003"
+  ],
+  "notes": "Mutated from heuristic_init_003 using validation feedback.",
+  "sub_policies": [
+    [
+      {
+        "name": "GaussianBlur",
+        "probability": 0.93,
+        "magnitude": 0.84
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.62,
+        "magnitude": 0.32
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

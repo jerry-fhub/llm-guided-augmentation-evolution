@@ -1,0 +1,38 @@
+experiment_name: smoke_fixmatch
+output_root: results
+seed: 7
+
+dataset:
+  name: fake
+  root: data/raw/image_datasets
+  image_size: 32
+  download: true
+  train_per_class: 2
+  val_per_class: 2
+  max_test: 40
+  max_unlabeled: 80
+
+training:
+  model_name: tinycnn
+  pretrained: false
+  epochs: 1
+  batch_size: 8
+  eval_batch_size: 16
+  lr: 0.001
+  weight_decay: 0.0001
+  optimizer: adamw
+  device: auto
+  num_workers: 0
+  evaluate_test: true
+  save_model: false
+
+fixmatch:
+  enabled: true
+  threshold: 0.8
+  lambda_u: 1.0
+  mu: 2
+  max_steps_per_epoch: 2
+  named_strong_transforms:
+    - standard
+    - randaugment
+

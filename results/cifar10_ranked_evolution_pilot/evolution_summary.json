@@ -1,0 +1,928 @@
+{
+  "method": "ranked_llm_evolution",
+  "best_rough": {
+    "policy": {
+      "policy_id": "seed_00_standard",
+      "source": "baseline_seed:standard",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.45
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.13,
+      "val_macro_f1": 0.045,
+      "val_confusion_matrix": [
+        [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.9981111431121825,
+          "val_accuracy": 0.13,
+          "val_macro_f1": 0.045
+        }
+      ],
+      "runtime_sec": 0.07844305038452148,
+      "device": "mps",
+      "policy_id": "seed_00_standard",
+      "stage": "rough",
+      "train_size": 100,
+      "val_size": 100,
+      "test_size": 200,
+      "epochs": 1,
+      "objective_score": 0.12816666666666668,
+      "policy_complexity": 0.18333333333333332,
+      "distortion_proxy": 0.225
+    },
+    "full_result": {
+      "val_accuracy": 0.06,
+      "val_macro_f1": 0.021316614420062698,
+      "val_confusion_matrix": [
+        [
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          9,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          9,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          10,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.0882912158966065,
+          "val_accuracy": 0.05,
+          "val_macro_f1": 0.03723707664884135
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.40873348236084,
+          "val_accuracy": 0.04,
+          "val_macro_f1": 0.01111111111111111
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.406403932571411,
+          "val_accuracy": 0.06,
+          "val_macro_f1": 0.021316614420062698
+        }
+      ],
+      "runtime_sec": 0.15799403190612793,
+      "device": "mps",
+      "test_accuracy": 0.075,
+      "test_macro_f1": 0.022764632627646324,
+      "test_confusion_matrix": [
+        [
+          12,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8
+        ],
+        [
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7
+        ],
+        [
+          17,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          11,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          17
+        ],
+        [
+          17,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ]
+      ],
+      "policy_id": "seed_00_standard",
+      "stage": "full",
+      "train_size": 100,
+      "val_size": 100,
+      "test_size": 200,
+      "epochs": 3,
+      "objective_score": 0.05579832810867293,
+      "policy_complexity": 0.18333333333333332,
+      "distortion_proxy": 0.225
+    },
+    "status": "full_evaluated"
+  },
+  "best_full": {
+    "policy": {
+      "policy_id": "seed_00_standard",
+      "source": "baseline_seed:standard",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.45
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.13,
+      "val_macro_f1": 0.045,
+      "val_confusion_matrix": [
+        [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.9981111431121825,
+          "val_accuracy": 0.13,
+          "val_macro_f1": 0.045
+        }
+      ],
+      "runtime_sec": 0.07844305038452148,
+      "device": "mps",
+      "policy_id": "seed_00_standard",
+      "stage": "rough",
+      "train_size": 100,
+      "val_size": 100,
+      "test_size": 200,
+      "epochs": 1,
+      "objective_score": 0.12816666666666668,
+      "policy_complexity": 0.18333333333333332,
+      "distortion_proxy": 0.225
+    },
+    "full_result": {
+      "val_accuracy": 0.06,
+      "val_macro_f1": 0.021316614420062698,
+      "val_confusion_matrix": [
+        [
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          9,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          9,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          10,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.0882912158966065,
+          "val_accuracy": 0.05,
+          "val_macro_f1": 0.03723707664884135
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.40873348236084,
+          "val_accuracy": 0.04,
+          "val_macro_f1": 0.01111111111111111
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.406403932571411,
+          "val_accuracy": 0.06,
+          "val_macro_f1": 0.021316614420062698
+        }
+      ],
+      "runtime_sec": 0.15799403190612793,
+      "device": "mps",
+      "test_accuracy": 0.075,
+      "test_macro_f1": 0.022764632627646324,
+      "test_confusion_matrix": [
+        [
+          12,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8
+        ],
+        [
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7
+        ],
+        [
+          17,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          11,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          25,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          17
+        ],
+        [
+          17,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ]
+      ],
+      "policy_id": "seed_00_standard",
+      "stage": "full",
+      "train_size": 100,
+      "val_size": 100,
+      "test_size": 200,
+      "epochs": 3,
+      "objective_score": 0.05579832810867293,
+      "policy_complexity": 0.18333333333333332,
+      "distortion_proxy": 0.225
+    },
+    "status": "full_evaluated"
+  },
+  "num_records": 7,
+  "num_valid": 7,
+  "num_full_evaluated": 2,
+  "seed_with_baselines": true,
+  "ranked_prompting": true,
+  "objective": {
+    "accuracy_weight": 1.0,
+    "macro_f1_weight": 0.1,
+    "distortion_weight": 0.02,
+    "complexity_weight": 0.01
+  }
+}

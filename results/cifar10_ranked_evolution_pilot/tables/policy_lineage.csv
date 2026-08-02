@@ -1,0 +1,8 @@
+policy_id,generation,source,parent_ids,status,rough_val_accuracy,full_val_accuracy,full_test_accuracy
+seed_00_standard,0,baseline_seed:standard,,full_evaluated,0.13,0.06,0.075
+seed_01_conservative,0,baseline_seed:conservative,,rough_evaluated,0.07,,
+seed_02_randaugment,0,baseline_seed:randaugment,,rough_evaluated,0.13,,
+seed_03_trivialaugment,0,baseline_seed:trivialaugment,,rough_evaluated,0.12,,
+gen01_cross_000,1,heuristic_ranked_crossover,seed_03_trivialaugment;seed_02_randaugment,rough_evaluated,0.09,,
+gen01_mut_001,1,heuristic_ranked_mutation,seed_02_randaugment,full_evaluated,0.13,0.06,0.085
+gen01_mut_002,1,heuristic_ranked_mutation,seed_02_randaugment,rough_evaluated,0.11,,

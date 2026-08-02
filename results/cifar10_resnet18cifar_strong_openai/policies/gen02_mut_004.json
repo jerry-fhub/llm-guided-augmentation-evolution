@@ -1,0 +1,45 @@
+{
+  "policy_id": "gen02_mut_004",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "gen01_cross_000",
+    "openai_init_001",
+    "openai_init_000"
+  ],
+  "notes": "Conservative mutation from the strongest initial policies and best baseline prior: keep CIFAR-10 crop/flip/color invariances, avoid dual Mixup+CutMix despite strong initial parents, slightly reduce Mixup from standard_mixup and use only very mild erasing/rotation to limit distortion in low-data training.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.95,
+        "magnitude": 0.24
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.32,
+        "magnitude": 0.16
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.16,
+        "magnitude": 0.06
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.1,
+        "magnitude": 0.07
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0.0,
+    "mixup_alpha": 0.16
+  }
+}

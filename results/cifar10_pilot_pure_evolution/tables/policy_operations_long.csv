@@ -1,0 +1,13 @@
+policy_id,generation,source,operation,probability,magnitude
+heuristic_init_000,0,heuristic,RandomCrop,0.68,0.46
+heuristic_init_001,0,heuristic,Rotation,0.44,0.18
+heuristic_init_001,0,heuristic,RandomErasing,0.65,0.16
+heuristic_init_001,0,heuristic,Grayscale,0.43,0.45
+heuristic_init_001,0,heuristic,HorizontalFlip,0.38,0.23
+heuristic_init_002,0,heuristic,GaussianBlur,0.68,0.33
+heuristic_init_002,0,heuristic,GaussianBlur,0.45,0.34
+heuristic_init_002,0,heuristic,RandomErasing,0.73,0.45
+heuristic_init_002,0,heuristic,RandomCrop,0.9,0.5
+heuristic_init_002,0,heuristic,ColorJitter,0.61,0.44
+gen01_mut_000,1,pure_evolution_mutation,RandomCrop,0.68,0.46
+gen01_mut_001,1,pure_evolution_mutation,RandomCrop,0.68,0.46

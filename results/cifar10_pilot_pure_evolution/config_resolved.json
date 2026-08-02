@@ -1,0 +1,59 @@
+{
+  "experiment_name": "cifar10_pilot_pure_evolution",
+  "output_root": "results",
+  "seed": 22,
+  "seeds": [
+    22
+  ],
+  "llm": {
+    "provider": "heuristic"
+  },
+  "dataset": {
+    "name": "cifar10",
+    "root": "data/raw/image_datasets",
+    "image_size": 32,
+    "download": true,
+    "download_url": "https://data.brainchip.com/dataset-mirror/cifar10/cifar-10-python.tar.gz",
+    "archive_filename": "cifar-10-python.tar.gz",
+    "archive_md5": "c58f30108f718f92721af3b95e74349a",
+    "train_per_class": 10,
+    "val_per_class": 10,
+    "max_test": 200
+  },
+  "training": {
+    "model_name": "tinycnn",
+    "pretrained": false,
+    "epochs": 1,
+    "batch_size": 64,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "optimizer": "adamw",
+    "device": "auto",
+    "num_workers": 0,
+    "evaluate_test": true,
+    "save_model": false
+  },
+  "rough_training": {
+    "epochs": 1,
+    "evaluate_test": false
+  },
+  "full_training": {
+    "epochs": 1,
+    "evaluate_test": true
+  },
+  "baselines": [],
+  "search": {
+    "population_size": 3,
+    "generations": 1,
+    "elite_count": 1,
+    "offspring_count": 2,
+    "full_top_k": 1,
+    "allow_discouraged": true,
+    "use_feedback": false
+  },
+  "random_search": {
+    "count": 0,
+    "full_top_k": 0
+  },
+  "one_shot_count": 0
+}

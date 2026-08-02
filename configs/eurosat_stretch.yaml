@@ -1,0 +1,56 @@
+experiment_name: eurosat_stretch_resnet18
+output_root: results
+seed: 42
+seeds: [42, 43, 44]
+
+dataset:
+  name: eurosat
+  root: data/raw/image_datasets
+  image_size: 64
+  download: true
+  train_per_class: 100
+  val_per_class: 100
+  max_test: 2000
+
+training:
+  model_name: resnet18
+  pretrained: false
+  epochs: 25
+  batch_size: 128
+  lr: 0.001
+  weight_decay: 0.0001
+  optimizer: adamw
+  device: auto
+  num_workers: 0
+  evaluate_test: true
+  save_model: false
+
+rough_training:
+  epochs: 5
+  evaluate_test: false
+
+full_training:
+  epochs: 25
+  evaluate_test: true
+
+baselines:
+  - none
+  - standard
+  - randaugment
+  - trivialaugment
+  - augmix
+
+search:
+  population_size: 8
+  generations: 3
+  elite_count: 3
+  offspring_count: 8
+  full_top_k: 3
+  allow_discouraged: true
+  use_feedback: true
+
+random_search:
+  count: 12
+  full_top_k: 3
+
+one_shot_count: 1

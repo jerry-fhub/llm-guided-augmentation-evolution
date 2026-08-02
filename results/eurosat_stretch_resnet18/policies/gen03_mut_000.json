@@ -1,0 +1,50 @@
+{
+  "policy_id": "gen03_mut_000",
+  "source": "heuristic_feedback",
+  "parent_ids": [
+    "heuristic_init_002"
+  ],
+  "notes": "Mutated from heuristic_init_002 using validation feedback.",
+  "sub_policies": [
+    [
+      {
+        "name": "VerticalFlip",
+        "probability": 0.31,
+        "magnitude": 0.36
+      },
+      {
+        "name": "VerticalFlip",
+        "probability": 0.69,
+        "magnitude": 0.77
+      }
+    ],
+    [
+      {
+        "name": "Affine",
+        "probability": 0.28,
+        "magnitude": 0.31
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.45,
+        "magnitude": 0.21
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.7,
+        "magnitude": 0.66
+      }
+    ],
+    [
+      {
+        "name": "VerticalFlip",
+        "probability": 0.52,
+        "magnitude": 0.47
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

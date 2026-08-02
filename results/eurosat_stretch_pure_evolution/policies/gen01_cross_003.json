@@ -1,0 +1,29 @@
+{
+  "policy_id": "gen01_cross_003",
+  "source": "pure_evolution_crossover",
+  "parent_ids": [
+    "heuristic_init_000",
+    "heuristic_init_000"
+  ],
+  "notes": "Combined sub-policies from heuristic_init_000 and heuristic_init_000.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.77,
+        "magnitude": 0.32
+      }
+    ],
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.77,
+        "magnitude": 0.32
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.26,
+    "cutmix_alpha": 0.0
+  }
+}

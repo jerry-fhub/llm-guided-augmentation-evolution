@@ -1,0 +1,121 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\onehalfspacing
+
+\title{Introduction and Background Literature Review\\
+\large LLM-Guided Evolutionary Search for Data Augmentation Policy Optimization in Low-Data Image Recognition}
+\author{Yushun Feng}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\chapter{Introduction}
+
+\section{Research Context}
+
+Image recognition has become one of the central applications of deep learning. Convolutional neural networks and related architectures have achieved strong performance on benchmark image classification tasks, supported by influential models such as residual networks \citep{he2016deep}. However, the practical success of image recognition systems often depends on the availability of sufficient labelled data. In many realistic settings, collecting and labelling large image datasets is expensive, time-consuming, or domain-specific. Fine-grained recognition, remote-sensing image classification, specialist scientific images, and student-scale research projects frequently operate under constrained data conditions. Under such circumstances, models can overfit to the limited training set and fail to generalise to unseen examples.
+
+Data augmentation is a widely used response to this problem. By applying label-preserving transformations to training images, augmentation can expose the model to a broader range of visual variation without requiring additional manual annotation. Conventional transformations include cropping, flipping, rotation, colour perturbation, blurring, erasing, and affine transformations. More recent strategies such as Mixup \citep{zhang2018mixup} and CutMix \citep{yun2019cutmix} combine multiple training samples to regularise the classifier. These techniques are simple to apply and are now standard components of many computer vision pipelines. Nevertheless, augmentation is not automatically beneficial. If transformations are too weak, they may have little regularising effect; if they are too strong or semantically inappropriate, they may distort class-discriminative information and harm performance.
+
+This creates a practical and research-relevant question: how should an augmentation policy be selected for a specific image recognition task? The answer is unlikely to be universal. Natural image datasets such as CIFAR-10 \citep{krizhevsky2009learning}, fine-grained datasets such as Oxford Flowers102 \citep{nilsback2008automated}, and remote-sensing datasets such as EuroSAT \citep{helber2019eurosat} differ in image statistics, class semantics, and invariances. For example, horizontal flipping may be broadly reasonable in many natural image settings, while stronger colour transformations may be risky for flower classes where colour is part of the category identity. Conversely, rotations and flips may be more natural for overhead remote-sensing imagery. A core motivation of this dissertation is therefore to investigate augmentation policy optimisation as a dataset-sensitive problem whose solution should be grounded in empirical feedback.
+
+\section{Problem Statement}
+
+Automated data augmentation methods address this problem by searching for augmentation policies using validation performance as the optimisation signal. AutoAugment \citep{cubuk2019autoaugment} demonstrated that learned augmentation policies can improve image classification, but its search procedure is computationally expensive. Subsequent approaches such as Population Based Augmentation \citep{ho2019population}, Fast AutoAugment \citep{lim2019fast}, RandAugment \citep{cubuk2020randaugment}, and TrivialAugment \citep{muller2021trivialaugment} reduce the search cost or simplify the policy space. AugMix \citep{hendrycks2020augmix} further highlights the importance of augmentation for robustness and uncertainty under distribution shift. These methods show that automated or semi-automated augmentation can be effective, yet they still leave open questions about how to guide policy search efficiently and interpretably in low-data settings.
+
+At the same time, large language models (LLMs) have recently been explored as tools for structured generation, program search, optimisation, and automatic algorithm design. FunSearch uses language models within a program search loop to discover useful algorithms \citep{romera2024funsearch}. Evolution of Heuristics proposes using LLMs to generate and improve heuristic algorithms under external evaluation \citep{liu2024eoh}. Other recent work argues that LLMs can act as evolutionary components, such as variation operators, search heuristics, or in-context evolution strategies \citep{lange2024llmes,wang2024llmea,meyerson2024lmcrossover,stein2024llamea}. In the specific context of data augmentation, \citet{duru2024adaptive} propose using LLM feedback to refine augmentation policies for image classification. These developments suggest that LLMs can operate as structured candidate-policy generators whose outputs are evaluated by a conventional machine learning pipeline.
+
+This dissertation investigates whether an LLM-guided evolutionary search framework can discover effective data augmentation policies for low-data image recognition. The LLM will be used to propose, revise, and combine augmentation policies in a constrained format. Candidate policies will then be validated, converted into executable image transformations, evaluated by training image classifiers, and selected through an evolutionary loop. The key design principle is that the LLM should provide structured suggestions, while objective validation performance and policy legality determine whether a candidate survives.
+
+\section{Aim and Research Questions}
+
+The aim of this project is to design, implement, and evaluate an LLM-guided evolutionary framework for data augmentation policy optimisation in low-data image recognition. The project scope is image classification; image generation, object detection, and segmentation are outside the core experimental scope. It uses publicly available datasets and standard classification models in order to keep the experimental setting reproducible and feasible within a master's dissertation.
+
+The research is guided by the following questions:
+
+\begin{enumerate}[label=\textbf{RQ\arabic*:}, leftmargin=*]
+    \item Can baseline-seeded ranked LLM evolution generate competitive augmentation policies for low-data supervised image classification?
+    \item How do the evolved policies compare with strong local baselines such as Mixup, CutMix, RandAugment, TrivialAugment, and conservative or no-augmentation settings?
+    \item Does placing LLM-guided policy evolution inside the FixMatch strong-augmentation branch produce competitive semi-supervised policies under a limited local training budget?
+    \item What roles do constrained policy representation, validation, repair, baseline seeding, and rough-to-full evaluation play in stabilising LLM-generated augmentation search?
+    \item How should current results be interpreted against external SOTA papers that use different model architectures, data regimes, training schedules, and search budgets?
+\end{enumerate}
+
+\section{Proposed Approach}
+
+The proposed framework consists of five main components. First, low-data image classification tasks are constructed from datasets such as CIFAR-10, Oxford Flowers102, and EuroSAT. Second, a constrained augmentation search space is defined. Candidate policies are represented as structured JSON configurations specifying augmentation operations, probabilities, magnitudes, and optional mixing parameters. Third, strong baseline seeds are placed in the initial population so that LLM-guided search starts from empirically meaningful augmentation priors. Fourth, an LLM proposes mutations and crossovers from ranked population feedback. Fifth, supervised and FixMatch-based evaluators provide selection pressure, record policy lineage, and use a rough-to-full strategy to control computational cost.
+
+The rough evaluation stage uses a smaller training budget, such as fewer epochs or a compact candidate set, to screen many candidate policies. Stronger candidates then enter a fuller evaluation. This is necessary because exhaustive augmentation search can be computationally expensive, especially when each candidate requires model training. The main classifier is a CIFAR-adapted ResNet18 \citep{he2016deep}, selected because it is widely used, efficient, and easy to reproduce. The final experimental focus also includes FixMatch \citep{sohn2020fixmatch}, because its weak/strong consistency objective makes the strong augmentation policy part of the central learning mechanism.
+
+\section{Expected Contributions}
+
+This dissertation is expected to make four contributions. First, it implements a reproducible LLM-guided evolutionary framework for augmentation policy search in low-data image classification. Second, it introduces a constrained policy representation, validator, and repair layer for controlling LLM-generated policies. Third, it evaluates baseline-seeded ranked LLM evolution under supervised and FixMatch semi-supervised settings. Fourth, it analyses policy behaviour through operation statistics, lineage, validation stability, pseudo-label dynamics, and classification diagnostics. The intended contribution combines empirical comparison with an explanation of the conditions under which LLM-guided policy search is useful for computer vision model development.
+
+\chapter{Background and Literature Review}
+
+\section{Low-Data Image Recognition}
+
+Image classification research has traditionally benefited from benchmark datasets and increasingly powerful model architectures. The CIFAR datasets introduced by \citet{krizhevsky2009learning} remain common for controlled experiments because they are small enough for rapid iteration while still capturing meaningful visual classification challenges. Oxford Flowers102 \citep{nilsback2008automated} is a more fine-grained dataset, where visually similar categories and within-class variation create a different challenge from general object classification. EuroSAT \citep{helber2019eurosat} represents a further domain shift because it consists of Sentinel-2 satellite images for land use and land cover classification. These datasets together support investigation into whether augmentation strategies should adapt to domain-specific visual characteristics.
+
+Low-data image recognition is challenging because deep neural networks have high capacity and can fit idiosyncrasies of small training sets. Residual networks \citep{he2016deep} alleviate optimisation difficulties and provide a strong baseline architecture, although model architecture alone cannot remove the need for labelled data. Regularisation, transfer learning, careful validation protocols, and data augmentation are therefore important. In this project, low-data settings are the target scenario: when labelled examples are limited, the value of selecting an appropriate augmentation policy becomes more visible.
+
+\section{Conventional Data Augmentation}
+
+Data augmentation has long been used to improve generalisation by introducing synthetic variation into the training process. \citet{shorten2019survey} survey image data augmentation for deep learning and describe its role in reducing overfitting and improving robustness. Basic transformations include random cropping, flipping, rotation, scaling, translation, colour jitter, blurring, and noise injection. These transformations encode assumptions about invariances: for example, that an object category should not change under small translations or moderate changes in lighting. The effectiveness of augmentation therefore depends on whether those assumptions match the dataset.
+
+Sample-mixing methods extend augmentation beyond independent image transformations. Mixup trains on convex combinations of images and labels, encouraging linear behaviour between examples \citep{zhang2018mixup}. CutMix replaces a region of one image with a patch from another and adjusts labels proportionally, improving localisation and regularisation \citep{yun2019cutmix}. Cutout \citep{devries2017cutout} removes rectangular regions from images to encourage robustness to occlusion. These methods show that augmentation can operate at the level of geometric transformations, photometric transformations, and training distribution design. They also add policy choices, such as mixing strength, region size, and probability of application.
+
+The limitation of conventional augmentation is that many choices remain manual. Researchers often select a small set of standard transformations based on experience, previous papers, or trial and error. This can be sufficient in well-studied settings, but it becomes less reliable when datasets differ in class semantics, visual domain, or label-preserving transformations. This motivates automated data augmentation.
+
+\section{Automated Data Augmentation}
+
+Automated data augmentation searches for augmentation policies through empirical objectives. AutoAugment formulates the problem as a search over sub-policies, where each sub-policy contains operations with probabilities and magnitudes \citep{cubuk2019autoaugment}. Candidate policies are evaluated through validation performance, making the method conceptually direct. However, AutoAugment's original search is expensive because it requires repeatedly training child models.
+
+Several methods reduce this cost. Population Based Augmentation learns augmentation policy schedules during training through population-based training \citep{ho2019population}. Fast AutoAugment accelerates policy search by using density matching and efficient policy evaluation \citep{lim2019fast}. RandAugment greatly simplifies the search space by replacing a large policy search space with a small number of global hyperparameters \citep{cubuk2020randaugment}. TrivialAugment goes further by sampling a single augmentation operation and magnitude without dataset-specific tuning, demonstrating that very simple strategies can compete with more complex automated methods \citep{muller2021trivialaugment}. AugMix improves robustness by mixing multiple augmented views and using a consistency objective \citep{hendrycks2020augmix}.
+
+Recent surveys argue that automated augmentation remains an active AutoML problem involving search space design, hyperparameter optimisation, and model evaluation \citep{mumuni2024automlaugment}. This is directly relevant to the present project. The central challenge is to design a search procedure that balances performance, cost, validity, and interpretability. AutoAugment-style search provides a useful baseline, while simplified methods such as RandAugment and TrivialAugment provide strong practical comparators. A successful LLM-guided approach should therefore be evaluated against these baselines alongside no-augmentation controls.
+
+\section{Semi-Supervised Learning and Strong Augmentation}
+
+Semi-supervised learning is closely related to low-data image recognition because it aims to use a small labelled set together with a larger pool of unlabelled images. Consistency-based methods train models to produce stable predictions under input perturbations, and modern semi-supervised methods often rely on strong data augmentation to create challenging views of unlabelled examples. ReMixMatch combines distribution alignment and augmentation anchoring \citep{berthelot2020remixmatch}, while Unsupervised Data Augmentation (UDA) shows that strong augmentation can provide a powerful consistency signal \citep{xie2020uda}.
+
+FixMatch combines pseudo-labelling with weak/strong augmentation consistency \citep{sohn2020fixmatch}. A weakly augmented unlabelled image is used to produce a pseudo-label when the model's confidence exceeds a threshold, and a strongly augmented view of the same image is then trained to match that pseudo-label. This design makes the strong augmentation policy central to the learning objective. If the strong view is too mild, the consistency task may provide weak regularisation; if it is too destructive, pseudo-label training may become noisy. This makes FixMatch a natural experimental setting for augmentation policy search.
+
+Recent semi-supervised learning methods improve the thresholding and pseudo-label selection mechanisms. FlexMatch introduces curriculum pseudo-labelling \citep{zhang2021flexmatch}; FreeMatch uses self-adaptive thresholding \citep{wang2023freematch}; SoftMatch studies the quantity-quality trade-off in pseudo-label usage \citep{chen2023softmatch}. These methods provide useful SOTA context for this dissertation. The current project focuses on the augmentation-policy component and uses FixMatch as a controlled semi-supervised framework, while recent threshold-adaptive methods motivate future extensions.
+
+\section{LLMs for Optimisation and Automatic Algorithm Design}
+
+Large language models have recently been studied as components in optimisation and automatic algorithm design. Their strength lies in generating structured text, code, and candidate solutions from natural language prompts. FunSearch demonstrates that language models can participate in program search, generating candidate programs that are evaluated and iteratively improved \citep{romera2024funsearch}. Evolution of Heuristics applies a similar idea to heuristic algorithm design, using LLM-generated heuristics within an evolutionary framework \citep{liu2024eoh}. These works share an important principle: the LLM proposes candidates, but an external evaluator determines whether those candidates are useful.
+
+The relationship between LLMs and evolutionary computation has also been examined more generally. \citet{wang2024llmea} discuss possible synergies between LLMs and evolutionary algorithms, including the use of LLMs as generators or enhancers of evolutionary operators. \citet{lange2024llmes} explore LLMs as evolution strategies, while \citet{meyerson2024lmcrossover} study language-model-based crossover through few-shot prompting. LLaMEA further demonstrates how a language model can generate metaheuristics in an evolutionary setting \citep{stein2024llamea}. Recent algorithmic-discovery systems such as AlphaEvolve also indicate growing interest in evaluator-controlled LLM search loops \citep{novikov2025alphaevolve}. These studies suggest that LLMs can be integrated into evolutionary pipelines as variation operators or proposal mechanisms.
+
+For this dissertation, the implication is that an LLM should be treated as a constrained proposal mechanism. It produces candidate augmentation policies in a controlled representation, while the evolutionary loop provides selection pressure, diversity management, and performance-based feedback. This approach combines the semantic and generative ability of LLMs with the empirical grounding of validation-set evaluation.
+
+\section{LLM-Guided Data Augmentation}
+
+The most directly related recent work is LLM-guided augmentation policy optimisation. \citet{duru2024adaptive} propose using LLM feedback to refine augmentation policies based on dataset characteristics, model architecture, and model performance. This supports the central premise that LLMs can be used to guide augmentation policy selection. However, the area remains new, and several issues require further study. First, LLM outputs may be invalid, ambiguous, or inconsistent unless the policy representation is constrained. Second, the computational cost of repeated evaluation can be high. Third, final accuracy alone may not explain whether improvements come from better reasoning, lucky sampling, or the search procedure itself.
+
+This dissertation addresses these issues by combining LLM policy generation with explicit validation, evolutionary search, and rough-to-full evaluation. Policy validation ensures that generated policies use only allowed operations and legal parameter ranges. Evolutionary search separates one-shot prompting from iterative feedback and selection. Rough-to-full evaluation provides a way to screen policies cheaply before committing to longer training. Finally, policy lineage and operation-frequency analysis provide interpretability beyond final accuracy.
+
+\section{Research Gap}
+
+The literature suggests four connected gaps. First, automated augmentation methods are effective, but many approaches are computationally expensive or intentionally generic. There is room for methods that adapt to dataset characteristics under a student-scale compute budget. Second, LLMs have been used for program search, heuristic design, and augmentation feedback, while their role in structured augmentation policy evolution remains underexplored. Third, semi-supervised methods such as FixMatch make strong augmentation central to the learning objective, yet LLM-guided search for the strong branch remains a relatively open direction. Fourth, many studies focus on final classification accuracy, with less attention to policy validity, repair, lineage, rough/full ranking reliability, and domain-specific augmentation preferences.
+
+This project is positioned at the intersection of these gaps. It investigates LLM-guided evolutionary search as a practical, interpretable, and evaluator-controlled approach to augmentation policy optimisation. The use of low-data image classification tasks makes the problem practically relevant, while the use of multiple datasets allows analysis of whether discovered policies vary across visual domains.
+
+\section{Summary}
+
+Data augmentation is essential for improving generalisation in image recognition, especially when labelled data is limited. Existing automated augmentation methods provide strong baselines and demonstrate that policy search can improve performance, while also exposing challenges of computational cost and dataset specificity. Recent work on LLM-assisted optimisation and evolutionary search suggests a promising direction: use LLMs to propose structured candidates while relying on external evaluation for selection. This dissertation builds on these ideas by developing an LLM-guided evolutionary framework for augmentation policy optimisation, with emphasis on low-data classification, FixMatch strong augmentation, constrained policy generation, rough-to-full evaluation, and interpretable analysis of policy behaviour.
+
+\bibliographystyle{plainnat}
+\bibliography{thesis_intro_background_references}
+
+\end{document}

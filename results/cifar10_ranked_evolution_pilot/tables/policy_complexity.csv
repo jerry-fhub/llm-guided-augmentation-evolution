@@ -1,0 +1,8 @@
+policy_id,generation,source,status,validation_ok,num_sub_policies,num_operations,mean_probability,mean_magnitude,mixup_alpha,cutmix_alpha,rough_val_accuracy,rough_val_macro_f1,full_val_accuracy,full_test_accuracy
+seed_00_standard,0,baseline_seed:standard,full_evaluated,True,1,2,0.75,0.225,0.0,0.0,0.13,0.045,0.06,0.075
+seed_01_conservative,0,baseline_seed:conservative,rough_evaluated,True,2,3,0.5833333333333334,0.15,0.0,0.0,0.07,0.02275132275132275,,
+seed_02_randaugment,0,baseline_seed:randaugment,rough_evaluated,True,4,8,0.425,0.26875,0.0,0.0,0.13,0.044204545454545455,,
+seed_03_trivialaugment,0,baseline_seed:trivialaugment,rough_evaluated,True,4,4,0.6125,0.2375,0.0,0.0,0.12,0.048,,
+gen01_cross_000,1,heuristic_ranked_crossover,rough_evaluated,True,4,6,0.5083333333333333,0.27499999999999997,0.0,0.0,0.09,0.0338680926916221,,
+gen01_mut_001,1,heuristic_ranked_mutation,full_evaluated,True,4,8,0.435,0.24625,0.0,0.0,0.13,0.055462184873949584,0.06,0.085
+gen01_mut_002,1,heuristic_ranked_mutation,rough_evaluated,True,4,8,0.37375,0.24875,0.0,0.0,0.11,0.03106893106893107,,

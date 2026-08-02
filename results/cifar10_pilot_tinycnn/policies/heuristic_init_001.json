@@ -1,0 +1,19 @@
+{
+  "policy_id": "heuristic_init_001",
+  "source": "heuristic",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.51,
+        "magnitude": 0.56
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.33,
+    "cutmix_alpha": 0.0
+  }
+}

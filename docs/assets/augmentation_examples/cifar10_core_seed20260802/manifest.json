@@ -1,0 +1,111 @@
+{
+  "dataset": "cifar10",
+  "split": "train",
+  "image_size": 32,
+  "display_size": 192,
+  "seed": 20260802,
+  "methods": [
+    {
+      "name": "original",
+      "label": "Original",
+      "note": "Resize and display without training augmentation."
+    },
+    {
+      "name": "standard",
+      "label": "Standard",
+      "note": "Random crop and horizontal flip baseline."
+    },
+    {
+      "name": "mixup",
+      "label": "Mixup",
+      "note": "Visual demonstration of batch-level Mixup using a paired image."
+    },
+    {
+      "name": "cutmix",
+      "label": "CutMix",
+      "note": "Visual demonstration of batch-level CutMix using a paired image."
+    },
+    {
+      "name": "randaugment",
+      "label": "RandAugment",
+      "note": "Torchvision RandAugment baseline."
+    },
+    {
+      "name": "trivialaugment",
+      "label": "TrivialAugment",
+      "note": "Torchvision TrivialAugment baseline."
+    },
+    {
+      "name": "supervised_llm",
+      "label": "LLM supervised",
+      "note": "Best CIFAR-10 supervised OpenAI-evolved JSON policy."
+    },
+    {
+      "name": "fixmatch_weak",
+      "label": "FixMatch weak",
+      "note": "Weak augmentation branch used for FixMatch pseudo-label views."
+    },
+    {
+      "name": "fixmatch_llm_child",
+      "label": "LLM FixMatch child",
+      "note": "Best repaired LLM-generated FixMatch strong-branch child."
+    }
+  ],
+  "samples": [
+    {
+      "sample_id": "sample_00_ship",
+      "source": "cifar10:train:14767",
+      "label": "ship",
+      "pair_source": "cifar10:train:12968",
+      "pair_label": "deer",
+      "outputs": {
+        "original": "individual/sample_00_ship_original.png",
+        "standard": "individual/sample_00_ship_standard.png",
+        "mixup": "individual/sample_00_ship_mixup.png",
+        "cutmix": "individual/sample_00_ship_cutmix.png",
+        "randaugment": "individual/sample_00_ship_randaugment.png",
+        "trivialaugment": "individual/sample_00_ship_trivialaugment.png",
+        "supervised_llm": "individual/sample_00_ship_supervised_llm.png",
+        "fixmatch_weak": "individual/sample_00_ship_fixmatch_weak.png",
+        "fixmatch_llm_child": "individual/sample_00_ship_fixmatch_llm_child.png"
+      }
+    },
+    {
+      "sample_id": "sample_01_truck",
+      "source": "cifar10:train:36117",
+      "label": "truck",
+      "pair_source": "cifar10:train:13817",
+      "pair_label": "airplane",
+      "outputs": {
+        "original": "individual/sample_01_truck_original.png",
+        "standard": "individual/sample_01_truck_standard.png",
+        "mixup": "individual/sample_01_truck_mixup.png",
+        "cutmix": "individual/sample_01_truck_cutmix.png",
+        "randaugment": "individual/sample_01_truck_randaugment.png",
+        "trivialaugment": "individual/sample_01_truck_trivialaugment.png",
+        "supervised_llm": "individual/sample_01_truck_supervised_llm.png",
+        "fixmatch_weak": "individual/sample_01_truck_fixmatch_weak.png",
+        "fixmatch_llm_child": "individual/sample_01_truck_fixmatch_llm_child.png"
+      }
+    },
+    {
+      "sample_id": "sample_02_dog",
+      "source": "cifar10:train:1591",
+      "label": "dog",
+      "pair_source": "cifar10:train:19939",
+      "pair_label": "automobile",
+      "outputs": {
+        "original": "individual/sample_02_dog_original.png",
+        "standard": "individual/sample_02_dog_standard.png",
+        "mixup": "individual/sample_02_dog_mixup.png",
+        "cutmix": "individual/sample_02_dog_cutmix.png",
+        "randaugment": "individual/sample_02_dog_randaugment.png",
+        "trivialaugment": "individual/sample_02_dog_trivialaugment.png",
+        "supervised_llm": "individual/sample_02_dog_supervised_llm.png",
+        "fixmatch_weak": "individual/sample_02_dog_fixmatch_weak.png",
+        "fixmatch_llm_child": "individual/sample_02_dog_fixmatch_llm_child.png"
+      }
+    }
+  ],
+  "grid": "augmentation_grid.png"
+}

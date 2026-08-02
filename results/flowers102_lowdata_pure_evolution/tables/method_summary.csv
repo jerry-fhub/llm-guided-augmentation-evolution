@@ -1,0 +1,2 @@
+method,val_accuracy_mean,val_accuracy_std,val_accuracy_count,val_macro_f1_mean,val_macro_f1_std,val_macro_f1_count,test_accuracy_mean,test_accuracy_std,test_accuracy_count,test_macro_f1_mean,test_macro_f1_std,test_macro_f1_count,runtime_sec_mean,runtime_sec_std,runtime_sec_count
+pure_evolution,0.3542483660130719,0.057637832172560265,3,,,0,0.313235294117647,0.02849468946928156,3,0.1851768900110644,0.01867900540517997,3,308.0107037226359,42.05084773744896,3

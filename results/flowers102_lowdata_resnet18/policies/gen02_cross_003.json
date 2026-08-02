@@ -1,0 +1,39 @@
+{
+  "policy_id": "gen02_cross_003",
+  "source": "heuristic_crossover",
+  "parent_ids": [
+    "gen01_mut_002",
+    "gen01_mut_002"
+  ],
+  "notes": "Combined sub-policies from gen01_mut_002 and gen01_mut_002.",
+  "sub_policies": [
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.95,
+        "magnitude": 0.52
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.36,
+        "magnitude": 0.52
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.95,
+        "magnitude": 0.52
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.36,
+        "magnitude": 0.52
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.3,
+    "cutmix_alpha": 0.0
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "policy_id": "random_009",
+  "source": "random_search",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "Affine",
+        "probability": 0.88,
+        "magnitude": 0.66
+      },
+      {
+        "name": "Affine",
+        "probability": 0.49,
+        "magnitude": 0.64
+      }
+    ],
+    [
+      {
+        "name": "VerticalFlip",
+        "probability": 0.38,
+        "magnitude": 0.25
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

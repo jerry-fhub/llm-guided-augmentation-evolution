@@ -1,0 +1,58 @@
+experiment_name: cifar10_adaptive_llm_evolution
+output_root: results
+seed: 62
+seeds: [62, 63, 64]
+
+llm:
+  provider: openai
+  model: gpt-5.5
+  fallback_to_heuristic: false
+  max_output_tokens: 3000
+  reasoning_effort: minimal
+  max_retries: 3
+
+dataset:
+  name: cifar10
+  root: data/raw/image_datasets
+  image_size: 32
+  download: true
+  download_url: https://data.brainchip.com/dataset-mirror/cifar10/cifar-10-python.tar.gz
+  archive_filename: cifar-10-python.tar.gz
+  archive_md5: c58f30108f718f92721af3b95e74349a
+  train_per_class: 100
+  val_per_class: 100
+  max_test: 2000
+
+training:
+  model_name: resnet18
+  pretrained: false
+  epochs: 30
+  batch_size: 128
+  lr: 0.001
+  weight_decay: 0.0001
+  optimizer: adamw
+  device: auto
+  num_workers: 0
+  evaluate_test: true
+  save_model: false
+
+baselines:
+  - none
+  - standard
+  - autoaugment
+  - randaugment
+  - trivialaugment
+  - augmix
+
+adaptive:
+  enabled: false
+  epochs: 30
+  update_interval: 5
+  initial_seed_policy: standard
+  ranked_feedback: true
+  allow_discouraged: true
+  objective:
+    accuracy_weight: 1.0
+    macro_f1_weight: 0.10
+    distortion_weight: 0.02
+    complexity_weight: 0.01

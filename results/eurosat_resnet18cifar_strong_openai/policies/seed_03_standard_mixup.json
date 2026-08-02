@@ -1,0 +1,36 @@
+{
+  "policy_id": "seed_03_standard_mixup",
+  "source": "baseline_seed:standard_mixup",
+  "parent_ids": [],
+  "notes": "Baseline-seeded parent approximating standard_mixup.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.25
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "VerticalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.25,
+        "magnitude": 0.12
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.2,
+    "cutmix_alpha": 0.0
+  }
+}

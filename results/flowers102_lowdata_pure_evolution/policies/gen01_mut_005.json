@@ -1,0 +1,21 @@
+{
+  "policy_id": "gen01_mut_005",
+  "source": "pure_evolution_mutation",
+  "parent_ids": [
+    "heuristic_init_003"
+  ],
+  "notes": "Mutated from heuristic_init_003 without LLM-style feedback.",
+  "sub_policies": [
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.69,
+        "magnitude": 0.41
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

@@ -1,0 +1,5 @@
+method,val_accuracy_mean,val_accuracy_std,val_accuracy_count,val_macro_f1_mean,val_macro_f1_std,val_macro_f1_count,test_accuracy_mean,test_accuracy_std,test_accuracy_count,test_macro_f1_mean,test_macro_f1_std,test_macro_f1_count,runtime_sec_mean,runtime_sec_std,runtime_sec_count
+fixmatch_llm_evolved_cifar_best,0.614,,1,0.6137227717437923,,1,0.59,,1,0.5838242670042952,,1,460.5797588825226,,1
+fixmatch_randaugment,0.639,,1,0.6365051623081526,,1,0.6205,,1,0.6105111738777231,,1,477.4414572715759,,1
+fixmatch_standard,0.566,,1,0.5551510053175159,,1,0.5675,,1,0.5512035100102725,,1,457.8352921009064,,1
+fixmatch_trivialaugment,0.63,,1,0.626799619561219,,1,0.615,,1,0.6108378052526446,,1,466.3779230117798,,1

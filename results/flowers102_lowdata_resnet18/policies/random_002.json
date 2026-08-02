@@ -1,0 +1,24 @@
+{
+  "policy_id": "random_002",
+  "source": "random_search",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.4,
+        "magnitude": 0.48
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.83,
+        "magnitude": 0.62
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

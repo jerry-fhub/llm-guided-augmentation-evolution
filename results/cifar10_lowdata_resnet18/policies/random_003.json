@@ -1,0 +1,38 @@
+{
+  "policy_id": "random_003",
+  "source": "random_search",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.67,
+        "magnitude": 0.55
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.33,
+        "magnitude": 0.49
+      }
+    ],
+    [
+      {
+        "name": "Affine",
+        "probability": 0.84,
+        "magnitude": 0.7
+      }
+    ],
+    [
+      {
+        "name": "RandomResizedCrop",
+        "probability": 0.52,
+        "magnitude": 0.59
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "policy_id": "seed_02_randaugment",
+  "source": "baseline_seed:randaugment",
+  "parent_ids": [],
+  "notes": "Baseline-seeded parent approximating randaugment.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.45
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.55,
+        "magnitude": 0.35
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.45,
+        "magnitude": 0.3
+      }
+    ],
+    [
+      {
+        "name": "Affine",
+        "probability": 0.35,
+        "magnitude": 0.3
+      },
+      {
+        "name": "Solarize",
+        "probability": 0.2,
+        "magnitude": 0.3
+      }
+    ],
+    [
+      {
+        "name": "Posterize",
+        "probability": 0.15,
+        "magnitude": 0.25
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.2,
+        "magnitude": 0.2
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

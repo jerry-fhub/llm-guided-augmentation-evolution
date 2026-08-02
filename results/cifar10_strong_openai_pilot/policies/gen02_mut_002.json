@@ -1,0 +1,40 @@
+{
+  "policy_id": "gen02_mut_002",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "openai_init_000",
+    "openai_init_001",
+    "gen01_cross_000"
+  ],
+  "notes": "Mutation from the strongest crossover and standard_mixup prior: keep simple RandomCrop+HorizontalFlip with single Mixup, slightly increase Mixup toward the baseline reference, and soften auxiliary color/rotation to reduce low-data distortion. Avoids CutMix stacking, erasing, blur, affine, solarize, and vertical flips.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.34
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.18,
+        "magnitude": 0.1
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.12,
+        "magnitude": 0.06
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0.0,
+    "mixup_alpha": 0.26
+  }
+}

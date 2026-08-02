@@ -1,0 +1,40 @@
+{
+  "policy_id": "seed_03_trivialaugment",
+  "source": "baseline_seed:trivialaugment",
+  "parent_ids": [],
+  "notes": "Baseline-seeded parent approximating trivialaugment.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.4
+      }
+    ],
+    [
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.55,
+        "magnitude": 0.3
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.4,
+        "magnitude": 0.25
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

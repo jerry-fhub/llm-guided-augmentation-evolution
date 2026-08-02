@@ -1,0 +1,950 @@
+{
+  "method": "ranked_llm_evolution",
+  "best_rough": {
+    "policy": {
+      "policy_id": "gen01_cross_000",
+      "source": "openai_ranked_crossover",
+      "parent_ids": [
+        "seed_01_conservative",
+        "openai_init_000",
+        "seed_00_standard"
+      ],
+      "notes": "Crossover favors the strongest compact standard parent: high-probability CIFAR crop plus horizontal flip, with only a mild color jitter borrowed from the better conservative seed. Discards blur, erasing, solarize, affine, rotation, resized crop, and mixing because weaker parents suggest added distortion/complexity hurt low-data performance.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.38
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.2,
+            "magnitude": 0.12
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.0
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.21,
+      "val_macro_f1": 0.1613361906910294,
+      "val_confusion_matrix": [
+        [
+          6,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          1,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          6,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          9,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          5,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          6,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          2,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          4,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.2764808750152588,
+          "val_accuracy": 0.21,
+          "val_macro_f1": 0.1613361906910294
+        }
+      ],
+      "runtime_sec": 0.08640885353088379,
+      "device": "mps",
+      "policy_id": "gen01_cross_000",
+      "stage": "rough",
+      "train_size": 100,
+      "val_size": 100,
+      "test_size": 200,
+      "epochs": 1,
+      "objective_score": 0.22004128573576962,
+      "policy_complexity": 0.3375,
+      "distortion_proxy": 0.13586666666666666
+    },
+    "full_result": {
+      "val_accuracy": 0.17,
+      "val_macro_f1": 0.09751221896383186,
+      "val_confusion_matrix": [
+        [
+          1,
+          3,
+          1,
+          0,
+          0,
+          2,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          4,
+          0,
+          0,
+          0,
+          1,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          2,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          6,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          2,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          2,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          5,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          7,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          1,
+          0,
+          0,
+          0,
+          2,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.7422573518753053,
+          "val_accuracy": 0.17,
+          "val_macro_f1": 0.09751221896383186
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.3567897987365722,
+          "val_accuracy": 0.13,
+          "val_macro_f1": 0.08839560439560439
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.4574852752685548,
+          "val_accuracy": 0.1,
+          "val_macro_f1": 0.046604643074515256
+        }
+      ],
+      "runtime_sec": 0.18141818046569824,
+      "device": "mps",
+      "test_accuracy": 0.215,
+      "test_macro_f1": 0.12728031944581242,
+      "test_confusion_matrix": [
+        [
+          10,
+          5,
+          0,
+          0,
+          1,
+          1,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          4,
+          0,
+          0,
+          0,
+          3,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          0,
+          1,
+          5,
+          8,
+          0,
+          1,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          0,
+          6,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          0,
+          5,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          3,
+          0,
+          0,
+          0,
+          6,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          4,
+          20,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          1,
+          0,
+          0,
+          0,
+          6,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          15,
+          6,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0,
+          3,
+          0
+        ],
+        [
+          4,
+          4,
+          0,
+          0,
+          0,
+          8,
+          4,
+          0,
+          1,
+          0
+        ]
+      ],
+      "policy_id": "gen01_cross_000",
+      "stage": "full",
+      "train_size": 100,
+      "val_size": 100,
+      "test_size": 200,
+      "epochs": 3,
+      "objective_score": 0.1736588885630499,
+      "policy_complexity": 0.3375,
+      "distortion_proxy": 0.13586666666666666
+    },
+    "status": "full_evaluated"
+  },
+  "best_full": {
+    "policy": {
+      "policy_id": "gen01_cross_000",
+      "source": "openai_ranked_crossover",
+      "parent_ids": [
+        "seed_01_conservative",
+        "openai_init_000",
+        "seed_00_standard"
+      ],
+      "notes": "Crossover favors the strongest compact standard parent: high-probability CIFAR crop plus horizontal flip, with only a mild color jitter borrowed from the better conservative seed. Discards blur, erasing, solarize, affine, rotation, resized crop, and mixing because weaker parents suggest added distortion/complexity hurt low-data performance.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.38
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.2,
+            "magnitude": 0.12
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.0
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.21,
+      "val_macro_f1": 0.1613361906910294,
+      "val_confusion_matrix": [
+        [
+          6,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          1,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          6,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          9,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          5,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          6,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          2,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          4,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.2764808750152588,
+          "val_accuracy": 0.21,
+          "val_macro_f1": 0.1613361906910294
+        }
+      ],
+      "runtime_sec": 0.08640885353088379,
+      "device": "mps",
+      "policy_id": "gen01_cross_000",
+      "stage": "rough",
+      "train_size": 100,
+      "val_size": 100,
+      "test_size": 200,
+      "epochs": 1,
+      "objective_score": 0.22004128573576962,
+      "policy_complexity": 0.3375,
+      "distortion_proxy": 0.13586666666666666
+    },
+    "full_result": {
+      "val_accuracy": 0.17,
+      "val_macro_f1": 0.09751221896383186,
+      "val_confusion_matrix": [
+        [
+          1,
+          3,
+          1,
+          0,
+          0,
+          2,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          4,
+          0,
+          0,
+          0,
+          1,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          2,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          6,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          2,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          2,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          5,
+          4,
+          0,
+          0,
+          0
+        ],
+        [
+          7,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          1,
+          0,
+          0,
+          0,
+          2,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.7422573518753053,
+          "val_accuracy": 0.17,
+          "val_macro_f1": 0.09751221896383186
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.3567897987365722,
+          "val_accuracy": 0.13,
+          "val_macro_f1": 0.08839560439560439
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.4574852752685548,
+          "val_accuracy": 0.1,
+          "val_macro_f1": 0.046604643074515256
+        }
+      ],
+      "runtime_sec": 0.18141818046569824,
+      "device": "mps",
+      "test_accuracy": 0.215,
+      "test_macro_f1": 0.12728031944581242,
+      "test_confusion_matrix": [
+        [
+          10,
+          5,
+          0,
+          0,
+          1,
+          1,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          4,
+          0,
+          0,
+          0,
+          3,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          0,
+          1,
+          5,
+          8,
+          0,
+          1,
+          0
+        ],
+        [
+          3,
+          0,
+          0,
+          0,
+          0,
+          6,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          0,
+          0,
+          5,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          3,
+          0,
+          0,
+          0,
+          6,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          4,
+          20,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          1,
+          0,
+          0,
+          0,
+          6,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          15,
+          6,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0,
+          3,
+          0
+        ],
+        [
+          4,
+          4,
+          0,
+          0,
+          0,
+          8,
+          4,
+          0,
+          1,
+          0
+        ]
+      ],
+      "policy_id": "gen01_cross_000",
+      "stage": "full",
+      "train_size": 100,
+      "val_size": 100,
+      "test_size": 200,
+      "epochs": 3,
+      "objective_score": 0.1736588885630499,
+      "policy_complexity": 0.3375,
+      "distortion_proxy": 0.13586666666666666
+    },
+    "status": "full_evaluated"
+  },
+  "num_records": 7,
+  "num_valid": 7,
+  "num_full_evaluated": 2,
+  "seed_with_baselines": true,
+  "ranked_prompting": true,
+  "objective": {
+    "accuracy_weight": 1.0,
+    "macro_f1_weight": 0.1,
+    "distortion_weight": 0.02,
+    "complexity_weight": 0.01
+  }
+}

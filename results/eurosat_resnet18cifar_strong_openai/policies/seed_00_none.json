@@ -1,0 +1,11 @@
+{
+  "policy_id": "seed_00_none",
+  "source": "baseline_seed:none",
+  "parent_ids": [],
+  "notes": "Baseline-seeded parent approximating none.",
+  "sub_policies": [],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

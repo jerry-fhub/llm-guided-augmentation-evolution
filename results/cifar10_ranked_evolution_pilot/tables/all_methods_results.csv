@@ -1,0 +1,14 @@
+method,stage,policy_id,source,seed,generation,valid,is_final_comparison,train_size,val_size,test_size,epochs,val_accuracy,val_macro_f1,test_accuracy,test_macro_f1,runtime_sec,device
+none,baseline,,,31,,True,True,100,100,200,,0.13,0.0445882352941176,0.1,0.0320855614973262,0.6105978488922119,mps
+standard,baseline,,,31,,True,True,100,100,200,,0.13,0.0564278564278564,0.135,0.0740256499691449,0.1757440567016601,mps
+randaugment,baseline,,,31,,True,True,100,100,200,,0.08,0.0224521072796934,0.09,0.0317111459968602,0.179671049118042,mps
+trivialaugment,baseline,,,31,,True,True,100,100,200,,0.1,0.0324999999999999,0.085,0.0371050934880722,0.1620891094207763,mps
+ranked_llm_evolution,evolution_rough,seed_00_standard,baseline_seed:standard,,0,True,False,,,,,0.13,0.045,,,0.2364370822906494,
+ranked_llm_evolution,evolution_full,seed_00_standard,baseline_seed:standard,,0,True,True,,,,,0.06,,0.075,0.0227646326276463,0.2364370822906494,
+ranked_llm_evolution,evolution_rough,seed_01_conservative,baseline_seed:conservative,,0,True,False,,,,,0.07,0.0227513227513227,,,0.0694198608398437,
+ranked_llm_evolution,evolution_rough,seed_02_randaugment,baseline_seed:randaugment,,0,True,False,,,,,0.13,0.0442045454545454,,,0.0833280086517334,
+ranked_llm_evolution,evolution_rough,seed_03_trivialaugment,baseline_seed:trivialaugment,,0,True,False,,,,,0.12,0.048,,,0.0661139488220214,
+ranked_llm_evolution,evolution_rough,gen01_cross_000,heuristic_ranked_crossover,,1,True,False,,,,,0.09,0.0338680926916221,,,0.0694978237152099,
+ranked_llm_evolution,evolution_rough,gen01_mut_001,heuristic_ranked_mutation,,1,True,False,,,,,0.13,0.0554621848739495,,,0.246622085571289,
+ranked_llm_evolution,evolution_full,gen01_mut_001,heuristic_ranked_mutation,,1,True,True,,,,,0.06,,0.085,0.0382827127546914,0.246622085571289,
+ranked_llm_evolution,evolution_rough,gen01_mut_002,heuristic_ranked_mutation,,1,True,False,,,,,0.11,0.031068931068931,,,0.0792250633239746,

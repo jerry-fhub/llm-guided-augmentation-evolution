@@ -1,0 +1,29 @@
+{
+  "policy_id": "gen03_cross_006",
+  "source": "pure_evolution_crossover",
+  "parent_ids": [
+    "gen02_cross_003",
+    "gen02_cross_003"
+  ],
+  "notes": "Combined sub-policies from gen02_cross_003 and gen02_cross_003.",
+  "sub_policies": [
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.92,
+        "magnitude": 0.39
+      }
+    ],
+    [
+      {
+        "name": "Posterize",
+        "probability": 0.87,
+        "magnitude": 0.27
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

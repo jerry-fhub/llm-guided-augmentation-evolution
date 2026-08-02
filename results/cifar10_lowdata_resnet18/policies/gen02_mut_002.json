@@ -1,0 +1,55 @@
+{
+  "policy_id": "gen02_mut_002",
+  "source": "heuristic_feedback",
+  "parent_ids": [
+    "gen01_mut_004"
+  ],
+  "notes": "Mutated from gen01_mut_004 using validation feedback.",
+  "sub_policies": [
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.41,
+        "magnitude": 0.17
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.47,
+        "magnitude": 0.34
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.4,
+        "magnitude": 0.81
+      }
+    ],
+    [
+      {
+        "name": "GaussianBlur",
+        "probability": 0.53,
+        "magnitude": 0.79
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.57,
+        "magnitude": 0.34
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.42,
+        "magnitude": 0.54
+      }
+    ],
+    [
+      {
+        "name": "Affine",
+        "probability": 0.9,
+        "magnitude": 0.6
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "policy_id": "gen01_cross_003",
+  "source": "openai_ranked_crossover",
+  "parent_ids": [
+    "seed_01_standard_color",
+    "openai_init_001",
+    "openai_init_000"
+  ],
+  "notes": "Crossover keeps the strongest baseline prior from standard_mixup while borrowing the best ranked openai parents' mild color/rotation and the stronger seed color crop/flip core. Avoids stacking CutMix with Mixup despite openai parents using both, since baseline reference favors standard_mixup and ranked weak seed_cutmix underperforms. No vertical flips or heavy distortions.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.32
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.28,
+        "magnitude": 0.16
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.18,
+        "magnitude": 0.07
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.12,
+        "magnitude": 0.08
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0,
+    "mixup_alpha": 0.18
+  }
+}

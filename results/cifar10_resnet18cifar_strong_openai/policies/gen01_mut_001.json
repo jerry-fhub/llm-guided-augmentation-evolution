@@ -1,0 +1,33 @@
+{
+  "policy_id": "gen01_mut_001",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "seed_01_standard_color",
+    "seed_02_standard_erasing",
+    "seed_03_standard_mixup"
+  ],
+  "notes": "Strongest baseline reference is standard_mixup, so preserve Mixup and avoid CutMix. Child keeps the best ranked parent's crop/flip/color prior, with a slightly milder crop and color jitter to improve low-data generalisation while retaining CIFAR-10 invariances.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.3
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.15,
+        "magnitude": 0.08
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0.0,
+    "mixup_alpha": 0.2
+  }
+}

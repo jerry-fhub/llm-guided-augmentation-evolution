@@ -1,0 +1,29 @@
+{
+  "policy_id": "heuristic_init_005",
+  "source": "heuristic",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomErasing",
+        "probability": 0.52,
+        "magnitude": 0.57
+      },
+      {
+        "name": "Grayscale",
+        "probability": 0.58,
+        "magnitude": 0.33
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.64,
+        "magnitude": 0.81
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.45
+  }
+}

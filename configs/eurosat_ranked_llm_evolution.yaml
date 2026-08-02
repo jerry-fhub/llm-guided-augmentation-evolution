@@ -1,0 +1,74 @@
+experiment_name: eurosat_ranked_llm_evolution
+output_root: results
+seed: 72
+seeds: [72, 73, 74]
+
+llm:
+  provider: openai
+  model: gpt-5.5
+  fallback_to_heuristic: false
+  max_output_tokens: 3000
+  reasoning_effort: minimal
+  max_retries: 3
+
+dataset:
+  name: eurosat
+  root: data/raw/image_datasets
+  image_size: 64
+  download: true
+  train_per_class: 100
+  val_per_class: 100
+  max_test: 2000
+
+training:
+  model_name: resnet18
+  pretrained: false
+  epochs: 25
+  batch_size: 128
+  lr: 0.001
+  weight_decay: 0.0001
+  optimizer: adamw
+  device: auto
+  num_workers: 0
+  evaluate_test: true
+  save_model: false
+
+rough_training:
+  epochs: 5
+  evaluate_test: false
+
+full_training:
+  epochs: 25
+  evaluate_test: true
+
+baselines:
+  - none
+  - standard
+  - randaugment
+  - trivialaugment
+  - augmix
+
+search:
+  population_size: 8
+  generations: 3
+  elite_count: 3
+  offspring_count: 8
+  full_top_k: 3
+  allow_discouraged: true
+  use_feedback: true
+  seed_with_baselines: true
+  baseline_seed_names: [standard, conservative, randaugment, trivialaugment]
+  ranked_prompting: true
+  ranked_prompt_max_items: 8
+  max_unique_attempts: 4
+  objective:
+    accuracy_weight: 1.0
+    macro_f1_weight: 0.10
+    distortion_weight: 0.02
+    complexity_weight: 0.01
+
+random_search:
+  count: 0
+  full_top_k: 0
+
+one_shot_count: 0

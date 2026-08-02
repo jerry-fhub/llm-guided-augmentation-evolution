@@ -1,0 +1,28 @@
+{
+  "policy_id": "gen03_mut_005",
+  "source": "heuristic_feedback",
+  "parent_ids": [
+    "gen02_mut_001"
+  ],
+  "notes": "Mutated from gen02_mut_001 using validation feedback.",
+  "sub_policies": [
+    [
+      {
+        "name": "Affine",
+        "probability": 0.56,
+        "magnitude": 0.47
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.62,
+        "magnitude": 0.32
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

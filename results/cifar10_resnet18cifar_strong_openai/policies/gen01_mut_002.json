@@ -1,0 +1,33 @@
+{
+  "policy_id": "gen01_mut_002",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "seed_01_standard_color",
+    "seed_02_standard_erasing",
+    "seed_03_standard_mixup"
+  ],
+  "notes": "Primary prior is strongest baseline standard_mixup. Preserve crop+flip and Mixup, avoid CutMix, and make only a conservative refinement: slightly stronger than parent Mixup with mild ColorJitter retained at low probability for CIFAR-10 low-data generalisation.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.32
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.16,
+        "magnitude": 0.1
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0,
+    "mixup_alpha": 0.22
+  }
+}

@@ -1,0 +1,56 @@
+experiment_name: smoke_fake_tinycnn
+output_root: results
+seed: 7
+seeds: [7]
+
+dataset:
+  name: fake
+  root: data/raw/image_datasets
+  image_size: 32
+  download: false
+  train_per_class: 8
+  val_per_class: 4
+  max_train: 80
+  max_val: 40
+  max_test: 40
+
+training:
+  model_name: tinycnn
+  pretrained: false
+  epochs: 1
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  optimizer: adamw
+  device: auto
+  num_workers: 0
+  evaluate_test: true
+  save_model: false
+
+rough_training:
+  epochs: 1
+  evaluate_test: false
+
+full_training:
+  epochs: 1
+  evaluate_test: true
+
+baselines:
+  - none
+  - standard
+  - randaugment
+
+search:
+  population_size: 3
+  generations: 1
+  elite_count: 1
+  offspring_count: 2
+  full_top_k: 1
+  allow_discouraged: true
+  use_feedback: true
+
+random_search:
+  count: 3
+  full_top_k: 1
+
+one_shot_count: 1

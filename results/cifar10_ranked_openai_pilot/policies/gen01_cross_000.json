@@ -1,0 +1,35 @@
+{
+  "policy_id": "gen01_cross_000",
+  "source": "openai_ranked_crossover",
+  "parent_ids": [
+    "seed_01_conservative",
+    "openai_init_000",
+    "seed_00_standard"
+  ],
+  "notes": "Crossover favors the strongest compact standard parent: high-probability CIFAR crop plus horizontal flip, with only a mild color jitter borrowed from the better conservative seed. Discards blur, erasing, solarize, affine, rotation, resized crop, and mixing because weaker parents suggest added distortion/complexity hurt low-data performance.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.38
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.2,
+        "magnitude": 0.12
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0.0,
+    "mixup_alpha": 0.0
+  }
+}

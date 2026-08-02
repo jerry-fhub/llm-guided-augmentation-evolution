@@ -1,0 +1,47 @@
+{
+  "policy_id": "gen01_mut_005",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "seed_05_conservative",
+    "openai_init_000",
+    "openai_init_001"
+  ],
+  "notes": "Mutation from the strongest openai initial policies and the standard_mixup baseline prior: keeps CIFAR-10-safe crop/flip invariance, removes stacked CutMix, lowers policy complexity, and uses only light color/rotation/erasing regularization for low-data generalisation.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.28
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.28,
+        "magnitude": 0.14
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.15,
+        "magnitude": 0.06
+      }
+    ],
+    [
+      {
+        "name": "RandomErasing",
+        "probability": 0.18,
+        "magnitude": 0.14
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0.0,
+    "mixup_alpha": 0.18
+  }
+}

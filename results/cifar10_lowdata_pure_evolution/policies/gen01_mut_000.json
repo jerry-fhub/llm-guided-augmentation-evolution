@@ -1,0 +1,45 @@
+{
+  "policy_id": "gen01_mut_000",
+  "source": "pure_evolution_mutation",
+  "parent_ids": [
+    "heuristic_init_002"
+  ],
+  "notes": "Mutated from heuristic_init_002 without LLM-style feedback.",
+  "sub_policies": [
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.4,
+        "magnitude": 0.52
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.69,
+        "magnitude": 0.77
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.28,
+        "magnitude": 0.31
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.45,
+        "magnitude": 0.21
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.52,
+        "magnitude": 0.47
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

@@ -1,0 +1,8 @@
+policy_id,generation,source,parent_ids,status,rough_val_accuracy,full_val_accuracy,full_test_accuracy
+seed_00_standard,0,baseline_seed:standard,,rough_evaluated,0.1,,
+seed_01_conservative,0,baseline_seed:conservative,,rough_evaluated,0.08,,
+openai_init_000,0,openai_initial,,rough_evaluated,0.1,,
+openai_init_001,0,openai_initial,,rough_evaluated,0.08,,
+gen01_cross_000,1,openai_ranked_crossover,seed_01_conservative;openai_init_000;seed_00_standard,full_evaluated,0.21,0.17,0.215
+gen01_mut_001,1,openai_ranked_mutation,seed_01_conservative;openai_init_000;seed_00_standard,full_evaluated,0.2,0.14,0.185
+gen01_mut_002,1,openai_ranked_mutation,seed_01_conservative;openai_init_000;seed_00_standard,rough_evaluated,0.1,,

@@ -1,0 +1,23 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+.env
+
+# Raw and processed datasets are large and should be downloaded locally.
+data/raw/
+data/processed/
+*.zip
+*.tar
+*.gz
+*.tgz
+
+# Training checkpoints are intentionally excluded.
+results/**/models/
+*.pt
+*.pth
+*.ckpt
+
+# Local build/release folders.
+dist/
+github_release/

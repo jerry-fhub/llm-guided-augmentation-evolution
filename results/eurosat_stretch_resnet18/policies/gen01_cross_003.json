@@ -1,0 +1,39 @@
+{
+  "policy_id": "gen01_cross_003",
+  "source": "heuristic_crossover",
+  "parent_ids": [
+    "heuristic_init_002",
+    "heuristic_init_002"
+  ],
+  "notes": "Combined sub-policies from heuristic_init_002 and heuristic_init_002.",
+  "sub_policies": [
+    [
+      {
+        "name": "VerticalFlip",
+        "probability": 0.31,
+        "magnitude": 0.36
+      },
+      {
+        "name": "VerticalFlip",
+        "probability": 0.69,
+        "magnitude": 0.77
+      }
+    ],
+    [
+      {
+        "name": "VerticalFlip",
+        "probability": 0.31,
+        "magnitude": 0.36
+      },
+      {
+        "name": "VerticalFlip",
+        "probability": 0.69,
+        "magnitude": 0.77
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

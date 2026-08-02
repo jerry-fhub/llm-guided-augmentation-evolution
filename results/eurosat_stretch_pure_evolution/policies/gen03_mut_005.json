@@ -1,0 +1,28 @@
+{
+  "policy_id": "gen03_mut_005",
+  "source": "pure_evolution_mutation",
+  "parent_ids": [
+    "heuristic_init_003"
+  ],
+  "notes": "Mutated from heuristic_init_003 without LLM-style feedback.",
+  "sub_policies": [
+    [
+      {
+        "name": "GaussianBlur",
+        "probability": 0.74,
+        "magnitude": 0.63
+      }
+    ],
+    [
+      {
+        "name": "GaussianBlur",
+        "probability": 0.42,
+        "magnitude": 0.24
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

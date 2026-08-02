@@ -1,0 +1,48 @@
+{
+  "policy_id": "random_001",
+  "source": "random_search",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomErasing",
+        "probability": 0.57,
+        "magnitude": 0.31
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.93,
+        "magnitude": 0.73
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.74,
+        "magnitude": 0.82
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.73,
+        "magnitude": 0.3
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.58,
+        "magnitude": 0.73
+      },
+      {
+        "name": "Affine",
+        "probability": 0.72,
+        "magnitude": 0.43
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.38,
+    "cutmix_alpha": 0.0
+  }
+}

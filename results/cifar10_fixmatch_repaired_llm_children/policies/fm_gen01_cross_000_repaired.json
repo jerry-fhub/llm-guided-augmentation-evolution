@@ -1,0 +1,67 @@
+{
+  "policy_id": "fm_gen01_cross_000_repaired",
+  "source": "repaired_openai_ranked_mutation",
+  "parent_ids": [
+    "seed_00_standard",
+    "init_supervised_llm_gen02_mut_005",
+    "seed_01_randaugment"
+  ],
+  "notes": "FixMatch strong-branch mutation using full-eval randaugment as primary prior, but tempered to reduce pseudo-label noise: keep crop/flip, add mild color/geometric/intensity perturbations, and disable Mixup/CutMix. Repaired to satisfy local max-subpolicy/max-operation constraints.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.4
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.32,
+        "magnitude": 0.18
+      }
+    ],
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.4
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.22,
+        "magnitude": 0.16
+      }
+    ],
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.4
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "Affine",
+        "probability": 0.16,
+        "magnitude": 0.14
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "policy_id": "random_011",
+  "source": "random_search",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.78,
+        "magnitude": 0.42
+      }
+    ],
+    [
+      {
+        "name": "Affine",
+        "probability": 0.62,
+        "magnitude": 0.32
+      },
+      {
+        "name": "RandomCrop",
+        "probability": 0.82,
+        "magnitude": 0.45
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "policy_id": "one_shot_000",
+  "source": "one_shot_heuristic_llm",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.77,
+        "magnitude": 0.32
+      }
+    ],
+    [
+      {
+        "name": "VerticalFlip",
+        "probability": 0.72,
+        "magnitude": 0.77
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.27,
+        "magnitude": 0.22
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.26,
+    "cutmix_alpha": 0.0
+  }
+}

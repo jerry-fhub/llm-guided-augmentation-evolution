@@ -1,0 +1,33 @@
+{
+  "policy_id": "gen01_cross_003_try2",
+  "source": "openai_ranked_crossover",
+  "parent_ids": [
+    "seed_01_standard_color",
+    "seed_02_standard_erasing",
+    "seed_03_standard_mixup"
+  ],
+  "notes": "Strongest baseline reference is standard_mixup, so preserve Mixup and avoid CutMix. Child keeps the strongest parent prior: conservative CIFAR crop/flip with only light ColorJitter, excluding RandomErasing and heavier transforms because no full-evaluation ranked parent beats the baseline.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.32
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.2,
+        "magnitude": 0.1
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0,
+    "mixup_alpha": 0.2
+  }
+}

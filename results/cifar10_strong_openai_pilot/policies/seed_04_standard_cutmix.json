@@ -1,0 +1,24 @@
+{
+  "policy_id": "seed_04_standard_cutmix",
+  "source": "baseline_seed:standard_cutmix",
+  "parent_ids": [],
+  "notes": "Baseline-seeded parent approximating standard_cutmix.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.32
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.4
+  }
+}

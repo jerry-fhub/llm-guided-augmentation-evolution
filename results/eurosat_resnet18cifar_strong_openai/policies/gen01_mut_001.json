@@ -1,0 +1,47 @@
+{
+  "policy_id": "gen01_mut_001",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "seed_06_conservative",
+    "seed_02_standard_color",
+    "seed_03_standard_erasing"
+  ],
+  "notes": "Mutation from the strongest low-distortion erasing parent, with baseline_reference showing no augmentation as the strongest prior. Keeps the standard EuroSAT spatial invariances but slightly relaxes crop probability and adds only very rare small erasing plus very mild color jitter to improve robustness without sample mixing or heavy distortion.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.75,
+        "magnitude": 0.2
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.45,
+        "magnitude": 0.0
+      },
+      {
+        "name": "VerticalFlip",
+        "probability": 0.45,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "RandomErasing",
+        "probability": 0.06,
+        "magnitude": 0.06
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.12,
+        "magnitude": 0.06
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0,
+    "mixup_alpha": 0
+  }
+}

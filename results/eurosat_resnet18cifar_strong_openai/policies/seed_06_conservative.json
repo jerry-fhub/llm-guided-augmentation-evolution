@@ -1,0 +1,41 @@
+{
+  "policy_id": "seed_06_conservative",
+  "source": "baseline_seed:conservative",
+  "parent_ids": [],
+  "notes": "Baseline-seeded parent approximating conservative.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.25
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "VerticalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.35,
+        "magnitude": 0.2
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.15,
+        "magnitude": 0.1
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "policy_id": "gen01_cross_000",
+  "source": "openai_ranked_crossover",
+  "parent_ids": [
+    "seed_05_conservative",
+    "openai_init_000",
+    "openai_init_001"
+  ],
+  "notes": "Crossover keeps the strongest baseline prior from standard_mixup and the best ranked parents: mild crop/flip with light color regularization. Drops stacked CutMix+Mixup and heavier blur/erasing/affine branches from complex parents because evidence favors simple Mixup over CutMix and weak parents show erasing/color-only variants underperform.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.32
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.22,
+        "magnitude": 0.12
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.15,
+        "magnitude": 0.08
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0,
+    "mixup_alpha": 0.22
+  }
+}

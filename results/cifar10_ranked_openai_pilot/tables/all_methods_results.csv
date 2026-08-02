@@ -1,0 +1,14 @@
+method,stage,policy_id,source,seed,generation,valid,is_final_comparison,train_size,val_size,test_size,epochs,val_accuracy,val_macro_f1,test_accuracy,test_macro_f1,runtime_sec,device
+none,baseline,,,33,,True,True,100,100,200,,0.15,0.0643648763853367,0.15,0.0647206599175103,0.7225940227508545,mps
+standard,baseline,,,33,,True,True,100,100,200,,0.22,0.171595795508839,0.245,0.1813268465280849,0.2207181453704834,mps
+randaugment,baseline,,,33,,True,True,100,100,200,,0.14,0.053410740203193,0.115,0.0469318181818181,0.2068150043487548,mps
+trivialaugment,baseline,,,33,,True,True,100,100,200,,0.16,0.090452847805789,0.17,0.1071894771894772,0.1957738399505615,mps
+ranked_llm_evolution,evolution_rough,seed_00_standard,baseline_seed:standard,,0,True,False,,,,,0.1,0.0420538991852448,,,0.6404900550842285,
+ranked_llm_evolution,evolution_rough,seed_01_conservative,baseline_seed:conservative,,0,True,False,,,,,0.08,0.0551033074252888,,,0.0906040668487548,
+ranked_llm_evolution,evolution_rough,openai_init_000,openai_initial,,0,True,False,,,,,0.1,0.0485739750445632,,,0.1143980026245117,
+ranked_llm_evolution,evolution_rough,openai_init_001,openai_initial,,0,True,False,,,,,0.08,0.0231884057971014,,,0.1064760684967041,
+ranked_llm_evolution,evolution_rough,gen01_cross_000,openai_ranked_crossover,,1,True,False,,,,,0.21,0.1613361906910294,,,0.267827033996582,
+ranked_llm_evolution,evolution_full,gen01_cross_000,openai_ranked_crossover,,1,True,True,,,,,0.17,,0.215,0.1272803194458124,0.267827033996582,
+ranked_llm_evolution,evolution_rough,gen01_mut_001,openai_ranked_mutation,,1,True,False,,,,,0.2,0.1008879714676568,,,0.2880628108978271,
+ranked_llm_evolution,evolution_full,gen01_mut_001,openai_ranked_mutation,,1,True,True,,,,,0.14,,0.185,0.0802049954973667,0.2880628108978271,
+ranked_llm_evolution,evolution_rough,gen01_mut_002,openai_ranked_mutation,,1,True,False,,,,,0.1,0.0334987593052109,,,0.0976929664611816,

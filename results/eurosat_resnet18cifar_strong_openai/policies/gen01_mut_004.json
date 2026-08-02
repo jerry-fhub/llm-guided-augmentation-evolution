@@ -1,0 +1,45 @@
+{
+  "policy_id": "gen01_mut_004",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "seed_06_conservative",
+    "seed_02_standard_color",
+    "seed_03_standard_erasing"
+  ],
+  "notes": "Mutation from strongest standard_erasing parent, guided by baseline reference where no augmentation is strongest. Keeps only mild EuroSAT-safe geometric invariance plus very low-probability erasing; reduces always-on crop strength to avoid removing land-use context in low-data training.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.65,
+        "magnitude": 0.18
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.45,
+        "magnitude": 0.0
+      },
+      {
+        "name": "VerticalFlip",
+        "probability": 0.45,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.18,
+        "magnitude": 0.1
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.06,
+        "magnitude": 0.06
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0.0,
+    "mixup_alpha": 0.0
+  }
+}

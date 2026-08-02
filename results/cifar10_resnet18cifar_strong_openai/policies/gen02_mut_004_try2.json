@@ -1,0 +1,33 @@
+{
+  "policy_id": "gen02_mut_004_try2",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "gen01_cross_003_try2",
+    "gen01_cross_000",
+    "seed_03_standard_mixup"
+  ],
+  "notes": "Strongest baseline_reference method is standard_mixup, so preserve Mixup and avoid CutMix. The best ranked policy is the standard_mixup seed; ranked mutations with slightly stronger ColorJitter or crop underperform it, while the closest strong parent keeps crop/flip and light jitter. This child makes a conservative targeted mutation: keep CIFAR-10 crop/flip, slightly reduce ColorJitter probability and Mixup alpha to lower distortion for low-data generalisation without adding erasing or heavier transforms.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.32
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.16,
+        "magnitude": 0.1
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0.0,
+    "mixup_alpha": 0.18
+  }
+}

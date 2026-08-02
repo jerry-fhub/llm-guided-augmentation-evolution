@@ -1,0 +1,6 @@
+policy_id,generation,source,status,validation_ok,num_sub_policies,num_operations,mean_probability,mean_magnitude,mixup_alpha,cutmix_alpha,rough_val_accuracy,rough_val_macro_f1,full_val_accuracy,full_test_accuracy
+heuristic_init_000,0,heuristic,rough_evaluated,True,1,1,0.68,0.46,0.0,0.0,0.1,0.01834862385321101,,
+heuristic_init_001,0,heuristic,rough_evaluated,True,2,4,0.475,0.255,0.0,0.0,0.1,0.02997572815533981,,
+heuristic_init_002,0,heuristic,rough_evaluated,True,3,5,0.674,0.41200000000000003,0.0,0.0,0.08,0.028135152696556205,,
+gen01_mut_000,1,pure_evolution_mutation,rough_evaluated,True,1,1,0.68,0.46,0.0,0.0,0.14,0.06276411760282728,,
+gen01_mut_001,1,pure_evolution_mutation,full_evaluated,True,1,1,0.68,0.46,0.0,0.0,0.22,0.13725660304607673,0.12,0.12

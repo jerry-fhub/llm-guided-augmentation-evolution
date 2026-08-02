@@ -1,0 +1,43 @@
+{
+  "policy_id": "random_007",
+  "source": "random_search",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "Posterize",
+        "probability": 0.69,
+        "magnitude": 0.66
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.26,
+        "magnitude": 0.49
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.35,
+        "magnitude": 0.65
+      }
+    ],
+    [
+      {
+        "name": "GaussianBlur",
+        "probability": 0.45,
+        "magnitude": 0.36
+      }
+    ],
+    [
+      {
+        "name": "RandomResizedCrop",
+        "probability": 0.91,
+        "magnitude": 0.33
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

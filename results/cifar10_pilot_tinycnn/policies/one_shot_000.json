@@ -1,0 +1,24 @@
+{
+  "policy_id": "one_shot_000",
+  "source": "one_shot_heuristic_llm",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.59,
+        "magnitude": 0.3
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.8,
+        "magnitude": 0.72
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

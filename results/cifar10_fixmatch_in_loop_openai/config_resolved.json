@@ -1,0 +1,93 @@
+{
+  "experiment_name": "cifar10_fixmatch_in_loop_openai",
+  "output_root": "results",
+  "seed": 61,
+  "llm": {
+    "provider": "openai",
+    "model": "gpt-5.5",
+    "api_mode": "chat",
+    "fallback_to_heuristic": false,
+    "max_output_tokens": 900,
+    "reasoning_effort": "minimal",
+    "max_retries": 2,
+    "request_timeout": 60
+  },
+  "dataset": {
+    "name": "cifar10",
+    "root": "data/raw/image_datasets",
+    "image_size": 32,
+    "download": true,
+    "download_url": "https://data.brainchip.com/dataset-mirror/cifar10/cifar-10-python.tar.gz",
+    "archive_filename": "cifar-10-python.tar.gz",
+    "archive_md5": "c58f30108f718f92721af3b95e74349a",
+    "train_per_class": 100,
+    "val_per_class": 100,
+    "max_test": 2000,
+    "max_unlabeled": 10000
+  },
+  "training": {
+    "model_name": "resnet18_cifar",
+    "pretrained": false,
+    "epochs": 15,
+    "batch_size": 64,
+    "eval_batch_size": 128,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "optimizer": "adamw",
+    "device": "auto",
+    "num_workers": 0,
+    "evaluate_test": true,
+    "save_model": false
+  },
+  "fixmatch": {
+    "threshold": 0.8,
+    "lambda_u": 1.0,
+    "mu": 2,
+    "max_steps_per_epoch": 80
+  },
+  "fixmatch_evolution": {
+    "enabled": true,
+    "method_name": "fixmatch_ranked_llm_evolution",
+    "population_size": 4,
+    "generations": 1,
+    "elite_count": 3,
+    "offspring_count": 2,
+    "full_top_k": 3,
+    "crossover_enabled": false,
+    "allow_discouraged": true,
+    "seed_with_baselines": true,
+    "baseline_seed_names": [
+      "standard",
+      "randaugment",
+      "trivialaugment"
+    ],
+    "initial_policy_files": [
+      {
+        "path": "results/cifar10_resnet18cifar_strong_openai/policies/gen02_mut_005.json",
+        "policy_id": "init_supervised_llm_gen02_mut_005",
+        "source": "supervised_openai_ranked_policy"
+      }
+    ],
+    "baseline_reference_csv": "results/cifar10_fixmatch_llm_strong_policy/tables/fixmatch_results.csv",
+    "ranked_prompt_max_items": 5,
+    "max_unique_attempts": 3,
+    "rough_training": {
+      "epochs": 4
+    },
+    "rough_fixmatch": {
+      "max_steps_per_epoch": 35
+    },
+    "full_training": {
+      "epochs": 15
+    },
+    "full_fixmatch": {
+      "max_steps_per_epoch": 80
+    },
+    "objective": {
+      "accuracy_weight": 1.0,
+      "macro_f1_weight": 0.08,
+      "distortion_weight": 0.01,
+      "complexity_weight": 0.004
+    }
+  }
+}

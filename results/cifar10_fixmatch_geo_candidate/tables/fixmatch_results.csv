@@ -1,0 +1,2 @@
+method,stage,policy_id,source,seed,valid,train_size,unlabeled_size,val_size,test_size,epochs,threshold,lambda_u,val_accuracy,val_macro_f1,runtime_sec,device,final_pseudo_mask_rate,final_pseudo_confidence,test_accuracy,test_macro_f1
+fixmatch_llm_geo_refined_candidate,fixmatch,fix_geo_balanced_001,manual_fixmatch_candidate,61,True,1000,10000,1000,2000,15,0.8,1.0,0.594,0.5886385470507162,451.92828488349915,mps,0.6944110576923077,0.8501233252195212,0.564,0.55317929418878

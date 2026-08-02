@@ -1,0 +1,92 @@
+{
+  "experiment_name": "eurosat_resnet18cifar_strong_openai",
+  "output_root": "results",
+  "seed": 57,
+  "seeds": [
+    57
+  ],
+  "llm": {
+    "provider": "openai",
+    "model": "gpt-5.5",
+    "fallback_to_heuristic": false,
+    "max_output_tokens": 3000,
+    "reasoning_effort": "minimal",
+    "max_retries": 3
+  },
+  "dataset": {
+    "name": "eurosat",
+    "root": "data/raw/image_datasets",
+    "image_size": 64,
+    "download": true,
+    "train_per_class": 100,
+    "val_per_class": 100,
+    "max_test": 2000
+  },
+  "training": {
+    "model_name": "resnet18_cifar",
+    "pretrained": false,
+    "epochs": 12,
+    "batch_size": 128,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "optimizer": "adamw",
+    "device": "auto",
+    "num_workers": 0,
+    "evaluate_test": true,
+    "save_model": false
+  },
+  "rough_training": {
+    "epochs": 4,
+    "evaluate_test": false
+  },
+  "full_training": {
+    "epochs": 12,
+    "evaluate_test": true
+  },
+  "baselines": [
+    "none",
+    "standard",
+    "standard_mixup",
+    "standard_cutmix",
+    "randaugment",
+    "trivialaugment"
+  ],
+  "search": {
+    "population_size": 8,
+    "generations": 2,
+    "elite_count": 3,
+    "offspring_count": 6,
+    "full_top_k": 3,
+    "full_include_policy_ids": [
+      "seed_00_none",
+      "seed_04_standard_mixup",
+      "seed_05_standard_cutmix"
+    ],
+    "allow_discouraged": true,
+    "use_feedback": true,
+    "seed_with_baselines": true,
+    "baseline_seed_names": [
+      "none",
+      "standard",
+      "standard_color",
+      "standard_erasing",
+      "standard_mixup",
+      "standard_cutmix",
+      "conservative"
+    ],
+    "ranked_prompting": true,
+    "ranked_prompt_max_items": 8,
+    "max_unique_attempts": 3,
+    "objective": {
+      "accuracy_weight": 1.0,
+      "macro_f1_weight": 0.1,
+      "distortion_weight": 0.015,
+      "complexity_weight": 0.006
+    }
+  },
+  "random_search": {
+    "count": 0,
+    "full_top_k": 0
+  },
+  "one_shot_count": 0
+}

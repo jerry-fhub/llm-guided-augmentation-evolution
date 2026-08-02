@@ -1,0 +1,80 @@
+{
+  "experiment_name": "cifar10_ranked_evolution_pilot",
+  "output_root": "results",
+  "seed": 31,
+  "seeds": [
+    31
+  ],
+  "llm": {
+    "provider": "heuristic"
+  },
+  "dataset": {
+    "name": "cifar10",
+    "root": "data/raw/image_datasets",
+    "image_size": 32,
+    "download": true,
+    "download_url": "https://data.brainchip.com/dataset-mirror/cifar10/cifar-10-python.tar.gz",
+    "archive_filename": "cifar-10-python.tar.gz",
+    "archive_md5": "c58f30108f718f92721af3b95e74349a",
+    "train_per_class": 10,
+    "val_per_class": 10,
+    "max_test": 200
+  },
+  "training": {
+    "model_name": "tinycnn",
+    "pretrained": false,
+    "epochs": 3,
+    "batch_size": 64,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "optimizer": "adamw",
+    "device": "auto",
+    "num_workers": 0,
+    "evaluate_test": true,
+    "save_model": false
+  },
+  "rough_training": {
+    "epochs": 1,
+    "evaluate_test": false
+  },
+  "full_training": {
+    "epochs": 3,
+    "evaluate_test": true
+  },
+  "baselines": [
+    "none",
+    "standard",
+    "randaugment",
+    "trivialaugment"
+  ],
+  "search": {
+    "population_size": 4,
+    "generations": 1,
+    "elite_count": 2,
+    "offspring_count": 3,
+    "full_top_k": 2,
+    "allow_discouraged": true,
+    "use_feedback": true,
+    "seed_with_baselines": true,
+    "baseline_seed_names": [
+      "standard",
+      "conservative",
+      "randaugment",
+      "trivialaugment"
+    ],
+    "ranked_prompting": true,
+    "ranked_prompt_max_items": 6,
+    "max_unique_attempts": 3,
+    "objective": {
+      "accuracy_weight": 1.0,
+      "macro_f1_weight": 0.1,
+      "distortion_weight": 0.02,
+      "complexity_weight": 0.01
+    }
+  },
+  "random_search": {
+    "count": 0,
+    "full_top_k": 0
+  },
+  "one_shot_count": 0
+}

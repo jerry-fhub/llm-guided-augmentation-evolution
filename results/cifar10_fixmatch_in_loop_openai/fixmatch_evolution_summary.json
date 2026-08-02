@@ -1,0 +1,141 @@
+{
+  "method": "fixmatch_ranked_llm_evolution",
+  "learning_algorithm": "FixMatch",
+  "num_records": 6,
+  "num_valid": 4,
+  "num_full_evaluated": 3,
+  "baseline_reference_csv": "results/cifar10_fixmatch_llm_strong_policy/tables/fixmatch_results.csv",
+  "best_full": {
+    "policy": {
+      "policy_id": "seed_01_randaugment",
+      "source": "baseline_seed:randaugment",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating randaugment.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.45
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.55,
+            "magnitude": 0.35
+          },
+          {
+            "name": "Rotation",
+            "probability": 0.45,
+            "magnitude": 0.3
+          }
+        ],
+        [
+          {
+            "name": "Affine",
+            "probability": 0.35,
+            "magnitude": 0.3
+          },
+          {
+            "name": "Solarize",
+            "probability": 0.2,
+            "magnitude": 0.3
+          }
+        ],
+        [
+          {
+            "name": "Posterize",
+            "probability": 0.15,
+            "magnitude": 0.25
+          },
+          {
+            "name": "GaussianBlur",
+            "probability": 0.2,
+            "magnitude": 0.2
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "method": "fixmatch_ranked_llm_evolution",
+      "stage": "fixmatch",
+      "policy_id": "seed_01_randaugment",
+      "source": "baseline_seed:randaugment",
+      "seed": 61,
+      "valid": true,
+      "train_size": 1000,
+      "unlabeled_size": 10000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "threshold": 0.8,
+      "lambda_u": 1.0,
+      "val_accuracy": 0.473,
+      "val_macro_f1": 0.46306021710451584,
+      "runtime_sec": 56.41129398345947,
+      "device": "mps",
+      "final_pseudo_mask_rate": 0.1,
+      "final_pseudo_confidence": 0.4966852537223271,
+      "best_epoch": 4,
+      "best_pseudo_mask_rate": 0.1,
+      "best_pseudo_confidence": 0.4966852537223271,
+      "best_unsupervised_loss": 0.032850599927561626,
+      "test_accuracy": 0.4705,
+      "test_macro_f1": 0.4632449054084356,
+      "objective_score": 0.505735546535028,
+      "policy_complexity": 0.7333333333333333,
+      "distortion_proxy": 0.13759375000000001
+    },
+    "full_result": {
+      "method": "fixmatch_ranked_llm_evolution",
+      "stage": "fixmatch",
+      "policy_id": "seed_01_randaugment",
+      "source": "baseline_seed:randaugment",
+      "seed": 61,
+      "valid": true,
+      "train_size": 1000,
+      "unlabeled_size": 10000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 15,
+      "threshold": 0.8,
+      "lambda_u": 1.0,
+      "val_accuracy": 0.593,
+      "val_macro_f1": 0.5933854156696916,
+      "runtime_sec": 433.9453489780426,
+      "device": "mps",
+      "final_pseudo_mask_rate": 0.0,
+      "final_pseudo_confidence": 0.16404080792115286,
+      "best_epoch": 13,
+      "best_pseudo_mask_rate": 0.6440304487179487,
+      "best_pseudo_confidence": 0.8269931521171179,
+      "best_unsupervised_loss": 0.2113682703138926,
+      "test_accuracy": 0.5695,
+      "test_macro_f1": 0.5647467103749273,
+      "objective_score": 0.636161562420242,
+      "policy_complexity": 0.7333333333333333,
+      "distortion_proxy": 0.13759375000000001
+    },
+    "status": "full_evaluated"
+  },
+  "objective": {
+    "accuracy_weight": 1.0,
+    "macro_f1_weight": 0.08,
+    "distortion_weight": 0.01,
+    "complexity_weight": 0.004
+  }
+}

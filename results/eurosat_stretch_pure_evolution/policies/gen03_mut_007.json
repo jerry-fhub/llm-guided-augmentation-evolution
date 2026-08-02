@@ -1,0 +1,28 @@
+{
+  "policy_id": "gen03_mut_007",
+  "source": "pure_evolution_mutation",
+  "parent_ids": [
+    "gen02_mut_007"
+  ],
+  "notes": "Mutated from gen02_mut_007 without LLM-style feedback.",
+  "sub_policies": [
+    [
+      {
+        "name": "GaussianBlur",
+        "probability": 0.79,
+        "magnitude": 0.66
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.39,
+        "magnitude": 0.19
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

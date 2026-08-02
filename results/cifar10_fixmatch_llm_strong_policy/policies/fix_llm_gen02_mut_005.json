@@ -1,0 +1,33 @@
+{
+  "policy_id": "fix_llm_gen02_mut_005",
+  "source": "openai_ranked_policy_from_supervised_search",
+  "parent_ids": [
+    "gen01_cross_003_try2",
+    "gen01_cross_000",
+    "seed_03_standard_mixup"
+  ],
+  "notes": "Strongest baseline reference is standard_mixup, and the strongest ranked policies cluster around crop+flip, light ColorJitter, and Mixup alpha 0.2. Preserve that prior, avoid CutMix and VerticalFlip, and make a narrow mutation by slightly lowering ColorJitter probability while keeping magnitude at the stronger ranked value to reduce low-data over-perturbation without losing color invariance.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.32
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.16,
+        "magnitude": 0.12
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

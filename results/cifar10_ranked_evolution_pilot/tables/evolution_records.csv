@@ -1,0 +1,8 @@
+method,policy_id,generation,source,valid,rough_val_accuracy,rough_val_macro_f1,rough_objective_score,rough_distortion_proxy,rough_policy_complexity,full_val_accuracy,full_test_accuracy,full_test_macro_f1,full_objective_score,full_distortion_proxy,full_policy_complexity,runtime_sec
+ranked_llm_evolution,seed_00_standard,0,baseline_seed:standard,True,0.13,0.045,0.12816666666666668,0.225,0.18333333333333332,0.06,0.075,0.022764632627646324,0.05579832810867293,0.225,0.18333333333333332,0.23643708229064941
+ranked_llm_evolution,seed_01_conservative,0,baseline_seed:conservative,True,0.07,0.02275132275132275,0.06661263227513228,0.114375,0.3375,,,,,,,0.06941986083984375
+ranked_llm_evolution,seed_02_randaugment,0,baseline_seed:randaugment,True,0.13,0.044204545454545455,0.12433524621212122,0.13759375000000001,0.7333333333333333,,,,,,,0.0833280086517334
+ranked_llm_evolution,seed_03_trivialaugment,0,baseline_seed:trivialaugment,True,0.12,0.048,0.11518458333333333,0.17243750000000002,0.6166666666666667,,,,,,,0.06611394882202148
+ranked_llm_evolution,gen01_cross_000,1,heuristic_ranked_crossover,True,0.09,0.0338680926916221,0.0834755592691622,0.1580625,0.675,,,,,,,0.06949782371520996
+ranked_llm_evolution,gen01_mut_001,1,heuristic_ranked_mutation,True,0.13,0.055462184873949584,0.12570653515406163,0.1253175,0.7333333333333333,0.06,0.085,0.0382827127546914,0.05250047011935209,0.1253175,0.7333333333333333,0.24662208557128906
+ranked_llm_evolution,gen01_mut_002,1,heuristic_ranked_mutation,True,0.11,0.03106893106893107,0.10363338477355978,0.10700875,0.7333333333333333,,,,,,,0.07922506332397461

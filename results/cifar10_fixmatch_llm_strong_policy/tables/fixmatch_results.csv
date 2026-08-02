@@ -1,0 +1,5 @@
+method,stage,policy_id,source,seed,valid,train_size,unlabeled_size,val_size,test_size,epochs,threshold,lambda_u,val_accuracy,val_macro_f1,runtime_sec,device,final_pseudo_mask_rate,final_pseudo_confidence,test_accuracy,test_macro_f1
+fixmatch_standard,fixmatch,strong_standard,fixmatch_named_strong,61,True,1000,10000,1000,2000,15,0.8,1.0,0.566,0.5551510053175159,457.8352921009064,mps,0.0,0.14329242925995436,0.5675,0.5512035100102725
+fixmatch_randaugment,fixmatch,strong_randaugment,fixmatch_named_strong,61,True,1000,10000,1000,2000,15,0.8,1.0,0.639,0.6365051623081526,477.4414572715759,mps,0.6319110576923077,0.8189146709747803,0.6205,0.6105111738777231
+fixmatch_trivialaugment,fixmatch,strong_trivialaugment,fixmatch_named_strong,61,True,1000,10000,1000,2000,15,0.8,1.0,0.63,0.626799619561219,466.3779230117798,mps,0.5873397435897436,0.7967087611173972,0.615,0.6108378052526446
+fixmatch_llm_evolved_cifar_best,fixmatch,fix_llm_gen02_mut_005,openai_ranked_policy_from_supervised_search,61,True,1000,10000,1000,2000,15,0.8,1.0,0.614,0.6137227717437923,460.5797588825226,mps,0.6901041666666666,0.8498592949830569,0.59,0.5838242670042952

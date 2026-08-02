@@ -1,0 +1,32 @@
+{
+  "policy_id": "adaptive_policy_002",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "adaptive_policy_001",
+    "adaptive_policy_000"
+  ],
+  "notes": "Conservative CIFAR-10 child retaining the stronger crop/flip baseline, slightly reducing crop distortion and adding rare mild color jitter for low-data generalisation without erasing complexity.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.4
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.18,
+        "magnitude": 0.12
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.03,
+    "cutmix_alpha": 0
+  }
+}

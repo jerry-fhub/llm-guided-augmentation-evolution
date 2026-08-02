@@ -1,0 +1,45 @@
+{
+  "policy_id": "gen02_cross_003",
+  "source": "openai_ranked_crossover",
+  "parent_ids": [
+    "gen01_cross_000",
+    "openai_init_001",
+    "openai_init_000"
+  ],
+  "notes": "Crossover favors the strongest ranked initial policies' mild crop/flip/color/rotation/erasing structure while using the baseline reference's stronger standard_mixup prior as the single sample-mixing mechanism. It drops stacked CutMix+Mixup, GaussianBlur, Affine, and vertical flips, and keeps spatial distortion conservative for low-data CIFAR-10.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.9,
+        "magnitude": 0.16
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.35,
+        "magnitude": 0.16
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.22,
+        "magnitude": 0.07
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.18,
+        "magnitude": 0.1
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0.0,
+    "mixup_alpha": 0.2
+  }
+}

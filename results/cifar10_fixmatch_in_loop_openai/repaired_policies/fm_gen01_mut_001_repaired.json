@@ -1,0 +1,33 @@
+{
+  "policy_id": "fm_gen01_mut_001",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "seed_00_standard",
+    "init_supervised_llm_gen02_mut_005",
+    "seed_01_randaugment"
+  ],
+  "notes": "FixMatch strong-branch mutation using fixmatch_randaugment as primary prior: keep crop/flip and moderate RA-style color/geometric signal, but lower destructive solarize/posterize/blur probabilities to protect pseudo-label quality; mixup/cutmix disabled. Repaired to satisfy local max-subpolicy/max-operation constraints.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.42
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.42,
+        "magnitude": 0.24
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

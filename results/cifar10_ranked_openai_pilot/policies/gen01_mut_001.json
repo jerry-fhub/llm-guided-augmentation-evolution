@@ -1,0 +1,35 @@
+{
+  "policy_id": "gen01_mut_001",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "seed_01_conservative",
+    "openai_init_000",
+    "seed_00_standard"
+  ],
+  "notes": "Mutation from strongest standard crop/flip parent: preserve simple CIFAR-10 spatial prior, reduce crop severity slightly for low-data stability, and add a low-probability mild ColorJitter to improve class/color robustness without the complexity and distortion of weaker multi-op policies. Avoids vertical flips and heavy mixing.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.36
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.2,
+        "magnitude": 0.12
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0.0,
+    "mixup_alpha": 0.05
+  }
+}

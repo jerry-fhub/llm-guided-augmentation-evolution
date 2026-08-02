@@ -1,0 +1,5050 @@
+[
+  {
+    "policy": {
+      "policy_id": "seed_00_standard",
+      "source": "baseline_seed:standard",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.45
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.285,
+      "val_macro_f1": 0.25068482436596196,
+      "val_confusion_matrix": [
+        [
+          53,
+          12,
+          2,
+          6,
+          1,
+          4,
+          0,
+          8,
+          0,
+          14
+        ],
+        [
+          2,
+          40,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          54
+        ],
+        [
+          11,
+          17,
+          9,
+          6,
+          22,
+          8,
+          3,
+          9,
+          0,
+          15
+        ],
+        [
+          6,
+          6,
+          6,
+          12,
+          7,
+          14,
+          2,
+          15,
+          0,
+          32
+        ],
+        [
+          6,
+          12,
+          6,
+          2,
+          36,
+          1,
+          2,
+          17,
+          0,
+          18
+        ],
+        [
+          4,
+          4,
+          5,
+          6,
+          14,
+          19,
+          2,
+          18,
+          0,
+          28
+        ],
+        [
+          3,
+          12,
+          6,
+          3,
+          20,
+          3,
+          12,
+          8,
+          0,
+          33
+        ],
+        [
+          11,
+          3,
+          1,
+          0,
+          4,
+          15,
+          3,
+          34,
+          0,
+          29
+        ],
+        [
+          26,
+          37,
+          1,
+          1,
+          1,
+          4,
+          1,
+          3,
+          1,
+          25
+        ],
+        [
+          4,
+          19,
+          0,
+          0,
+          0,
+          2,
+          1,
+          5,
+          0,
+          69
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.136123369216919,
+          "val_accuracy": 0.134,
+          "val_macro_f1": 0.07947678573634957
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.9498234062194824,
+          "val_accuracy": 0.24,
+          "val_macro_f1": 0.16025248607567733
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.7579995536804198,
+          "val_accuracy": 0.285,
+          "val_macro_f1": 0.25068482436596196
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.8214413423538207,
+          "val_accuracy": 0.27,
+          "val_macro_f1": 0.24122908690594422
+        }
+      ],
+      "runtime_sec": 10.320770978927612,
+      "device": "mps",
+      "policy_id": "seed_00_standard",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.3055934824365962,
+      "policy_complexity": 0.18333333333333332,
+      "distortion_proxy": 0.225
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_01_standard_color",
+      "source": "baseline_seed:standard_color",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard_color.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.35
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.3,
+            "magnitude": 0.16
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.306,
+      "val_macro_f1": 0.27565262661725864,
+      "val_confusion_matrix": [
+        [
+          53,
+          1,
+          8,
+          0,
+          0,
+          10,
+          0,
+          8,
+          13,
+          7
+        ],
+        [
+          4,
+          11,
+          5,
+          0,
+          0,
+          5,
+          1,
+          33,
+          10,
+          31
+        ],
+        [
+          7,
+          0,
+          48,
+          7,
+          0,
+          27,
+          0,
+          7,
+          2,
+          2
+        ],
+        [
+          1,
+          0,
+          17,
+          4,
+          0,
+          56,
+          1,
+          19,
+          2,
+          0
+        ],
+        [
+          3,
+          0,
+          48,
+          4,
+          0,
+          22,
+          4,
+          18,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          20,
+          7,
+          0,
+          55,
+          1,
+          13,
+          3,
+          1
+        ],
+        [
+          0,
+          0,
+          34,
+          11,
+          0,
+          14,
+          19,
+          19,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          12,
+          3,
+          0,
+          29,
+          0,
+          52,
+          2,
+          0
+        ],
+        [
+          21,
+          2,
+          2,
+          0,
+          0,
+          12,
+          0,
+          7,
+          38,
+          18
+        ],
+        [
+          8,
+          2,
+          9,
+          1,
+          0,
+          8,
+          0,
+          39,
+          7,
+          26
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.252209243774414,
+          "val_accuracy": 0.171,
+          "val_macro_f1": 0.11966427857697355
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.9904884815216064,
+          "val_accuracy": 0.196,
+          "val_macro_f1": 0.13426705590468058
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.66865358543396,
+          "val_accuracy": 0.279,
+          "val_macro_f1": 0.24190164523355967
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.652864725112915,
+          "val_accuracy": 0.306,
+          "val_macro_f1": 0.27565262661725864
+        }
+      ],
+      "runtime_sec": 10.213757991790771,
+      "device": "mps",
+      "policy_id": "seed_01_standard_color",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.3302642626617258,
+      "policy_complexity": 0.2125,
+      "distortion_proxy": 0.13506666666666667
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_02_standard_erasing",
+      "source": "baseline_seed:standard_erasing",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard_erasing.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.35
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "RandomErasing",
+            "probability": 0.15,
+            "magnitude": 0.1
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.314,
+      "val_macro_f1": 0.29068992465517496,
+      "val_confusion_matrix": [
+        [
+          34,
+          6,
+          2,
+          0,
+          0,
+          0,
+          0,
+          1,
+          14,
+          43
+        ],
+        [
+          1,
+          32,
+          3,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          60
+        ],
+        [
+          11,
+          12,
+          34,
+          8,
+          1,
+          0,
+          12,
+          8,
+          2,
+          12
+        ],
+        [
+          8,
+          6,
+          20,
+          21,
+          0,
+          0,
+          15,
+          17,
+          3,
+          10
+        ],
+        [
+          8,
+          5,
+          32,
+          3,
+          8,
+          1,
+          19,
+          14,
+          2,
+          8
+        ],
+        [
+          3,
+          12,
+          17,
+          19,
+          0,
+          4,
+          18,
+          15,
+          5,
+          7
+        ],
+        [
+          1,
+          10,
+          26,
+          6,
+          3,
+          0,
+          40,
+          7,
+          1,
+          6
+        ],
+        [
+          2,
+          12,
+          11,
+          5,
+          5,
+          1,
+          8,
+          43,
+          3,
+          10
+        ],
+        [
+          5,
+          10,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          27,
+          55
+        ],
+        [
+          1,
+          18,
+          0,
+          1,
+          0,
+          0,
+          3,
+          3,
+          3,
+          71
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.563543741226196,
+          "val_accuracy": 0.158,
+          "val_macro_f1": 0.1095077352701636
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.972423171043396,
+          "val_accuracy": 0.239,
+          "val_macro_f1": 0.19954407292970028
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.7917956562042237,
+          "val_accuracy": 0.272,
+          "val_macro_f1": 0.2066346544246403
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.7225722923278808,
+          "val_accuracy": 0.314,
+          "val_macro_f1": 0.29068992465517496
+        }
+      ],
+      "runtime_sec": 9.899657964706421,
+      "device": "mps",
+      "policy_id": "seed_02_standard_erasing",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.3399427424655174,
+      "policy_complexity": 0.2125,
+      "distortion_proxy": 0.12341666666666666
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_03_standard_mixup",
+      "source": "baseline_seed:standard_mixup",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard_mixup.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.18,
+            "magnitude": 0.1
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.2,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.358,
+      "val_macro_f1": 0.3169713840877043,
+      "val_confusion_matrix": [
+        [
+          57,
+          5,
+          2,
+          1,
+          0,
+          1,
+          2,
+          8,
+          4,
+          20
+        ],
+        [
+          2,
+          27,
+          2,
+          1,
+          0,
+          0,
+          1,
+          4,
+          0,
+          63
+        ],
+        [
+          9,
+          1,
+          13,
+          14,
+          0,
+          2,
+          34,
+          19,
+          1,
+          7
+        ],
+        [
+          3,
+          3,
+          2,
+          54,
+          0,
+          4,
+          12,
+          13,
+          3,
+          6
+        ],
+        [
+          3,
+          1,
+          4,
+          17,
+          4,
+          1,
+          49,
+          15,
+          0,
+          6
+        ],
+        [
+          2,
+          3,
+          1,
+          44,
+          0,
+          12,
+          21,
+          11,
+          1,
+          5
+        ],
+        [
+          0,
+          2,
+          5,
+          14,
+          0,
+          0,
+          58,
+          16,
+          2,
+          3
+        ],
+        [
+          3,
+          3,
+          1,
+          14,
+          1,
+          2,
+          12,
+          54,
+          2,
+          8
+        ],
+        [
+          19,
+          7,
+          1,
+          1,
+          0,
+          1,
+          1,
+          13,
+          11,
+          46
+        ],
+        [
+          4,
+          8,
+          1,
+          2,
+          0,
+          0,
+          1,
+          14,
+          2,
+          68
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.0759154891967775,
+          "val_accuracy": 0.176,
+          "val_macro_f1": 0.103576240410412
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.946561529159546,
+          "val_accuracy": 0.233,
+          "val_macro_f1": 0.1651986825959905
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.8397076625823974,
+          "val_accuracy": 0.226,
+          "val_macro_f1": 0.15742920314288786
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.7281549758911132,
+          "val_accuracy": 0.358,
+          "val_macro_f1": 0.3169713840877043
+        }
+      ],
+      "runtime_sec": 10.04706621170044,
+      "device": "mps",
+      "policy_id": "seed_03_standard_mixup",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.3860286384087704,
+      "policy_complexity": 0.22749999999999998,
+      "distortion_proxy": 0.15356666666666668
+    },
+    "full_result": {
+      "val_accuracy": 0.496,
+      "val_macro_f1": 0.4884081947547041,
+      "val_confusion_matrix": [
+        [
+          60,
+          3,
+          1,
+          5,
+          6,
+          3,
+          1,
+          4,
+          15,
+          2
+        ],
+        [
+          3,
+          75,
+          0,
+          1,
+          1,
+          7,
+          0,
+          5,
+          1,
+          7
+        ],
+        [
+          14,
+          2,
+          15,
+          16,
+          14,
+          18,
+          7,
+          9,
+          5,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          41,
+          8,
+          31,
+          7,
+          6,
+          1,
+          0
+        ],
+        [
+          5,
+          1,
+          0,
+          8,
+          48,
+          13,
+          7,
+          14,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          2,
+          20,
+          10,
+          59,
+          1,
+          4,
+          1,
+          0
+        ],
+        [
+          0,
+          3,
+          6,
+          12,
+          14,
+          15,
+          47,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          6,
+          5,
+          25,
+          0,
+          60,
+          0,
+          2
+        ],
+        [
+          15,
+          11,
+          2,
+          3,
+          0,
+          5,
+          0,
+          0,
+          57,
+          7
+        ],
+        [
+          3,
+          28,
+          1,
+          5,
+          1,
+          9,
+          2,
+          10,
+          7,
+          34
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.401164300918579,
+          "val_accuracy": 0.136,
+          "val_macro_f1": 0.09430735099046333
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.029710445404053,
+          "val_accuracy": 0.193,
+          "val_macro_f1": 0.11307041284298913
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.7830267524719239,
+          "val_accuracy": 0.265,
+          "val_macro_f1": 0.21397241887167295
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.6881957559585572,
+          "val_accuracy": 0.348,
+          "val_macro_f1": 0.29319209115233436
+        },
+        {
+          "epoch": 5,
+          "train_loss": 1.6995839014053344,
+          "val_accuracy": 0.312,
+          "val_macro_f1": 0.2974101120111469
+        },
+        {
+          "epoch": 6,
+          "train_loss": 1.4927425365447997,
+          "val_accuracy": 0.451,
+          "val_macro_f1": 0.43662885348585545
+        },
+        {
+          "epoch": 7,
+          "train_loss": 1.6455520191192627,
+          "val_accuracy": 0.393,
+          "val_macro_f1": 0.36054889350944364
+        },
+        {
+          "epoch": 8,
+          "train_loss": 1.7071732692718506,
+          "val_accuracy": 0.463,
+          "val_macro_f1": 0.44780410419347466
+        },
+        {
+          "epoch": 9,
+          "train_loss": 1.3432253618240357,
+          "val_accuracy": 0.403,
+          "val_macro_f1": 0.3967690637904965
+        },
+        {
+          "epoch": 10,
+          "train_loss": 1.430829071998596,
+          "val_accuracy": 0.46,
+          "val_macro_f1": 0.44312129999664596
+        },
+        {
+          "epoch": 11,
+          "train_loss": 1.4449511995315552,
+          "val_accuracy": 0.432,
+          "val_macro_f1": 0.3994499295000583
+        },
+        {
+          "epoch": 12,
+          "train_loss": 1.2470286016464234,
+          "val_accuracy": 0.496,
+          "val_macro_f1": 0.4884081947547041
+        },
+        {
+          "epoch": 13,
+          "train_loss": 1.1845457429885864,
+          "val_accuracy": 0.453,
+          "val_macro_f1": 0.4355274003584831
+        },
+        {
+          "epoch": 14,
+          "train_loss": 1.29586403465271,
+          "val_accuracy": 0.45,
+          "val_macro_f1": 0.4354214310369187
+        },
+        {
+          "epoch": 15,
+          "train_loss": 1.2574268703460694,
+          "val_accuracy": 0.454,
+          "val_macro_f1": 0.4468151265607201
+        }
+      ],
+      "runtime_sec": 35.64581894874573,
+      "device": "mps",
+      "test_accuracy": 0.4665,
+      "test_macro_f1": 0.4558385618081958,
+      "test_confusion_matrix": [
+        [
+          97,
+          18,
+          6,
+          12,
+          2,
+          8,
+          2,
+          12,
+          31,
+          8
+        ],
+        [
+          3,
+          152,
+          0,
+          8,
+          0,
+          10,
+          0,
+          4,
+          6,
+          15
+        ],
+        [
+          21,
+          6,
+          28,
+          24,
+          34,
+          42,
+          17,
+          15,
+          5,
+          3
+        ],
+        [
+          5,
+          5,
+          2,
+          72,
+          8,
+          76,
+          17,
+          7,
+          4,
+          3
+        ],
+        [
+          9,
+          5,
+          4,
+          20,
+          78,
+          32,
+          15,
+          27,
+          5,
+          3
+        ],
+        [
+          2,
+          2,
+          2,
+          46,
+          7,
+          105,
+          7,
+          13,
+          1,
+          0
+        ],
+        [
+          0,
+          6,
+          1,
+          29,
+          47,
+          26,
+          88,
+          13,
+          3,
+          3
+        ],
+        [
+          4,
+          2,
+          2,
+          13,
+          10,
+          46,
+          3,
+          110,
+          2,
+          1
+        ],
+        [
+          28,
+          23,
+          0,
+          2,
+          2,
+          7,
+          6,
+          2,
+          138,
+          9
+        ],
+        [
+          4,
+          63,
+          1,
+          11,
+          0,
+          14,
+          6,
+          20,
+          19,
+          65
+        ]
+      ],
+      "policy_id": "seed_03_standard_mixup",
+      "stage": "full",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 15,
+      "objective_score": 0.5411723194754704,
+      "policy_complexity": 0.22749999999999998,
+      "distortion_proxy": 0.15356666666666668
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_04_standard_cutmix",
+      "source": "baseline_seed:standard_cutmix",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard_cutmix.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.4
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.285,
+      "val_macro_f1": 0.23132410820539392,
+      "val_confusion_matrix": [
+        [
+          55,
+          1,
+          3,
+          0,
+          0,
+          6,
+          0,
+          0,
+          35,
+          0
+        ],
+        [
+          7,
+          22,
+          1,
+          0,
+          0,
+          4,
+          0,
+          2,
+          64,
+          0
+        ],
+        [
+          12,
+          3,
+          12,
+          9,
+          0,
+          37,
+          5,
+          5,
+          17,
+          0
+        ],
+        [
+          5,
+          8,
+          2,
+          22,
+          0,
+          55,
+          1,
+          2,
+          5,
+          0
+        ],
+        [
+          15,
+          2,
+          15,
+          15,
+          0,
+          29,
+          6,
+          9,
+          9,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          18,
+          0,
+          65,
+          0,
+          3,
+          8,
+          0
+        ],
+        [
+          2,
+          6,
+          11,
+          30,
+          0,
+          24,
+          10,
+          7,
+          10,
+          0
+        ],
+        [
+          14,
+          8,
+          2,
+          8,
+          0,
+          34,
+          1,
+          25,
+          8,
+          0
+        ],
+        [
+          15,
+          2,
+          0,
+          0,
+          0,
+          8,
+          0,
+          1,
+          74,
+          0
+        ],
+        [
+          15,
+          9,
+          1,
+          2,
+          0,
+          2,
+          0,
+          2,
+          69,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.3085616207122803,
+          "val_accuracy": 0.143,
+          "val_macro_f1": 0.07171286352146741
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.0765768013000487,
+          "val_accuracy": 0.188,
+          "val_macro_f1": 0.13200333319956334
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.8934987354278565,
+          "val_accuracy": 0.271,
+          "val_macro_f1": 0.21816866222089898
+        },
+        {
+          "epoch": 4,
+          "train_loss": 2.0290429286956786,
+          "val_accuracy": 0.285,
+          "val_macro_f1": 0.23132410820539392
+        }
+      ],
+      "runtime_sec": 10.003342151641846,
+      "device": "mps",
+      "policy_id": "seed_04_standard_cutmix",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.3032524108205394,
+      "policy_complexity": 0.21333333333333332,
+      "distortion_proxy": 0.24000000000000002
+    },
+    "full_result": {
+      "val_accuracy": 0.466,
+      "val_macro_f1": 0.4473631263484664,
+      "val_confusion_matrix": [
+        [
+          73,
+          0,
+          3,
+          0,
+          3,
+          0,
+          1,
+          0,
+          20,
+          0
+        ],
+        [
+          17,
+          61,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          15,
+          5
+        ],
+        [
+          24,
+          2,
+          12,
+          11,
+          22,
+          10,
+          10,
+          2,
+          5,
+          2
+        ],
+        [
+          10,
+          1,
+          5,
+          27,
+          6,
+          34,
+          10,
+          1,
+          3,
+          3
+        ],
+        [
+          9,
+          3,
+          3,
+          4,
+          47,
+          8,
+          12,
+          7,
+          5,
+          2
+        ],
+        [
+          6,
+          4,
+          2,
+          9,
+          13,
+          56,
+          4,
+          1,
+          3,
+          2
+        ],
+        [
+          6,
+          7,
+          1,
+          7,
+          10,
+          7,
+          54,
+          0,
+          4,
+          4
+        ],
+        [
+          13,
+          10,
+          1,
+          2,
+          16,
+          12,
+          1,
+          26,
+          0,
+          19
+        ],
+        [
+          25,
+          2,
+          2,
+          1,
+          1,
+          0,
+          0,
+          0,
+          68,
+          1
+        ],
+        [
+          17,
+          21,
+          0,
+          1,
+          0,
+          0,
+          2,
+          0,
+          17,
+          42
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.400129829406738,
+          "val_accuracy": 0.175,
+          "val_macro_f1": 0.10977006164985541
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.9739529857635498,
+          "val_accuracy": 0.217,
+          "val_macro_f1": 0.14987715556892417
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.9855773191452026,
+          "val_accuracy": 0.233,
+          "val_macro_f1": 0.15891122739813257
+        },
+        {
+          "epoch": 4,
+          "train_loss": 2.1106683616638184,
+          "val_accuracy": 0.338,
+          "val_macro_f1": 0.2883738096840465
+        },
+        {
+          "epoch": 5,
+          "train_loss": 1.7716253356933593,
+          "val_accuracy": 0.361,
+          "val_macro_f1": 0.3281307892666165
+        },
+        {
+          "epoch": 6,
+          "train_loss": 1.783344060897827,
+          "val_accuracy": 0.42,
+          "val_macro_f1": 0.41151335657902177
+        },
+        {
+          "epoch": 7,
+          "train_loss": 1.8617203788757324,
+          "val_accuracy": 0.381,
+          "val_macro_f1": 0.35585908307115405
+        },
+        {
+          "epoch": 8,
+          "train_loss": 1.623541784286499,
+          "val_accuracy": 0.442,
+          "val_macro_f1": 0.4298786608918932
+        },
+        {
+          "epoch": 9,
+          "train_loss": 1.887335880279541,
+          "val_accuracy": 0.439,
+          "val_macro_f1": 0.4307332544070713
+        },
+        {
+          "epoch": 10,
+          "train_loss": 1.6282851028442382,
+          "val_accuracy": 0.43,
+          "val_macro_f1": 0.3986914041509402
+        },
+        {
+          "epoch": 11,
+          "train_loss": 1.800958366394043,
+          "val_accuracy": 0.448,
+          "val_macro_f1": 0.4396490338071741
+        },
+        {
+          "epoch": 12,
+          "train_loss": 1.552088828086853,
+          "val_accuracy": 0.466,
+          "val_macro_f1": 0.4473631263484664
+        },
+        {
+          "epoch": 13,
+          "train_loss": 1.4656437730789185,
+          "val_accuracy": 0.45,
+          "val_macro_f1": 0.4404040223609889
+        },
+        {
+          "epoch": 14,
+          "train_loss": 1.753083472251892,
+          "val_accuracy": 0.462,
+          "val_macro_f1": 0.45678898523303263
+        },
+        {
+          "epoch": 15,
+          "train_loss": 1.4961113214492798,
+          "val_accuracy": 0.448,
+          "val_macro_f1": 0.4313209257871817
+        }
+      ],
+      "runtime_sec": 35.155235052108765,
+      "device": "mps",
+      "test_accuracy": 0.435,
+      "test_macro_f1": 0.4147626061549916,
+      "test_confusion_matrix": [
+        [
+          127,
+          9,
+          1,
+          4,
+          1,
+          2,
+          1,
+          1,
+          46,
+          4
+        ],
+        [
+          40,
+          114,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          34,
+          8
+        ],
+        [
+          47,
+          8,
+          20,
+          11,
+          47,
+          35,
+          9,
+          3,
+          13,
+          2
+        ],
+        [
+          27,
+          12,
+          5,
+          45,
+          11,
+          66,
+          11,
+          0,
+          8,
+          14
+        ],
+        [
+          23,
+          6,
+          6,
+          17,
+          75,
+          25,
+          23,
+          10,
+          11,
+          2
+        ],
+        [
+          11,
+          9,
+          4,
+          25,
+          13,
+          99,
+          6,
+          3,
+          5,
+          10
+        ],
+        [
+          12,
+          19,
+          3,
+          16,
+          32,
+          6,
+          111,
+          0,
+          8,
+          9
+        ],
+        [
+          35,
+          16,
+          3,
+          6,
+          20,
+          32,
+          3,
+          57,
+          4,
+          17
+        ],
+        [
+          45,
+          3,
+          1,
+          0,
+          0,
+          1,
+          2,
+          0,
+          160,
+          5
+        ],
+        [
+          43,
+          51,
+          1,
+          3,
+          0,
+          1,
+          5,
+          0,
+          37,
+          62
+        ]
+      ],
+      "policy_id": "seed_04_standard_cutmix",
+      "stage": "full",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 15,
+      "objective_score": 0.5058563126348466,
+      "policy_complexity": 0.21333333333333332,
+      "distortion_proxy": 0.24000000000000002
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_05_conservative",
+      "source": "baseline_seed:conservative",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating conservative.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.3
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.25,
+            "magnitude": 0.15
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.296,
+      "val_macro_f1": 0.24646247209470004,
+      "val_confusion_matrix": [
+        [
+          62,
+          23,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          13,
+          0
+        ],
+        [
+          1,
+          91,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          5,
+          0
+        ],
+        [
+          22,
+          25,
+          25,
+          12,
+          6,
+          1,
+          1,
+          6,
+          1,
+          1
+        ],
+        [
+          11,
+          30,
+          6,
+          29,
+          0,
+          3,
+          1,
+          16,
+          2,
+          2
+        ],
+        [
+          8,
+          26,
+          26,
+          10,
+          7,
+          3,
+          2,
+          16,
+          1,
+          1
+        ],
+        [
+          6,
+          32,
+          15,
+          27,
+          2,
+          5,
+          0,
+          13,
+          0,
+          0
+        ],
+        [
+          3,
+          45,
+          17,
+          8,
+          6,
+          0,
+          3,
+          15,
+          1,
+          2
+        ],
+        [
+          11,
+          37,
+          3,
+          9,
+          0,
+          3,
+          0,
+          35,
+          1,
+          1
+        ],
+        [
+          23,
+          36,
+          1,
+          0,
+          0,
+          2,
+          0,
+          1,
+          36,
+          1
+        ],
+        [
+          10,
+          78,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          3
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.2009711322784424,
+          "val_accuracy": 0.154,
+          "val_macro_f1": 0.10608136740749563
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.8756172008514405,
+          "val_accuracy": 0.266,
+          "val_macro_f1": 0.1983994344793369
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.6399897480010985,
+          "val_accuracy": 0.296,
+          "val_macro_f1": 0.24646247209470004
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.5248877582550049,
+          "val_accuracy": 0.261,
+          "val_macro_f1": 0.241599390862356
+        }
+      ],
+      "runtime_sec": 9.868347883224487,
+      "device": "mps",
+      "policy_id": "seed_05_conservative",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.31690562220947,
+      "policy_complexity": 0.3375,
+      "distortion_proxy": 0.114375
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_cross_000",
+      "source": "openai_ranked_crossover",
+      "parent_ids": [
+        "seed_01_standard_color",
+        "seed_02_standard_erasing",
+        "seed_03_standard_mixup"
+      ],
+      "notes": "Strongest baseline reference is standard_mixup, so preserve Mixup and avoid CutMix. Child keeps CIFAR-10-safe crop/flip prior from the strongest ranked parent and slightly tempers ColorJitter toward the conservative/color parents without adding erasing or heavier transforms.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.2,
+            "magnitude": 0.12
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0.2
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.353,
+      "val_macro_f1": 0.31759152729809176,
+      "val_confusion_matrix": [
+        [
+          46,
+          11,
+          6,
+          1,
+          0,
+          1,
+          0,
+          3,
+          32,
+          0
+        ],
+        [
+          13,
+          69,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          14,
+          1
+        ],
+        [
+          15,
+          8,
+          39,
+          2,
+          8,
+          8,
+          2,
+          14,
+          3,
+          1
+        ],
+        [
+          11,
+          6,
+          15,
+          8,
+          2,
+          28,
+          5,
+          23,
+          2,
+          0
+        ],
+        [
+          6,
+          4,
+          33,
+          1,
+          19,
+          13,
+          4,
+          18,
+          2,
+          0
+        ],
+        [
+          5,
+          7,
+          14,
+          2,
+          6,
+          31,
+          1,
+          31,
+          3,
+          0
+        ],
+        [
+          3,
+          7,
+          14,
+          4,
+          19,
+          9,
+          15,
+          25,
+          2,
+          2
+        ],
+        [
+          12,
+          4,
+          9,
+          1,
+          6,
+          6,
+          0,
+          54,
+          5,
+          3
+        ],
+        [
+          18,
+          13,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          64,
+          0
+        ],
+        [
+          17,
+          34,
+          1,
+          1,
+          1,
+          0,
+          0,
+          9,
+          29,
+          8
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.384882308959961,
+          "val_accuracy": 0.123,
+          "val_macro_f1": 0.05609826563239993
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.0376353912353515,
+          "val_accuracy": 0.227,
+          "val_macro_f1": 0.15815545638932274
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.939519687652588,
+          "val_accuracy": 0.249,
+          "val_macro_f1": 0.19669341859413003
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.8291137599945069,
+          "val_accuracy": 0.353,
+          "val_macro_f1": 0.31759152729809176
+        }
+      ],
+      "runtime_sec": 10.404654741287231,
+      "device": "mps",
+      "policy_id": "gen01_cross_000",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.38105615272980914,
+      "policy_complexity": 0.22749999999999998,
+      "distortion_proxy": 0.15586666666666668
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_mut_001",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_01_standard_color",
+        "seed_02_standard_erasing",
+        "seed_03_standard_mixup"
+      ],
+      "notes": "Strongest baseline reference is standard_mixup, so preserve Mixup and avoid CutMix. Child keeps the best ranked parent's crop/flip/color prior, with a slightly milder crop and color jitter to improve low-data generalisation while retaining CIFAR-10 invariances.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.3
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.15,
+            "magnitude": 0.08
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.2
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.277,
+      "val_macro_f1": 0.2518719907024483,
+      "val_confusion_matrix": [
+        [
+          72,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          19,
+          0
+        ],
+        [
+          47,
+          51,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          38,
+          4,
+          23,
+          5,
+          11,
+          4,
+          3,
+          5,
+          7,
+          0
+        ],
+        [
+          37,
+          4,
+          7,
+          33,
+          1,
+          6,
+          2,
+          7,
+          3,
+          0
+        ],
+        [
+          26,
+          3,
+          26,
+          10,
+          18,
+          2,
+          3,
+          9,
+          3,
+          0
+        ],
+        [
+          32,
+          5,
+          11,
+          30,
+          0,
+          9,
+          0,
+          8,
+          5,
+          0
+        ],
+        [
+          16,
+          8,
+          13,
+          20,
+          15,
+          2,
+          11,
+          10,
+          3,
+          2
+        ],
+        [
+          39,
+          10,
+          4,
+          13,
+          5,
+          1,
+          0,
+          22,
+          6,
+          0
+        ],
+        [
+          58,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          37,
+          0
+        ],
+        [
+          53,
+          37,
+          0,
+          2,
+          0,
+          0,
+          0,
+          1,
+          6,
+          1
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.4704933795928956,
+          "val_accuracy": 0.15,
+          "val_macro_f1": 0.07166239129061305
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.9181928129196166,
+          "val_accuracy": 0.218,
+          "val_macro_f1": 0.17275084385490358
+        },
+        {
+          "epoch": 3,
+          "train_loss": 2.0061612310409545,
+          "val_accuracy": 0.27,
+          "val_macro_f1": 0.2031769682739879
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.7982320919036865,
+          "val_accuracy": 0.277,
+          "val_macro_f1": 0.2518719907024483
+        }
+      ],
+      "runtime_sec": 10.038831949234009,
+      "device": "mps",
+      "policy_id": "gen01_mut_001",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.29865319907024485,
+      "policy_complexity": 0.22749999999999998,
+      "distortion_proxy": 0.1446
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_mut_002",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_01_standard_color",
+        "seed_02_standard_erasing",
+        "seed_03_standard_mixup"
+      ],
+      "notes": "Primary prior is strongest baseline standard_mixup. Preserve crop+flip and Mixup, avoid CutMix, and make only a conservative refinement: slightly stronger than parent Mixup with mild ColorJitter retained at low probability for CIFAR-10 low-data generalisation.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.16,
+            "magnitude": 0.1
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0.22
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.252,
+      "val_macro_f1": 0.22411296619077095,
+      "val_confusion_matrix": [
+        [
+          92,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          59,
+          39,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          46,
+          3,
+          25,
+          3,
+          9,
+          7,
+          3,
+          4,
+          0,
+          0
+        ],
+        [
+          49,
+          1,
+          5,
+          17,
+          4,
+          12,
+          4,
+          7,
+          1,
+          0
+        ],
+        [
+          27,
+          4,
+          25,
+          4,
+          19,
+          6,
+          5,
+          8,
+          2,
+          0
+        ],
+        [
+          42,
+          2,
+          5,
+          21,
+          5,
+          12,
+          2,
+          9,
+          1,
+          1
+        ],
+        [
+          13,
+          6,
+          8,
+          12,
+          25,
+          4,
+          17,
+          10,
+          1,
+          4
+        ],
+        [
+          52,
+          3,
+          6,
+          6,
+          4,
+          1,
+          2,
+          25,
+          1,
+          0
+        ],
+        [
+          88,
+          4,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          71,
+          25,
+          0,
+          1,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.439182849884033,
+          "val_accuracy": 0.206,
+          "val_macro_f1": 0.14967848660167254
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.0076596374511717,
+          "val_accuracy": 0.213,
+          "val_macro_f1": 0.1840738264892064
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.9535487442016601,
+          "val_accuracy": 0.247,
+          "val_macro_f1": 0.1795120352632993
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.8439937877655028,
+          "val_accuracy": 0.252,
+          "val_macro_f1": 0.22411296619077095
+        }
+      ],
+      "runtime_sec": 10.03839898109436,
+      "device": "mps",
+      "policy_id": "gen01_mut_002",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.2706852966190771,
+      "policy_complexity": 0.22899999999999998,
+      "distortion_proxy": 0.15680000000000002
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_cross_003_try2",
+      "source": "openai_ranked_crossover",
+      "parent_ids": [
+        "seed_01_standard_color",
+        "seed_02_standard_erasing",
+        "seed_03_standard_mixup"
+      ],
+      "notes": "Strongest baseline reference is standard_mixup, so preserve Mixup and avoid CutMix. Child keeps the strongest parent prior: conservative CIFAR crop/flip with only light ColorJitter, excluding RandomErasing and heavier transforms because no full-evaluation ranked parent beats the baseline.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.2,
+            "magnitude": 0.1
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0.2
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.322,
+      "val_macro_f1": 0.28535733955017195,
+      "val_confusion_matrix": [
+        [
+          52,
+          7,
+          1,
+          0,
+          0,
+          1,
+          0,
+          3,
+          36,
+          0
+        ],
+        [
+          22,
+          59,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          17,
+          0
+        ],
+        [
+          19,
+          7,
+          21,
+          3,
+          30,
+          6,
+          1,
+          9,
+          4,
+          0
+        ],
+        [
+          13,
+          14,
+          12,
+          18,
+          10,
+          19,
+          0,
+          9,
+          4,
+          1
+        ],
+        [
+          10,
+          4,
+          19,
+          3,
+          45,
+          8,
+          0,
+          9,
+          2,
+          0
+        ],
+        [
+          9,
+          6,
+          15,
+          11,
+          12,
+          26,
+          0,
+          15,
+          6,
+          0
+        ],
+        [
+          4,
+          8,
+          11,
+          8,
+          34,
+          6,
+          5,
+          18,
+          6,
+          0
+        ],
+        [
+          23,
+          8,
+          1,
+          4,
+          18,
+          5,
+          0,
+          29,
+          10,
+          2
+        ],
+        [
+          21,
+          12,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0,
+          64,
+          0
+        ],
+        [
+          45,
+          25,
+          1,
+          1,
+          0,
+          0,
+          0,
+          3,
+          22,
+          3
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.3651716213226317,
+          "val_accuracy": 0.114,
+          "val_macro_f1": 0.0384517653902997
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.0649646224975586,
+          "val_accuracy": 0.209,
+          "val_macro_f1": 0.14103763154713073
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.9256659984588622,
+          "val_accuracy": 0.261,
+          "val_macro_f1": 0.19453901616251906
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.8285109090805054,
+          "val_accuracy": 0.322,
+          "val_macro_f1": 0.28535733955017195
+        }
+      ],
+      "runtime_sec": 10.1273672580719,
+      "device": "mps",
+      "policy_id": "gen01_cross_003_try2",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.3468557339550172,
+      "policy_complexity": 0.22749999999999998,
+      "distortion_proxy": 0.15433333333333335
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_mut_004",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_01_standard_color",
+        "seed_02_standard_erasing",
+        "seed_03_standard_mixup"
+      ],
+      "notes": "Strongest baseline and ranked parent both favor standard_mixup. Preserves Mixup, avoids CutMix, and makes a conservative improvement by slightly reducing crop strength while keeping only light color jitter.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.3
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.2,
+            "magnitude": 0.1
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.2,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.316,
+      "val_macro_f1": 0.27856258432889885,
+      "val_confusion_matrix": [
+        [
+          48,
+          8,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          41,
+          0
+        ],
+        [
+          22,
+          59,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          17,
+          0
+        ],
+        [
+          19,
+          7,
+          20,
+          3,
+          29,
+          7,
+          1,
+          9,
+          5,
+          0
+        ],
+        [
+          17,
+          13,
+          11,
+          15,
+          11,
+          18,
+          1,
+          8,
+          5,
+          1
+        ],
+        [
+          9,
+          4,
+          18,
+          2,
+          45,
+          8,
+          0,
+          10,
+          4,
+          0
+        ],
+        [
+          9,
+          6,
+          17,
+          10,
+          11,
+          24,
+          0,
+          17,
+          6,
+          0
+        ],
+        [
+          3,
+          11,
+          7,
+          3,
+          38,
+          6,
+          6,
+          17,
+          9,
+          0
+        ],
+        [
+          23,
+          9,
+          1,
+          3,
+          18,
+          7,
+          0,
+          26,
+          11,
+          2
+        ],
+        [
+          17,
+          11,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0,
+          69,
+          0
+        ],
+        [
+          38,
+          21,
+          1,
+          1,
+          0,
+          0,
+          0,
+          3,
+          32,
+          4
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.3635021133422853,
+          "val_accuracy": 0.116,
+          "val_macro_f1": 0.041618483200014864
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.059419797897339,
+          "val_accuracy": 0.209,
+          "val_macro_f1": 0.14170884811316
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.9259900856018066,
+          "val_accuracy": 0.252,
+          "val_macro_f1": 0.18488031720373804
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.8328452568054199,
+          "val_accuracy": 0.316,
+          "val_macro_f1": 0.27856258432889885
+        }
+      ],
+      "runtime_sec": 10.152789831161499,
+      "device": "mps",
+      "policy_id": "gen01_mut_004",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.3402762584328899,
+      "policy_complexity": 0.22749999999999998,
+      "distortion_proxy": 0.14766666666666667
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_mut_005",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_01_standard_color",
+        "seed_02_standard_erasing",
+        "seed_03_standard_mixup"
+      ],
+      "notes": "Primary prior is standard_mixup from the baseline reference and strongest ranked parent. Preserve Mixup, avoid CutMix, keep standard crop/flip, and make only a conservative color-jitter adjustment toward the stronger color baseline without adding heavier transforms.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.34
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.22,
+            "magnitude": 0.12
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.2,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.268,
+      "val_macro_f1": 0.21883516097933028,
+      "val_confusion_matrix": [
+        [
+          33,
+          11,
+          4,
+          0,
+          0,
+          5,
+          0,
+          0,
+          22,
+          25
+        ],
+        [
+          2,
+          54,
+          0,
+          0,
+          0,
+          0,
+          2,
+          4,
+          8,
+          30
+        ],
+        [
+          11,
+          9,
+          36,
+          0,
+          0,
+          20,
+          1,
+          2,
+          11,
+          10
+        ],
+        [
+          15,
+          25,
+          11,
+          0,
+          0,
+          30,
+          2,
+          4,
+          2,
+          11
+        ],
+        [
+          5,
+          14,
+          37,
+          0,
+          1,
+          25,
+          4,
+          2,
+          9,
+          3
+        ],
+        [
+          10,
+          20,
+          5,
+          0,
+          0,
+          37,
+          1,
+          9,
+          9,
+          9
+        ],
+        [
+          1,
+          13,
+          35,
+          0,
+          0,
+          23,
+          4,
+          3,
+          10,
+          11
+        ],
+        [
+          19,
+          24,
+          10,
+          0,
+          0,
+          12,
+          0,
+          13,
+          3,
+          19
+        ],
+        [
+          9,
+          20,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          30,
+          39
+        ],
+        [
+          10,
+          17,
+          2,
+          0,
+          0,
+          1,
+          1,
+          0,
+          9,
+          60
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.3278827877044677,
+          "val_accuracy": 0.185,
+          "val_macro_f1": 0.11259861214768074
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.002060464859009,
+          "val_accuracy": 0.268,
+          "val_macro_f1": 0.21883516097933028
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.7639224414825438,
+          "val_accuracy": 0.261,
+          "val_macro_f1": 0.22079898021758154
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.7744620933532715,
+          "val_accuracy": 0.224,
+          "val_macro_f1": 0.15434930507775652
+        }
+      ],
+      "runtime_sec": 10.062824249267578,
+      "device": "mps",
+      "policy_id": "gen01_mut_005",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.28606671609793305,
+      "policy_complexity": 0.22749999999999998,
+      "distortion_proxy": 0.16345333333333334
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_cross_000",
+      "source": "openai_ranked_crossover",
+      "parent_ids": [
+        "gen01_cross_003_try2",
+        "gen01_cross_000",
+        "seed_03_standard_mixup"
+      ],
+      "notes": "Strongest baseline reference is standard_mixup, so preserve Mixup and avoid CutMix. The child stays close to the strongest baseline while borrowing the best ranked crossover's slightly stronger but still light ColorJitter; crop/flip remain the CIFAR-10 prior and no erasing or heavy transforms are added.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.2,
+            "magnitude": 0.11
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.2,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.296,
+      "val_macro_f1": 0.26461145162956473,
+      "val_confusion_matrix": [
+        [
+          35,
+          15,
+          0,
+          0,
+          4,
+          1,
+          1,
+          0,
+          19,
+          25
+        ],
+        [
+          1,
+          63,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          3,
+          30
+        ],
+        [
+          14,
+          18,
+          17,
+          4,
+          4,
+          1,
+          16,
+          9,
+          5,
+          12
+        ],
+        [
+          1,
+          17,
+          5,
+          10,
+          1,
+          5,
+          16,
+          14,
+          2,
+          29
+        ],
+        [
+          7,
+          12,
+          13,
+          1,
+          10,
+          0,
+          24,
+          16,
+          4,
+          13
+        ],
+        [
+          2,
+          21,
+          6,
+          10,
+          3,
+          3,
+          18,
+          16,
+          1,
+          20
+        ],
+        [
+          1,
+          20,
+          5,
+          5,
+          3,
+          0,
+          47,
+          10,
+          1,
+          8
+        ],
+        [
+          3,
+          22,
+          1,
+          3,
+          0,
+          0,
+          11,
+          25,
+          0,
+          35
+        ],
+        [
+          20,
+          22,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          27,
+          28
+        ],
+        [
+          5,
+          31,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          4,
+          59
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.322641092300415,
+          "val_accuracy": 0.11,
+          "val_macro_f1": 0.043107457884668354
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.9478164806365967,
+          "val_accuracy": 0.193,
+          "val_macro_f1": 0.13260157854019464
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.8562850980758667,
+          "val_accuracy": 0.291,
+          "val_macro_f1": 0.2628344268598835
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.6506093502044679,
+          "val_accuracy": 0.296,
+          "val_macro_f1": 0.26461145162956473
+        }
+      ],
+      "runtime_sec": 10.173162937164307,
+      "device": "mps",
+      "policy_id": "gen02_cross_000",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.3187696451629564,
+      "policy_complexity": 0.22749999999999998,
+      "distortion_proxy": 0.15510000000000002
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_mut_001",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "gen01_cross_003_try2",
+        "gen01_cross_000",
+        "seed_03_standard_mixup"
+      ],
+      "notes": "Strongest baseline reference is standard_mixup, with standard_cutmix close but lower; preserve Mixup and avoid CutMix. Ranked evidence shows the exact standard_mixup seed remains strongest, while nearby children with stronger ColorJitter or altered crop underperform, so this child makes a minimal conservative mutation: keep CIFAR-10 crop/flip/color prior and slightly soften Mixup alpha for low-data generalisation.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.18,
+            "magnitude": 0.1
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.18
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.365,
+      "val_macro_f1": 0.3513975377804129,
+      "val_confusion_matrix": [
+        [
+          39,
+          5,
+          3,
+          1,
+          3,
+          0,
+          2,
+          1,
+          31,
+          15
+        ],
+        [
+          6,
+          35,
+          3,
+          0,
+          1,
+          2,
+          1,
+          1,
+          11,
+          40
+        ],
+        [
+          8,
+          3,
+          21,
+          4,
+          16,
+          8,
+          14,
+          6,
+          13,
+          7
+        ],
+        [
+          3,
+          2,
+          6,
+          12,
+          6,
+          22,
+          27,
+          3,
+          6,
+          13
+        ],
+        [
+          6,
+          1,
+          11,
+          3,
+          22,
+          2,
+          33,
+          6,
+          6,
+          10
+        ],
+        [
+          3,
+          1,
+          3,
+          15,
+          7,
+          31,
+          24,
+          8,
+          1,
+          7
+        ],
+        [
+          0,
+          2,
+          3,
+          1,
+          11,
+          7,
+          64,
+          1,
+          4,
+          7
+        ],
+        [
+          6,
+          1,
+          2,
+          6,
+          4,
+          7,
+          23,
+          32,
+          4,
+          15
+        ],
+        [
+          26,
+          4,
+          0,
+          1,
+          0,
+          0,
+          2,
+          1,
+          53,
+          13
+        ],
+        [
+          13,
+          8,
+          0,
+          1,
+          1,
+          0,
+          4,
+          1,
+          16,
+          56
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.317629072189331,
+          "val_accuracy": 0.109,
+          "val_macro_f1": 0.03492063492063492
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.0162100591659544,
+          "val_accuracy": 0.153,
+          "val_macro_f1": 0.11083877478592727
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.8077005910873414,
+          "val_accuracy": 0.277,
+          "val_macro_f1": 0.24345735082413947
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.6521178588867187,
+          "val_accuracy": 0.365,
+          "val_macro_f1": 0.3513975377804129
+        }
+      ],
+      "runtime_sec": 10.057987213134766,
+      "device": "mps",
+      "policy_id": "gen02_mut_001",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.39654025377804125,
+      "policy_complexity": 0.226,
+      "distortion_proxy": 0.14956666666666665
+    },
+    "full_result": {
+      "val_accuracy": 0.488,
+      "val_macro_f1": 0.4716909244453342,
+      "val_confusion_matrix": [
+        [
+          56,
+          0,
+          3,
+          1,
+          2,
+          0,
+          3,
+          4,
+          24,
+          7
+        ],
+        [
+          6,
+          42,
+          2,
+          2,
+          2,
+          0,
+          0,
+          2,
+          19,
+          25
+        ],
+        [
+          14,
+          1,
+          24,
+          15,
+          6,
+          7,
+          10,
+          12,
+          8,
+          3
+        ],
+        [
+          3,
+          1,
+          5,
+          44,
+          1,
+          8,
+          11,
+          20,
+          5,
+          2
+        ],
+        [
+          3,
+          0,
+          6,
+          21,
+          19,
+          3,
+          12,
+          31,
+          4,
+          1
+        ],
+        [
+          1,
+          0,
+          3,
+          27,
+          4,
+          29,
+          4,
+          22,
+          9,
+          1
+        ],
+        [
+          2,
+          1,
+          3,
+          10,
+          4,
+          0,
+          58,
+          10,
+          4,
+          8
+        ],
+        [
+          2,
+          1,
+          1,
+          3,
+          0,
+          8,
+          1,
+          71,
+          2,
+          11
+        ],
+        [
+          9,
+          1,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          81,
+          5
+        ],
+        [
+          7,
+          3,
+          0,
+          2,
+          0,
+          1,
+          3,
+          4,
+          16,
+          64
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.403832542419434,
+          "val_accuracy": 0.115,
+          "val_macro_f1": 0.05710075527924605
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.027917205810547,
+          "val_accuracy": 0.163,
+          "val_macro_f1": 0.08703212031501899
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.7770878839492799,
+          "val_accuracy": 0.241,
+          "val_macro_f1": 0.19717870862665005
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.6889242391586303,
+          "val_accuracy": 0.355,
+          "val_macro_f1": 0.3007064903335664
+        },
+        {
+          "epoch": 5,
+          "train_loss": 1.6881506147384644,
+          "val_accuracy": 0.335,
+          "val_macro_f1": 0.31606027695503497
+        },
+        {
+          "epoch": 6,
+          "train_loss": 1.5023652086257935,
+          "val_accuracy": 0.458,
+          "val_macro_f1": 0.4488971084132197
+        },
+        {
+          "epoch": 7,
+          "train_loss": 1.6302982234954835,
+          "val_accuracy": 0.395,
+          "val_macro_f1": 0.35694944513043747
+        },
+        {
+          "epoch": 8,
+          "train_loss": 1.7056917152404785,
+          "val_accuracy": 0.426,
+          "val_macro_f1": 0.4053361574691811
+        },
+        {
+          "epoch": 9,
+          "train_loss": 1.365891384124756,
+          "val_accuracy": 0.355,
+          "val_macro_f1": 0.32969617942467105
+        },
+        {
+          "epoch": 10,
+          "train_loss": 1.4142019443511964,
+          "val_accuracy": 0.441,
+          "val_macro_f1": 0.4210127859714701
+        },
+        {
+          "epoch": 11,
+          "train_loss": 1.48237131690979,
+          "val_accuracy": 0.424,
+          "val_macro_f1": 0.3925151841012958
+        },
+        {
+          "epoch": 12,
+          "train_loss": 1.2469328098297119,
+          "val_accuracy": 0.455,
+          "val_macro_f1": 0.4294619335916616
+        },
+        {
+          "epoch": 13,
+          "train_loss": 1.1933699893951415,
+          "val_accuracy": 0.443,
+          "val_macro_f1": 0.42399162560887993
+        },
+        {
+          "epoch": 14,
+          "train_loss": 1.2896236457824708,
+          "val_accuracy": 0.472,
+          "val_macro_f1": 0.46058925389090283
+        },
+        {
+          "epoch": 15,
+          "train_loss": 1.2361186294555664,
+          "val_accuracy": 0.488,
+          "val_macro_f1": 0.4716909244453342
+        }
+      ],
+      "runtime_sec": 35.640465259552,
+      "device": "mps",
+      "test_accuracy": 0.467,
+      "test_macro_f1": 0.44643208140057755,
+      "test_confusion_matrix": [
+        [
+          96,
+          3,
+          7,
+          8,
+          4,
+          2,
+          5,
+          5,
+          48,
+          18
+        ],
+        [
+          15,
+          62,
+          1,
+          2,
+          0,
+          3,
+          5,
+          5,
+          36,
+          69
+        ],
+        [
+          26,
+          1,
+          48,
+          24,
+          19,
+          16,
+          17,
+          27,
+          12,
+          5
+        ],
+        [
+          16,
+          2,
+          7,
+          89,
+          2,
+          24,
+          11,
+          30,
+          11,
+          7
+        ],
+        [
+          10,
+          1,
+          5,
+          29,
+          46,
+          4,
+          29,
+          53,
+          15,
+          6
+        ],
+        [
+          3,
+          2,
+          11,
+          59,
+          5,
+          45,
+          10,
+          40,
+          5,
+          5
+        ],
+        [
+          1,
+          1,
+          2,
+          32,
+          10,
+          3,
+          121,
+          27,
+          9,
+          10
+        ],
+        [
+          9,
+          0,
+          3,
+          17,
+          5,
+          6,
+          2,
+          131,
+          11,
+          9
+        ],
+        [
+          19,
+          3,
+          2,
+          0,
+          1,
+          1,
+          2,
+          0,
+          174,
+          15
+        ],
+        [
+          9,
+          13,
+          1,
+          5,
+          0,
+          2,
+          8,
+          4,
+          39,
+          122
+        ]
+      ],
+      "policy_id": "gen02_mut_001",
+      "stage": "full",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 15,
+      "objective_score": 0.5315695924445334,
+      "policy_complexity": 0.226,
+      "distortion_proxy": 0.14956666666666665
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_mut_002",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "gen01_cross_003_try2",
+        "gen01_cross_000",
+        "seed_03_standard_mixup"
+      ],
+      "notes": "Strongest baseline reference is standard_mixup, and the strongest ranked full policy is the standard_mixup seed. Preserve Mixup and avoid CutMix. Mutate conservatively around the best prior by keeping CIFAR-safe crop/flip, slightly lowering ColorJitter probability versus the strongest baseline while retaining its magnitude, aiming to reduce low-data distortion without removing useful color invariance.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.16,
+            "magnitude": 0.1
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0.2
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.3,
+      "val_macro_f1": 0.2775874882400397,
+      "val_confusion_matrix": [
+        [
+          72,
+          2,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          21,
+          2
+        ],
+        [
+          46,
+          29,
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          20,
+          1
+        ],
+        [
+          28,
+          2,
+          19,
+          3,
+          12,
+          13,
+          4,
+          4,
+          12,
+          3
+        ],
+        [
+          19,
+          3,
+          5,
+          3,
+          5,
+          42,
+          1,
+          7,
+          13,
+          2
+        ],
+        [
+          19,
+          2,
+          15,
+          0,
+          25,
+          17,
+          5,
+          8,
+          6,
+          3
+        ],
+        [
+          16,
+          2,
+          5,
+          4,
+          10,
+          51,
+          0,
+          5,
+          6,
+          1
+        ],
+        [
+          6,
+          4,
+          11,
+          3,
+          24,
+          22,
+          23,
+          3,
+          1,
+          3
+        ],
+        [
+          28,
+          5,
+          5,
+          0,
+          7,
+          22,
+          2,
+          25,
+          3,
+          3
+        ],
+        [
+          50,
+          3,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          45,
+          1
+        ],
+        [
+          62,
+          12,
+          0,
+          2,
+          0,
+          1,
+          0,
+          2,
+          13,
+          8
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.3968581428527833,
+          "val_accuracy": 0.102,
+          "val_macro_f1": 0.02213650487517411
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.9888899688720703,
+          "val_accuracy": 0.195,
+          "val_macro_f1": 0.1408211576301961
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.9150048418045045,
+          "val_accuracy": 0.272,
+          "val_macro_f1": 0.24231758612295468
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.7472809667587281,
+          "val_accuracy": 0.3,
+          "val_macro_f1": 0.2775874882400397
+        }
+      ],
+      "runtime_sec": 10.065026044845581,
+      "device": "mps",
+      "policy_id": "gen02_mut_002",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.32410174882400394,
+      "policy_complexity": 0.22749999999999998,
+      "distortion_proxy": 0.15280000000000002
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_cross_003_try1",
+      "source": "openai_ranked_crossover",
+      "parent_ids": [
+        "gen01_cross_003_try2",
+        "gen01_cross_000",
+        "seed_03_standard_mixup"
+      ],
+      "notes": "Strongest baseline_reference is standard_mixup, so preserve Mixup and avoid CutMix. The strongest ranked policies all favor CIFAR-safe crop/flip plus light ColorJitter; weak variants used slightly stronger crop, color, or Mixup. Child keeps the standard_mixup prior and makes a narrow crossover refinement by using the best baseline crop/flip with ColorJitter midway between the strongest baseline and strongest crossover, without RandomErasing or heavy transforms.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.19,
+            "magnitude": 0.11
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0.2
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.348,
+      "val_macro_f1": 0.33762683876360977,
+      "val_confusion_matrix": [
+        [
+          23,
+          9,
+          0,
+          4,
+          2,
+          1,
+          0,
+          1,
+          29,
+          31
+        ],
+        [
+          1,
+          43,
+          0,
+          4,
+          0,
+          1,
+          1,
+          1,
+          3,
+          46
+        ],
+        [
+          13,
+          4,
+          16,
+          11,
+          10,
+          7,
+          6,
+          12,
+          8,
+          13
+        ],
+        [
+          1,
+          3,
+          5,
+          17,
+          3,
+          28,
+          6,
+          11,
+          3,
+          23
+        ],
+        [
+          5,
+          3,
+          13,
+          6,
+          22,
+          7,
+          11,
+          14,
+          3,
+          16
+        ],
+        [
+          4,
+          2,
+          1,
+          18,
+          6,
+          38,
+          2,
+          14,
+          1,
+          14
+        ],
+        [
+          1,
+          3,
+          7,
+          10,
+          15,
+          8,
+          33,
+          14,
+          0,
+          9
+        ],
+        [
+          4,
+          2,
+          1,
+          8,
+          3,
+          10,
+          5,
+          37,
+          1,
+          29
+        ],
+        [
+          6,
+          19,
+          0,
+          2,
+          0,
+          1,
+          0,
+          1,
+          46,
+          25
+        ],
+        [
+          2,
+          11,
+          0,
+          0,
+          0,
+          1,
+          0,
+          3,
+          10,
+          73
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.338851133346558,
+          "val_accuracy": 0.101,
+          "val_macro_f1": 0.020259045978867303
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.060087155342102,
+          "val_accuracy": 0.21,
+          "val_macro_f1": 0.15648479705522153
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.8368991193771362,
+          "val_accuracy": 0.301,
+          "val_macro_f1": 0.2602927208961753
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.783222661972046,
+          "val_accuracy": 0.348,
+          "val_macro_f1": 0.33762683876360977
+        }
+      ],
+      "runtime_sec": 9.974284172058105,
+      "device": "mps",
+      "policy_id": "gen02_cross_003_try1",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.378077508876361,
+      "policy_complexity": 0.22749999999999998,
+      "distortion_proxy": 0.15467833333333333
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_mut_004_try2",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "gen01_cross_003_try2",
+        "gen01_cross_000",
+        "seed_03_standard_mixup"
+      ],
+      "notes": "Strongest baseline_reference method is standard_mixup, so preserve Mixup and avoid CutMix. The best ranked policy is the standard_mixup seed; ranked mutations with slightly stronger ColorJitter or crop underperform it, while the closest strong parent keeps crop/flip and light jitter. This child makes a conservative targeted mutation: keep CIFAR-10 crop/flip, slightly reduce ColorJitter probability and Mixup alpha to lower distortion for low-data generalisation without adding erasing or heavier transforms.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.16,
+            "magnitude": 0.1
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.18
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.295,
+      "val_macro_f1": 0.2725932737451787,
+      "val_confusion_matrix": [
+        [
+          70,
+          4,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          22,
+          3
+        ],
+        [
+          37,
+          25,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          32,
+          4
+        ],
+        [
+          27,
+          3,
+          10,
+          3,
+          15,
+          7,
+          7,
+          6,
+          15,
+          7
+        ],
+        [
+          16,
+          2,
+          3,
+          2,
+          4,
+          29,
+          1,
+          12,
+          17,
+          14
+        ],
+        [
+          21,
+          3,
+          7,
+          0,
+          30,
+          8,
+          7,
+          11,
+          6,
+          7
+        ],
+        [
+          17,
+          2,
+          2,
+          7,
+          9,
+          34,
+          1,
+          11,
+          11,
+          6
+        ],
+        [
+          7,
+          11,
+          4,
+          2,
+          21,
+          6,
+          30,
+          7,
+          5,
+          7
+        ],
+        [
+          27,
+          4,
+          2,
+          0,
+          4,
+          9,
+          1,
+          32,
+          7,
+          14
+        ],
+        [
+          42,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          53,
+          2
+        ],
+        [
+          52,
+          12,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          25,
+          9
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.388870983123779,
+          "val_accuracy": 0.102,
+          "val_macro_f1": 0.02213650487517411
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.979547763824463,
+          "val_accuracy": 0.171,
+          "val_macro_f1": 0.11443735405585902
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.9213393697738648,
+          "val_accuracy": 0.267,
+          "val_macro_f1": 0.24034972392079917
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.7522902698516847,
+          "val_accuracy": 0.295,
+          "val_macro_f1": 0.2725932737451787
+        }
+      ],
+      "runtime_sec": 9.992414951324463,
+      "device": "mps",
+      "policy_id": "gen02_mut_004_try2",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.3186713273745178,
+      "policy_complexity": 0.226,
+      "distortion_proxy": 0.14880000000000002
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_mut_005",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "gen01_cross_003_try2",
+        "gen01_cross_000",
+        "seed_03_standard_mixup"
+      ],
+      "notes": "Strongest baseline reference is standard_mixup, and the strongest ranked policies cluster around crop+flip, light ColorJitter, and Mixup alpha 0.2. Preserve that prior, avoid CutMix and VerticalFlip, and make a narrow mutation by slightly lowering ColorJitter probability while keeping magnitude at the stronger ranked value to reduce low-data over-perturbation without losing color invariance.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.16,
+            "magnitude": 0.12
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.2,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.361,
+      "val_macro_f1": 0.34428896483095484,
+      "val_confusion_matrix": [
+        [
+          55,
+          10,
+          3,
+          1,
+          4,
+          0,
+          0,
+          4,
+          19,
+          4
+        ],
+        [
+          16,
+          51,
+          6,
+          3,
+          0,
+          1,
+          0,
+          4,
+          13,
+          6
+        ],
+        [
+          15,
+          2,
+          36,
+          2,
+          8,
+          10,
+          4,
+          15,
+          7,
+          1
+        ],
+        [
+          6,
+          3,
+          12,
+          4,
+          8,
+          35,
+          8,
+          13,
+          4,
+          7
+        ],
+        [
+          10,
+          1,
+          29,
+          1,
+          20,
+          6,
+          5,
+          19,
+          8,
+          1
+        ],
+        [
+          5,
+          1,
+          14,
+          5,
+          10,
+          48,
+          3,
+          14,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          23,
+          1,
+          23,
+          7,
+          28,
+          9,
+          1,
+          4
+        ],
+        [
+          9,
+          1,
+          9,
+          1,
+          5,
+          16,
+          4,
+          52,
+          1,
+          2
+        ],
+        [
+          34,
+          12,
+          4,
+          0,
+          1,
+          2,
+          0,
+          0,
+          43,
+          4
+        ],
+        [
+          25,
+          16,
+          4,
+          3,
+          0,
+          1,
+          1,
+          11,
+          15,
+          24
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.408664150238037,
+          "val_accuracy": 0.103,
+          "val_macro_f1": 0.02405678328362436
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.004412124633789,
+          "val_accuracy": 0.195,
+          "val_macro_f1": 0.14560530924331463
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.929792963027954,
+          "val_accuracy": 0.277,
+          "val_macro_f1": 0.24489298823896705
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.7602145347595215,
+          "val_accuracy": 0.361,
+          "val_macro_f1": 0.34428896483095484
+        }
+      ],
+      "runtime_sec": 10.016700029373169,
+      "device": "mps",
+      "policy_id": "gen02_mut_005",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.3917534964830955,
+      "policy_complexity": 0.22749999999999998,
+      "distortion_proxy": 0.15402666666666667
+    },
+    "full_result": {
+      "val_accuracy": 0.502,
+      "val_macro_f1": 0.49659785007618773,
+      "val_confusion_matrix": [
+        [
+          62,
+          1,
+          5,
+          0,
+          0,
+          0,
+          0,
+          2,
+          24,
+          6
+        ],
+        [
+          8,
+          58,
+          2,
+          0,
+          0,
+          0,
+          0,
+          2,
+          8,
+          22
+        ],
+        [
+          22,
+          0,
+          37,
+          5,
+          7,
+          10,
+          10,
+          1,
+          8,
+          0
+        ],
+        [
+          1,
+          4,
+          13,
+          25,
+          5,
+          27,
+          7,
+          13,
+          3,
+          2
+        ],
+        [
+          7,
+          2,
+          14,
+          6,
+          35,
+          11,
+          8,
+          11,
+          3,
+          3
+        ],
+        [
+          3,
+          2,
+          16,
+          6,
+          6,
+          56,
+          0,
+          6,
+          1,
+          4
+        ],
+        [
+          3,
+          3,
+          7,
+          11,
+          8,
+          3,
+          51,
+          5,
+          1,
+          8
+        ],
+        [
+          4,
+          2,
+          2,
+          1,
+          5,
+          26,
+          1,
+          54,
+          0,
+          5
+        ],
+        [
+          17,
+          4,
+          3,
+          0,
+          1,
+          0,
+          0,
+          0,
+          62,
+          13
+        ],
+        [
+          2,
+          16,
+          3,
+          2,
+          1,
+          0,
+          0,
+          7,
+          7,
+          62
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.3900650405883788,
+          "val_accuracy": 0.147,
+          "val_macro_f1": 0.06093289013632265
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.034654155731201,
+          "val_accuracy": 0.232,
+          "val_macro_f1": 0.18047511248397677
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.8415070075988769,
+          "val_accuracy": 0.314,
+          "val_macro_f1": 0.2913863296062257
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.758952865600586,
+          "val_accuracy": 0.35,
+          "val_macro_f1": 0.30411462660387223
+        },
+        {
+          "epoch": 5,
+          "train_loss": 1.68975852394104,
+          "val_accuracy": 0.319,
+          "val_macro_f1": 0.3017008101662194
+        },
+        {
+          "epoch": 6,
+          "train_loss": 1.744976957321167,
+          "val_accuracy": 0.409,
+          "val_macro_f1": 0.38759358196507365
+        },
+        {
+          "epoch": 7,
+          "train_loss": 1.419552004814148,
+          "val_accuracy": 0.425,
+          "val_macro_f1": 0.3956550088650286
+        },
+        {
+          "epoch": 8,
+          "train_loss": 1.450712703704834,
+          "val_accuracy": 0.421,
+          "val_macro_f1": 0.4053830716092201
+        },
+        {
+          "epoch": 9,
+          "train_loss": 1.5455214424133301,
+          "val_accuracy": 0.399,
+          "val_macro_f1": 0.37254410000156624
+        },
+        {
+          "epoch": 10,
+          "train_loss": 1.4778680658340455,
+          "val_accuracy": 0.5,
+          "val_macro_f1": 0.4882240976691027
+        },
+        {
+          "epoch": 11,
+          "train_loss": 1.4058320693969726,
+          "val_accuracy": 0.469,
+          "val_macro_f1": 0.4501021116296564
+        },
+        {
+          "epoch": 12,
+          "train_loss": 1.505210509300232,
+          "val_accuracy": 0.461,
+          "val_macro_f1": 0.4513376354195584
+        },
+        {
+          "epoch": 13,
+          "train_loss": 1.2240177602767945,
+          "val_accuracy": 0.478,
+          "val_macro_f1": 0.4651412263799778
+        },
+        {
+          "epoch": 14,
+          "train_loss": 1.3465717458724975,
+          "val_accuracy": 0.502,
+          "val_macro_f1": 0.49659785007618773
+        },
+        {
+          "epoch": 15,
+          "train_loss": 1.3876721782684327,
+          "val_accuracy": 0.397,
+          "val_macro_f1": 0.38210625003155874
+        }
+      ],
+      "runtime_sec": 35.68765425682068,
+      "device": "mps",
+      "test_accuracy": 0.4845,
+      "test_macro_f1": 0.47220449303182355,
+      "test_confusion_matrix": [
+        [
+          105,
+          7,
+          7,
+          5,
+          0,
+          3,
+          2,
+          3,
+          51,
+          13
+        ],
+        [
+          14,
+          124,
+          1,
+          2,
+          0,
+          0,
+          0,
+          3,
+          19,
+          35
+        ],
+        [
+          38,
+          3,
+          69,
+          7,
+          18,
+          22,
+          11,
+          9,
+          12,
+          6
+        ],
+        [
+          15,
+          7,
+          32,
+          30,
+          6,
+          70,
+          10,
+          7,
+          13,
+          9
+        ],
+        [
+          18,
+          5,
+          25,
+          11,
+          59,
+          20,
+          23,
+          19,
+          11,
+          7
+        ],
+        [
+          4,
+          3,
+          16,
+          23,
+          3,
+          111,
+          3,
+          12,
+          3,
+          7
+        ],
+        [
+          2,
+          8,
+          27,
+          24,
+          21,
+          12,
+          104,
+          4,
+          2,
+          12
+        ],
+        [
+          17,
+          5,
+          9,
+          6,
+          15,
+          38,
+          2,
+          90,
+          2,
+          9
+        ],
+        [
+          24,
+          9,
+          4,
+          0,
+          1,
+          1,
+          0,
+          1,
+          155,
+          22
+        ],
+        [
+          9,
+          42,
+          2,
+          6,
+          0,
+          2,
+          1,
+          4,
+          15,
+          122
+        ]
+      ],
+      "policy_id": "gen02_mut_005",
+      "stage": "full",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 15,
+      "objective_score": 0.5479843850076188,
+      "policy_complexity": 0.22749999999999998,
+      "distortion_proxy": 0.15402666666666667
+    },
+    "status": "full_evaluated"
+  }
+]

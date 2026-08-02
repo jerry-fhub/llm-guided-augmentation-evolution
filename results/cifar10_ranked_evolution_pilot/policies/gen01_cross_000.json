@@ -1,0 +1,53 @@
+{
+  "policy_id": "gen01_cross_000",
+  "source": "heuristic_ranked_crossover",
+  "parent_ids": [
+    "seed_03_trivialaugment",
+    "seed_02_randaugment"
+  ],
+  "notes": "Ranked-population crossover from seed_03_trivialaugment and seed_02_randaugment.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.4
+      }
+    ],
+    [
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.55,
+        "magnitude": 0.35
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.45,
+        "magnitude": 0.3
+      }
+    ],
+    [
+      {
+        "name": "Affine",
+        "probability": 0.35,
+        "magnitude": 0.3
+      },
+      {
+        "name": "Solarize",
+        "probability": 0.2,
+        "magnitude": 0.3
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

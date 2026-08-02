@@ -1,0 +1,5 @@
+method,stage,policy_id,source,seed,generation,valid,is_final_comparison,train_size,unlabeled_size,val_size,test_size,epochs,val_accuracy,val_macro_f1,test_accuracy,test_macro_f1,runtime_sec,device
+fixmatch_standard,fixmatch,strong_standard,fixmatch_named_strong,61,,True,True,1000,10000,1000,2000,15,0.566,0.5551510053175159,0.5675,0.5512035100102725,457.8352921009064,mps
+fixmatch_randaugment,fixmatch,strong_randaugment,fixmatch_named_strong,61,,True,True,1000,10000,1000,2000,15,0.639,0.6365051623081526,0.6205,0.6105111738777231,477.4414572715759,mps
+fixmatch_trivialaugment,fixmatch,strong_trivialaugment,fixmatch_named_strong,61,,True,True,1000,10000,1000,2000,15,0.63,0.626799619561219,0.615,0.6108378052526446,466.3779230117798,mps
+fixmatch_llm_evolved_cifar_best,fixmatch,fix_llm_gen02_mut_005,openai_ranked_policy_from_supervised_search,61,,True,True,1000,10000,1000,2000,15,0.614,0.6137227717437923,0.59,0.5838242670042952,460.5797588825226,mps

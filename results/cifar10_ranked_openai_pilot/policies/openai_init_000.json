@@ -1,0 +1,63 @@
+{
+  "policy_id": "openai_init_000",
+  "source": "openai_initial",
+  "parent_ids": [],
+  "notes": "Conservative CIFAR-10 initial policy emphasizing standard crop/flip invariances with mild color and geometric perturbations; avoids vertical flips.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.9,
+        "magnitude": 0.12
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.35,
+        "magnitude": 0.25
+      }
+    ],
+    [
+      {
+        "name": "RandomResizedCrop",
+        "probability": 0.45,
+        "magnitude": 0.18
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.25,
+        "magnitude": 0.12
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.15,
+        "magnitude": 0.1
+      }
+    ],
+    [
+      {
+        "name": "Affine",
+        "probability": 0.3,
+        "magnitude": 0.15
+      },
+      {
+        "name": "Solarize",
+        "probability": 0.12,
+        "magnitude": 0.25
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.2,
+        "magnitude": 0.18
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.2,
+    "cutmix_alpha": 0.4
+  }
+}

@@ -1,0 +1,15 @@
+method,stage,policy_id,source,seed,generation,valid,is_final_comparison,train_size,val_size,test_size,epochs,val_accuracy,val_macro_f1,test_accuracy,test_macro_f1,runtime_sec,device
+none,baseline,,,21,,True,True,100,100,200,,0.1,0.0181818181818181,0.09,0.016589861751152,1.9794471263885496,mps
+standard,baseline,,,21,,True,True,100,100,200,,0.15,0.0705361305361305,0.16,0.0792195453926772,0.089141845703125,mps
+randaugment,baseline,,,21,,True,True,100,100,200,,0.1,0.0437806637806637,0.105,0.0310162002945508,0.0865688323974609,mps
+one_shot_llm,one_shot,one_shot_000,one_shot_heuristic_llm,,,True,True,100,100,200,1,0.07,0.0289115646258503,0.1,0.0286192869107441,0.1206519603729248,mps
+random_search,random_rough,random_000,random_search,,,True,False,100,100,200,1,0.08,0.0274436090225563,,,0.0750126838684082,mps
+random_search,random_rough,random_001,random_search,,,True,False,100,100,200,1,0.1,0.037652645861601,,,0.1163170337677002,mps
+random_search,random_rough,random_002,random_search,,,True,False,100,100,200,1,0.1,0.0188679245283018,,,0.0836610794067382,mps
+random_search_full,random_full,random_001,random_search,,,True,True,100,100,200,1,0.12,0.0429468874928612,0.1,0.036504854368932,0.0917932987213134,mps
+llm_guided_evolution,evolution_rough,heuristic_init_000,heuristic,,0,True,False,,,,,0.12,0.0573116219667943,,,0.1231501102447509,
+llm_guided_evolution,evolution_rough,heuristic_init_001,heuristic,,0,True,False,,,,,0.09,0.0367864693446088,,,0.0777120590209961,
+llm_guided_evolution,evolution_rough,heuristic_init_002,heuristic,,0,True,False,,,,,0.1,0.0181818181818181,,,0.0874853134155273,
+llm_guided_evolution,evolution_rough,gen01_mut_000,heuristic_feedback,,1,True,False,,,,,0.14,0.0474671669793621,,,0.2256412506103515,
+llm_guided_evolution,evolution_full,gen01_mut_000,heuristic_feedback,,1,True,True,,,,,0.11,,0.18,0.1249871151050614,0.2256412506103515,
+llm_guided_evolution,evolution_rough,gen01_mut_001,heuristic_feedback,,1,True,False,,,,,0.1,0.0181818181818181,,,0.1127240657806396,

@@ -1,0 +1,6247 @@
+[
+  {
+    "policy": {
+      "policy_id": "seed_00_none",
+      "source": "baseline_seed:none",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating none.",
+      "sub_policies": [],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.553,
+      "val_macro_f1": 0.5233389331748342,
+      "val_confusion_matrix": [
+        [
+          63,
+          7,
+          6,
+          3,
+          1,
+          6,
+          14,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          96,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          1,
+          62,
+          4,
+          1,
+          8,
+          2,
+          3,
+          9,
+          0
+        ],
+        [
+          19,
+          14,
+          13,
+          8,
+          1,
+          13,
+          8,
+          12,
+          12,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          4,
+          73,
+          0,
+          0,
+          21,
+          1,
+          0
+        ],
+        [
+          3,
+          17,
+          7,
+          0,
+          0,
+          72,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          12,
+          0,
+          30,
+          3,
+          0,
+          7,
+          43,
+          1,
+          3,
+          1
+        ],
+        [
+          2,
+          0,
+          5,
+          2,
+          2,
+          1,
+          1,
+          87,
+          0,
+          0
+        ],
+        [
+          16,
+          38,
+          4,
+          3,
+          0,
+          9,
+          3,
+          0,
+          24,
+          3
+        ],
+        [
+          2,
+          67,
+          0,
+          0,
+          0,
+          5,
+          1,
+          0,
+          0,
+          25
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.9178305473327637,
+          "val_accuracy": 0.124,
+          "val_macro_f1": 0.057031474033082216
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.3486849775314331,
+          "val_accuracy": 0.444,
+          "val_macro_f1": 0.36151808328098833
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.089143394470215,
+          "val_accuracy": 0.503,
+          "val_macro_f1": 0.4582199371858574
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.9918699054718018,
+          "val_accuracy": 0.553,
+          "val_macro_f1": 0.5233389331748342
+        }
+      ],
+      "runtime_sec": 33.31706690788269,
+      "device": "mps",
+      "policy_id": "seed_00_none",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.6053338933174834,
+      "policy_complexity": 0.0,
+      "distortion_proxy": 0.0
+    },
+    "full_result": {
+      "val_accuracy": 0.719,
+      "val_macro_f1": 0.7110421359232667,
+      "val_confusion_matrix": [
+        [
+          64,
+          0,
+          1,
+          4,
+          4,
+          2,
+          15,
+          0,
+          4,
+          6
+        ],
+        [
+          0,
+          90,
+          1,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          6,
+          2,
+          52,
+          5,
+          5,
+          0,
+          14,
+          9,
+          3,
+          4
+        ],
+        [
+          1,
+          3,
+          2,
+          52,
+          16,
+          4,
+          2,
+          8,
+          11,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          98,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          3,
+          4,
+          1,
+          0,
+          75,
+          0,
+          0,
+          0,
+          16
+        ],
+        [
+          6,
+          0,
+          8,
+          11,
+          8,
+          6,
+          59,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          8,
+          0,
+          0,
+          90,
+          0,
+          0
+        ],
+        [
+          3,
+          5,
+          2,
+          15,
+          4,
+          5,
+          2,
+          1,
+          55,
+          8
+        ],
+        [
+          0,
+          16,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          84
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.845080348968506,
+          "val_accuracy": 0.115,
+          "val_macro_f1": 0.040737354584123406
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.2857452278137207,
+          "val_accuracy": 0.265,
+          "val_macro_f1": 0.2050559111293914
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.0485639715194701,
+          "val_accuracy": 0.525,
+          "val_macro_f1": 0.4722788643380009
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.8812563638687134,
+          "val_accuracy": 0.565,
+          "val_macro_f1": 0.526373213940732
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.8377170314788819,
+          "val_accuracy": 0.594,
+          "val_macro_f1": 0.5786927712257998
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.7600307378768921,
+          "val_accuracy": 0.632,
+          "val_macro_f1": 0.6175134638069686
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.728892496585846,
+          "val_accuracy": 0.647,
+          "val_macro_f1": 0.6283883631786591
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.692499746799469,
+          "val_accuracy": 0.64,
+          "val_macro_f1": 0.6308289102687452
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.6146326687335968,
+          "val_accuracy": 0.638,
+          "val_macro_f1": 0.6309926750105319
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.619275366306305,
+          "val_accuracy": 0.719,
+          "val_macro_f1": 0.7110421359232667
+        },
+        {
+          "epoch": 11,
+          "train_loss": 0.5304445192813874,
+          "val_accuracy": 0.71,
+          "val_macro_f1": 0.7058243577767757
+        },
+        {
+          "epoch": 12,
+          "train_loss": 0.5481790208816528,
+          "val_accuracy": 0.68,
+          "val_macro_f1": 0.670164040489858
+        }
+      ],
+      "runtime_sec": 87.3573727607727,
+      "device": "mps",
+      "test_accuracy": 0.7225,
+      "test_macro_f1": 0.7091446207075599,
+      "test_confusion_matrix": [
+        [
+          170,
+          2,
+          3,
+          14,
+          10,
+          4,
+          22,
+          1,
+          11,
+          17
+        ],
+        [
+          0,
+          197,
+          1,
+          0,
+          0,
+          16,
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          8,
+          9,
+          128,
+          10,
+          10,
+          1,
+          25,
+          22,
+          4,
+          13
+        ],
+        [
+          8,
+          1,
+          9,
+          95,
+          21,
+          5,
+          18,
+          10,
+          24,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          174,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          3,
+          7,
+          7,
+          2,
+          0,
+          90,
+          4,
+          0,
+          2,
+          12
+        ],
+        [
+          3,
+          0,
+          17,
+          17,
+          15,
+          7,
+          106,
+          1,
+          9,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          4,
+          16,
+          0,
+          0,
+          212,
+          0,
+          0
+        ],
+        [
+          7,
+          9,
+          2,
+          27,
+          3,
+          4,
+          5,
+          1,
+          94,
+          6
+        ],
+        [
+          1,
+          44,
+          2,
+          1,
+          0,
+          3,
+          0,
+          0,
+          1,
+          179
+        ]
+      ],
+      "policy_id": "seed_00_none",
+      "stage": "full",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 12,
+      "objective_score": 0.7901042135923266,
+      "policy_complexity": 0.0,
+      "distortion_proxy": 0.0
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_01_standard",
+      "source": "baseline_seed:standard",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.35
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "Rotation",
+            "probability": 0.45,
+            "magnitude": 0.25
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.544,
+      "val_macro_f1": 0.5104618887029411,
+      "val_confusion_matrix": [
+        [
+          65,
+          2,
+          0,
+          0,
+          0,
+          5,
+          15,
+          0,
+          0,
+          13
+        ],
+        [
+          0,
+          90,
+          0,
+          0,
+          0,
+          10,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          11,
+          2,
+          48,
+          0,
+          1,
+          3,
+          32,
+          0,
+          0,
+          3
+        ],
+        [
+          21,
+          13,
+          15,
+          8,
+          4,
+          13,
+          13,
+          5,
+          7,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          90,
+          0,
+          3,
+          5,
+          0,
+          0
+        ],
+        [
+          3,
+          7,
+          1,
+          0,
+          0,
+          82,
+          5,
+          0,
+          0,
+          2
+        ],
+        [
+          17,
+          0,
+          8,
+          1,
+          0,
+          9,
+          61,
+          2,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          23,
+          7,
+          4,
+          0,
+          24,
+          41,
+          0,
+          0
+        ],
+        [
+          16,
+          25,
+          6,
+          2,
+          1,
+          17,
+          3,
+          1,
+          15,
+          14
+        ],
+        [
+          2,
+          49,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          44
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.908450150489807,
+          "val_accuracy": 0.11,
+          "val_macro_f1": 0.033568506186008235
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.4573014736175538,
+          "val_accuracy": 0.274,
+          "val_macro_f1": 0.23850307265207665
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.18284690284729,
+          "val_accuracy": 0.496,
+          "val_macro_f1": 0.4433246812307103
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.0523421683311462,
+          "val_accuracy": 0.544,
+          "val_macro_f1": 0.5104618887029411
+        }
+      ],
+      "runtime_sec": 32.08545422554016,
+      "device": "mps",
+      "policy_id": "seed_01_standard",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.5911118138702942,
+      "policy_complexity": 0.36666666666666664,
+      "distortion_proxy": 0.11562499999999999
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_02_standard_color",
+      "source": "baseline_seed:standard_color",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard_color.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.25
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.2,
+            "magnitude": 0.1
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.588,
+      "val_macro_f1": 0.560845604151163,
+      "val_confusion_matrix": [
+        [
+          73,
+          3,
+          1,
+          0,
+          0,
+          4,
+          13,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          76,
+          0,
+          0,
+          0,
+          17,
+          0,
+          0,
+          0,
+          7
+        ],
+        [
+          16,
+          1,
+          48,
+          1,
+          0,
+          3,
+          24,
+          3,
+          4,
+          0
+        ],
+        [
+          21,
+          13,
+          10,
+          8,
+          3,
+          8,
+          15,
+          11,
+          11,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          78,
+          0,
+          11,
+          9,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          5,
+          0,
+          0,
+          86,
+          3,
+          0,
+          1,
+          1
+        ],
+        [
+          24,
+          0,
+          8,
+          0,
+          0,
+          7,
+          59,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          3,
+          0,
+          0,
+          0,
+          15,
+          80,
+          1,
+          0
+        ],
+        [
+          23,
+          20,
+          2,
+          2,
+          1,
+          14,
+          2,
+          3,
+          20,
+          13
+        ],
+        [
+          6,
+          24,
+          0,
+          0,
+          0,
+          9,
+          1,
+          0,
+          0,
+          60
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.8809132642745972,
+          "val_accuracy": 0.126,
+          "val_macro_f1": 0.050665753751059105
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.2851168088912963,
+          "val_accuracy": 0.436,
+          "val_macro_f1": 0.3891790894682767
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.3446510372161866,
+          "val_accuracy": 0.511,
+          "val_macro_f1": 0.465564279140971
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.069274998664856,
+          "val_accuracy": 0.588,
+          "val_macro_f1": 0.560845604151163
+        }
+      ],
+      "runtime_sec": 32.55469608306885,
+      "device": "mps",
+      "policy_id": "seed_02_standard_color",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.6408608104151163,
+      "policy_complexity": 0.36666666666666664,
+      "distortion_proxy": 0.06825
+    },
+    "full_result": {
+      "val_accuracy": 0.709,
+      "val_macro_f1": 0.704335103074875,
+      "val_confusion_matrix": [
+        [
+          82,
+          1,
+          0,
+          5,
+          1,
+          6,
+          4,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          81,
+          1,
+          0,
+          0,
+          10,
+          0,
+          0,
+          1,
+          7
+        ],
+        [
+          7,
+          2,
+          54,
+          9,
+          9,
+          0,
+          8,
+          4,
+          4,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          61,
+          23,
+          3,
+          2,
+          3,
+          3,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          99,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          3,
+          3,
+          0,
+          82,
+          1,
+          0,
+          1,
+          6
+        ],
+        [
+          4,
+          0,
+          9,
+          16,
+          13,
+          6,
+          52,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          22,
+          0,
+          0,
+          77,
+          0,
+          0
+        ],
+        [
+          8,
+          1,
+          3,
+          25,
+          9,
+          10,
+          2,
+          0,
+          41,
+          1
+        ],
+        [
+          8,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6,
+          80
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.8532867937088013,
+          "val_accuracy": 0.104,
+          "val_macro_f1": 0.025075322028964415
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.203118586540222,
+          "val_accuracy": 0.25,
+          "val_macro_f1": 0.16716847963879666
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.0630804786682129,
+          "val_accuracy": 0.433,
+          "val_macro_f1": 0.394589878526493
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.9225828990936279,
+          "val_accuracy": 0.481,
+          "val_macro_f1": 0.44143159440343016
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.8821308851242066,
+          "val_accuracy": 0.663,
+          "val_macro_f1": 0.6497723911043404
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.7993567066192627,
+          "val_accuracy": 0.573,
+          "val_macro_f1": 0.549927386301335
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.7569055314064026,
+          "val_accuracy": 0.652,
+          "val_macro_f1": 0.6307167409612272
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.7411044216156006,
+          "val_accuracy": 0.663,
+          "val_macro_f1": 0.653904113053444
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.6622713313102723,
+          "val_accuracy": 0.626,
+          "val_macro_f1": 0.5994543085017918
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.6875284361839294,
+          "val_accuracy": 0.709,
+          "val_macro_f1": 0.704335103074875
+        },
+        {
+          "epoch": 11,
+          "train_loss": 0.9434518775939942,
+          "val_accuracy": 0.666,
+          "val_macro_f1": 0.6527657429804172
+        },
+        {
+          "epoch": 12,
+          "train_loss": 0.69667884349823,
+          "val_accuracy": 0.675,
+          "val_macro_f1": 0.643140847534709
+        }
+      ],
+      "runtime_sec": 87.85773491859436,
+      "device": "mps",
+      "test_accuracy": 0.7055,
+      "test_macro_f1": 0.69508676007409,
+      "test_confusion_matrix": [
+        [
+          203,
+          1,
+          1,
+          15,
+          0,
+          7,
+          13,
+          1,
+          5,
+          8
+        ],
+        [
+          0,
+          159,
+          1,
+          0,
+          0,
+          31,
+          0,
+          0,
+          5,
+          24
+        ],
+        [
+          12,
+          4,
+          126,
+          15,
+          25,
+          6,
+          15,
+          12,
+          7,
+          8
+        ],
+        [
+          11,
+          1,
+          5,
+          114,
+          33,
+          6,
+          7,
+          3,
+          11,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          179,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          5,
+          8,
+          3,
+          101,
+          3,
+          0,
+          0,
+          3
+        ],
+        [
+          6,
+          0,
+          11,
+          35,
+          25,
+          2,
+          96,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          4,
+          60,
+          0,
+          0,
+          169,
+          0,
+          0
+        ],
+        [
+          14,
+          0,
+          1,
+          46,
+          11,
+          11,
+          0,
+          1,
+          74,
+          0
+        ],
+        [
+          18,
+          17,
+          0,
+          0,
+          2,
+          2,
+          0,
+          0,
+          2,
+          190
+        ]
+      ],
+      "policy_id": "seed_02_standard_color",
+      "stage": "full",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 12,
+      "objective_score": 0.7762097603074875,
+      "policy_complexity": 0.36666666666666664,
+      "distortion_proxy": 0.06825
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_03_standard_erasing",
+      "source": "baseline_seed:standard_erasing",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard_erasing.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.25
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.08,
+            "magnitude": 0.08
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.608,
+      "val_macro_f1": 0.5819621211826751,
+      "val_confusion_matrix": [
+        [
+          60,
+          2,
+          6,
+          0,
+          0,
+          20,
+          7,
+          0,
+          0,
+          5
+        ],
+        [
+          0,
+          65,
+          1,
+          0,
+          0,
+          17,
+          0,
+          0,
+          0,
+          17
+        ],
+        [
+          6,
+          0,
+          70,
+          0,
+          0,
+          2,
+          9,
+          6,
+          3,
+          4
+        ],
+        [
+          20,
+          6,
+          11,
+          11,
+          4,
+          10,
+          6,
+          20,
+          9,
+          3
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          94,
+          0,
+          1,
+          3,
+          0,
+          0
+        ],
+        [
+          1,
+          3,
+          16,
+          0,
+          0,
+          77,
+          0,
+          2,
+          0,
+          1
+        ],
+        [
+          16,
+          0,
+          30,
+          1,
+          1,
+          4,
+          43,
+          3,
+          2,
+          0
+        ],
+        [
+          2,
+          0,
+          6,
+          1,
+          8,
+          0,
+          4,
+          78,
+          1,
+          0
+        ],
+        [
+          8,
+          11,
+          10,
+          2,
+          1,
+          20,
+          1,
+          6,
+          28,
+          13
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0,
+          0,
+          82
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.9530535535812379,
+          "val_accuracy": 0.074,
+          "val_macro_f1": 0.04408743842720801
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.4868596324920653,
+          "val_accuracy": 0.4,
+          "val_macro_f1": 0.3475239769700165
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.2334333362579346,
+          "val_accuracy": 0.518,
+          "val_macro_f1": 0.4721529769286712
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.11959810256958,
+          "val_accuracy": 0.608,
+          "val_macro_f1": 0.5819621211826751
+        }
+      ],
+      "runtime_sec": 33.12419605255127,
+      "device": "mps",
+      "policy_id": "seed_03_standard_erasing",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.6630263121182676,
+      "policy_complexity": 0.36666666666666664,
+      "distortion_proxy": 0.06466
+    },
+    "full_result": {
+      "val_accuracy": 0.715,
+      "val_macro_f1": 0.7099103772698441,
+      "val_confusion_matrix": [
+        [
+          75,
+          0,
+          1,
+          2,
+          0,
+          2,
+          17,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          74,
+          2,
+          0,
+          0,
+          11,
+          0,
+          0,
+          1,
+          12
+        ],
+        [
+          1,
+          1,
+          47,
+          6,
+          1,
+          0,
+          20,
+          14,
+          4,
+          6
+        ],
+        [
+          2,
+          1,
+          3,
+          66,
+          4,
+          4,
+          9,
+          6,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          3,
+          73,
+          0,
+          0,
+          24,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          2,
+          0,
+          86,
+          2,
+          0,
+          0,
+          5
+        ],
+        [
+          5,
+          0,
+          3,
+          13,
+          1,
+          3,
+          72,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          9,
+          1,
+          5,
+          0,
+          84,
+          0,
+          0
+        ],
+        [
+          7,
+          3,
+          3,
+          23,
+          2,
+          12,
+          4,
+          1,
+          41,
+          4
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          97
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.9967368803024292,
+          "val_accuracy": 0.235,
+          "val_macro_f1": 0.1357592200156446
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.287309253692627,
+          "val_accuracy": 0.42,
+          "val_macro_f1": 0.3470234762973277
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.131366536140442,
+          "val_accuracy": 0.439,
+          "val_macro_f1": 0.38420261233510095
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.0017985200881958,
+          "val_accuracy": 0.602,
+          "val_macro_f1": 0.5571665206326665
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.9414744462966919,
+          "val_accuracy": 0.593,
+          "val_macro_f1": 0.5767728849836019
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.833723014831543,
+          "val_accuracy": 0.563,
+          "val_macro_f1": 0.5278865910828066
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.7290350217819214,
+          "val_accuracy": 0.692,
+          "val_macro_f1": 0.6823362698660752
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.7183774337768555,
+          "val_accuracy": 0.616,
+          "val_macro_f1": 0.6025555917181853
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.709643967628479,
+          "val_accuracy": 0.68,
+          "val_macro_f1": 0.6747137578871286
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.6803670682907105,
+          "val_accuracy": 0.638,
+          "val_macro_f1": 0.6232172014568176
+        },
+        {
+          "epoch": 11,
+          "train_loss": 0.6706000318527222,
+          "val_accuracy": 0.715,
+          "val_macro_f1": 0.7099103772698441
+        },
+        {
+          "epoch": 12,
+          "train_loss": 0.6200193696022034,
+          "val_accuracy": 0.615,
+          "val_macro_f1": 0.5891441370436524
+        }
+      ],
+      "runtime_sec": 88.08163785934448,
+      "device": "mps",
+      "test_accuracy": 0.694,
+      "test_macro_f1": 0.6857333285784584,
+      "test_confusion_matrix": [
+        [
+          184,
+          2,
+          1,
+          10,
+          0,
+          8,
+          37,
+          1,
+          2,
+          9
+        ],
+        [
+          0,
+          142,
+          3,
+          1,
+          0,
+          32,
+          0,
+          0,
+          4,
+          38
+        ],
+        [
+          2,
+          2,
+          112,
+          18,
+          4,
+          4,
+          37,
+          31,
+          7,
+          13
+        ],
+        [
+          12,
+          0,
+          6,
+          100,
+          9,
+          8,
+          29,
+          14,
+          13,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          133,
+          0,
+          3,
+          40,
+          0,
+          0
+        ],
+        [
+          9,
+          1,
+          2,
+          2,
+          0,
+          102,
+          6,
+          0,
+          2,
+          3
+        ],
+        [
+          6,
+          0,
+          4,
+          31,
+          1,
+          1,
+          128,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          5,
+          24,
+          3,
+          3,
+          1,
+          198,
+          0,
+          0
+        ],
+        [
+          15,
+          0,
+          3,
+          41,
+          4,
+          11,
+          4,
+          0,
+          77,
+          3
+        ],
+        [
+          2,
+          8,
+          3,
+          0,
+          0,
+          4,
+          0,
+          0,
+          2,
+          212
+        ]
+      ],
+      "policy_id": "seed_03_standard_erasing",
+      "stage": "full",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 12,
+      "objective_score": 0.7828211377269845,
+      "policy_complexity": 0.36666666666666664,
+      "distortion_proxy": 0.06466
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_04_standard_mixup",
+      "source": "baseline_seed:standard_mixup",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard_mixup.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.25
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "Rotation",
+            "probability": 0.25,
+            "magnitude": 0.12
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.2,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.566,
+      "val_macro_f1": 0.5308802772824432,
+      "val_confusion_matrix": [
+        [
+          68,
+          5,
+          0,
+          0,
+          7,
+          5,
+          10,
+          0,
+          1,
+          4
+        ],
+        [
+          0,
+          86,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          4,
+          28,
+          4,
+          6,
+          5,
+          35,
+          5,
+          4,
+          1
+        ],
+        [
+          17,
+          14,
+          3,
+          14,
+          13,
+          10,
+          4,
+          6,
+          18,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          100,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          1,
+          0,
+          0,
+          85,
+          2,
+          0,
+          1,
+          7
+        ],
+        [
+          18,
+          1,
+          0,
+          3,
+          9,
+          8,
+          59,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          3,
+          1,
+          17,
+          0,
+          4,
+          69,
+          5,
+          0
+        ],
+        [
+          17,
+          25,
+          1,
+          3,
+          6,
+          9,
+          2,
+          0,
+          22,
+          15
+        ],
+        [
+          10,
+          47,
+          0,
+          0,
+          0,
+          6,
+          1,
+          0,
+          1,
+          35
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.115475196838379,
+          "val_accuracy": 0.2,
+          "val_macro_f1": 0.0696800650973964
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.872139247894287,
+          "val_accuracy": 0.42,
+          "val_macro_f1": 0.3429432678299654
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.2305518002510072,
+          "val_accuracy": 0.509,
+          "val_macro_f1": 0.4434452125990676
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.4550696945190429,
+          "val_accuracy": 0.566,
+          "val_macro_f1": 0.5308802772824432
+        }
+      ],
+      "runtime_sec": 32.493229150772095,
+      "device": "mps",
+      "policy_id": "seed_04_standard_mixup",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.6151480277282442,
+      "policy_complexity": 0.38166666666666665,
+      "distortion_proxy": 0.11000000000000001
+    },
+    "full_result": {
+      "val_accuracy": 0.723,
+      "val_macro_f1": 0.7141866516791074,
+      "val_confusion_matrix": [
+        [
+          63,
+          1,
+          1,
+          8,
+          1,
+          3,
+          18,
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          88,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          3,
+          55,
+          1,
+          1,
+          0,
+          14,
+          17,
+          6,
+          3
+        ],
+        [
+          0,
+          4,
+          2,
+          42,
+          18,
+          2,
+          3,
+          18,
+          9,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          91,
+          0,
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          5,
+          1,
+          0,
+          90,
+          2,
+          0,
+          0,
+          1
+        ],
+        [
+          2,
+          0,
+          12,
+          6,
+          3,
+          2,
+          61,
+          12,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          4,
+          0,
+          0,
+          94,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          5,
+          19,
+          5,
+          8,
+          3,
+          5,
+          48,
+          4
+        ],
+        [
+          0,
+          8,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          91
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.998703914642334,
+          "val_accuracy": 0.112,
+          "val_macro_f1": 0.03621287767727897
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.6055236883163453,
+          "val_accuracy": 0.281,
+          "val_macro_f1": 0.20578934626609963
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.4449445867538453,
+          "val_accuracy": 0.441,
+          "val_macro_f1": 0.3494692809995219
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.1954942054748534,
+          "val_accuracy": 0.54,
+          "val_macro_f1": 0.4970790297441689
+        },
+        {
+          "epoch": 5,
+          "train_loss": 1.1349187116622925,
+          "val_accuracy": 0.631,
+          "val_macro_f1": 0.6051019766627947
+        },
+        {
+          "epoch": 6,
+          "train_loss": 1.2642151155471801,
+          "val_accuracy": 0.66,
+          "val_macro_f1": 0.6345946158732688
+        },
+        {
+          "epoch": 7,
+          "train_loss": 1.4321773467063903,
+          "val_accuracy": 0.6,
+          "val_macro_f1": 0.5833253696539769
+        },
+        {
+          "epoch": 8,
+          "train_loss": 1.0871676592826842,
+          "val_accuracy": 0.705,
+          "val_macro_f1": 0.692269196479049
+        },
+        {
+          "epoch": 9,
+          "train_loss": 1.2818996453285216,
+          "val_accuracy": 0.627,
+          "val_macro_f1": 0.6087343786676096
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.8787450246810913,
+          "val_accuracy": 0.723,
+          "val_macro_f1": 0.7141866516791074
+        },
+        {
+          "epoch": 11,
+          "train_loss": 0.9829124898910523,
+          "val_accuracy": 0.684,
+          "val_macro_f1": 0.6787798446886419
+        },
+        {
+          "epoch": 12,
+          "train_loss": 0.6534308056831359,
+          "val_accuracy": 0.697,
+          "val_macro_f1": 0.6825377450554365
+        }
+      ],
+      "runtime_sec": 92.18616914749146,
+      "device": "mps",
+      "test_accuracy": 0.72,
+      "test_macro_f1": 0.7077689173128474,
+      "test_confusion_matrix": [
+        [
+          159,
+          2,
+          7,
+          31,
+          0,
+          8,
+          27,
+          2,
+          8,
+          10
+        ],
+        [
+          0,
+          173,
+          1,
+          0,
+          0,
+          24,
+          0,
+          0,
+          0,
+          22
+        ],
+        [
+          4,
+          6,
+          129,
+          6,
+          4,
+          5,
+          22,
+          38,
+          9,
+          7
+        ],
+        [
+          5,
+          2,
+          9,
+          85,
+          19,
+          4,
+          13,
+          30,
+          23,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          167,
+          0,
+          0,
+          13,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          8,
+          5,
+          0,
+          103,
+          3,
+          1,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          20,
+          15,
+          5,
+          1,
+          108,
+          21,
+          5,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          3,
+          2,
+          0,
+          0,
+          228,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          5,
+          29,
+          7,
+          8,
+          5,
+          7,
+          89,
+          5
+        ],
+        [
+          1,
+          19,
+          1,
+          0,
+          0,
+          9,
+          0,
+          0,
+          2,
+          199
+        ]
+      ],
+      "policy_id": "seed_04_standard_mixup",
+      "stage": "full",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 12,
+      "objective_score": 0.7904786651679107,
+      "policy_complexity": 0.38166666666666665,
+      "distortion_proxy": 0.11000000000000001
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_05_standard_cutmix",
+      "source": "baseline_seed:standard_cutmix",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard_cutmix.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.25
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.4
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.536,
+      "val_macro_f1": 0.5026745504430385,
+      "val_confusion_matrix": [
+        [
+          55,
+          5,
+          0,
+          0,
+          1,
+          23,
+          16,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          67,
+          0,
+          0,
+          0,
+          13,
+          0,
+          0,
+          0,
+          20
+        ],
+        [
+          3,
+          4,
+          22,
+          1,
+          1,
+          34,
+          25,
+          5,
+          4,
+          1
+        ],
+        [
+          9,
+          14,
+          4,
+          9,
+          5,
+          21,
+          17,
+          12,
+          8,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          62,
+          37,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          0,
+          94,
+          1,
+          0,
+          0,
+          2
+        ],
+        [
+          7,
+          0,
+          2,
+          2,
+          2,
+          18,
+          66,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          14,
+          3,
+          7,
+          72,
+          1,
+          0
+        ],
+        [
+          6,
+          22,
+          2,
+          2,
+          2,
+          25,
+          5,
+          1,
+          12,
+          23
+        ],
+        [
+          5,
+          9,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0,
+          0,
+          77
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.2219533176422117,
+          "val_accuracy": 0.136,
+          "val_macro_f1": 0.05648208164473721
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.6582832889556884,
+          "val_accuracy": 0.326,
+          "val_macro_f1": 0.28710013905343024
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.5013257579803467,
+          "val_accuracy": 0.405,
+          "val_macro_f1": 0.3349540539580312
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.4999317207336427,
+          "val_accuracy": 0.536,
+          "val_macro_f1": 0.5026745504430385
+        }
+      ],
+      "runtime_sec": 32.408693075180054,
+      "device": "mps",
+      "policy_id": "seed_05_standard_cutmix",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.582362455044304,
+      "policy_complexity": 0.2425,
+      "distortion_proxy": 0.16333333333333333
+    },
+    "full_result": {
+      "val_accuracy": 0.697,
+      "val_macro_f1": 0.679902996570708,
+      "val_confusion_matrix": [
+        [
+          78,
+          4,
+          0,
+          2,
+          2,
+          2,
+          9,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          76,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0,
+          0,
+          18
+        ],
+        [
+          10,
+          6,
+          43,
+          4,
+          6,
+          2,
+          15,
+          7,
+          5,
+          2
+        ],
+        [
+          5,
+          7,
+          1,
+          32,
+          14,
+          5,
+          4,
+          5,
+          24,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          96,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          4,
+          0,
+          0,
+          88,
+          0,
+          0,
+          1,
+          4
+        ],
+        [
+          8,
+          0,
+          11,
+          7,
+          6,
+          5,
+          59,
+          0,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          6,
+          10,
+          0,
+          1,
+          83,
+          0,
+          0
+        ],
+        [
+          5,
+          8,
+          5,
+          11,
+          2,
+          11,
+          2,
+          0,
+          43,
+          13
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          99
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.262450267791748,
+          "val_accuracy": 0.132,
+          "val_macro_f1": 0.061967358523855744
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.761954005241394,
+          "val_accuracy": 0.425,
+          "val_macro_f1": 0.3323766784815637
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.544648292541504,
+          "val_accuracy": 0.494,
+          "val_macro_f1": 0.41778101837811155
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.4585803565979003,
+          "val_accuracy": 0.543,
+          "val_macro_f1": 0.4884083927297224
+        },
+        {
+          "epoch": 5,
+          "train_loss": 1.3159348936080932,
+          "val_accuracy": 0.645,
+          "val_macro_f1": 0.6299403694084835
+        },
+        {
+          "epoch": 6,
+          "train_loss": 1.504132544517517,
+          "val_accuracy": 0.624,
+          "val_macro_f1": 0.5943377720126111
+        },
+        {
+          "epoch": 7,
+          "train_loss": 1.3369484882354736,
+          "val_accuracy": 0.642,
+          "val_macro_f1": 0.624036705745923
+        },
+        {
+          "epoch": 8,
+          "train_loss": 1.6225611248016358,
+          "val_accuracy": 0.654,
+          "val_macro_f1": 0.6302007696555573
+        },
+        {
+          "epoch": 9,
+          "train_loss": 1.3154965295791625,
+          "val_accuracy": 0.579,
+          "val_macro_f1": 0.5434747989166367
+        },
+        {
+          "epoch": 10,
+          "train_loss": 1.0984631605148316,
+          "val_accuracy": 0.697,
+          "val_macro_f1": 0.679902996570708
+        },
+        {
+          "epoch": 11,
+          "train_loss": 1.3899441375732422,
+          "val_accuracy": 0.647,
+          "val_macro_f1": 0.6253343976953084
+        },
+        {
+          "epoch": 12,
+          "train_loss": 1.188135316848755,
+          "val_accuracy": 0.664,
+          "val_macro_f1": 0.640688453213031
+        }
+      ],
+      "runtime_sec": 98.95150589942932,
+      "device": "mps",
+      "test_accuracy": 0.6905,
+      "test_macro_f1": 0.6688598258077556,
+      "test_confusion_matrix": [
+        [
+          200,
+          6,
+          2,
+          2,
+          3,
+          10,
+          11,
+          0,
+          6,
+          14
+        ],
+        [
+          0,
+          134,
+          1,
+          0,
+          0,
+          24,
+          0,
+          0,
+          0,
+          61
+        ],
+        [
+          15,
+          10,
+          112,
+          5,
+          13,
+          5,
+          33,
+          17,
+          7,
+          13
+        ],
+        [
+          13,
+          15,
+          9,
+          55,
+          18,
+          12,
+          17,
+          5,
+          43,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          4,
+          169,
+          0,
+          0,
+          5,
+          2,
+          0
+        ],
+        [
+          1,
+          6,
+          4,
+          0,
+          1,
+          107,
+          3,
+          0,
+          2,
+          3
+        ],
+        [
+          9,
+          0,
+          11,
+          16,
+          15,
+          4,
+          110,
+          1,
+          9,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          11,
+          20,
+          0,
+          1,
+          199,
+          0,
+          0
+        ],
+        [
+          10,
+          9,
+          3,
+          11,
+          1,
+          15,
+          4,
+          0,
+          83,
+          22
+        ],
+        [
+          0,
+          11,
+          0,
+          0,
+          1,
+          5,
+          0,
+          0,
+          2,
+          212
+        ]
+      ],
+      "policy_id": "seed_05_standard_cutmix",
+      "stage": "full",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 12,
+      "objective_score": 0.7610852996570708,
+      "policy_complexity": 0.2425,
+      "distortion_proxy": 0.16333333333333333
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_06_conservative",
+      "source": "baseline_seed:conservative",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating conservative.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.25
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "Rotation",
+            "probability": 0.35,
+            "magnitude": 0.2
+          },
+          {
+            "name": "GaussianBlur",
+            "probability": 0.15,
+            "magnitude": 0.1
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.572,
+      "val_macro_f1": 0.5398557939393724,
+      "val_confusion_matrix": [
+        [
+          55,
+          4,
+          2,
+          1,
+          2,
+          10,
+          24,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          88,
+          1,
+          0,
+          0,
+          11,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          16,
+          0,
+          53,
+          0,
+          4,
+          2,
+          16,
+          1,
+          8,
+          0
+        ],
+        [
+          16,
+          13,
+          9,
+          8,
+          8,
+          12,
+          13,
+          4,
+          17,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          100,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          3,
+          4,
+          0,
+          0,
+          89,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          17,
+          0,
+          14,
+          0,
+          3,
+          6,
+          56,
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          0,
+          7,
+          5,
+          23,
+          0,
+          2,
+          61,
+          1,
+          0
+        ],
+        [
+          12,
+          32,
+          4,
+          0,
+          2,
+          7,
+          2,
+          1,
+          29,
+          11
+        ],
+        [
+          9,
+          52,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0,
+          0,
+          33
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.8997977123260499,
+          "val_accuracy": 0.134,
+          "val_macro_f1": 0.058579360755033116
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.2418849124908447,
+          "val_accuracy": 0.329,
+          "val_macro_f1": 0.24331836931278433
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.003822474002838,
+          "val_accuracy": 0.489,
+          "val_macro_f1": 0.41795553727766477
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.9851952886581421,
+          "val_accuracy": 0.572,
+          "val_macro_f1": 0.5398557939393724
+        }
+      ],
+      "runtime_sec": 32.35469198226929,
+      "device": "mps",
+      "policy_id": "seed_06_conservative",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.6225965793939372,
+      "policy_complexity": 0.39583333333333337,
+      "distortion_proxy": 0.0676
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "openai_init_000",
+      "source": "openai_initial",
+      "parent_ids": [],
+      "notes": "Conservative EuroSAT initial policy emphasizing rotation/flip invariance and mild spectral/color robustness while avoiding aggressive crops that could remove land-use context.",
+      "sub_policies": [
+        [
+          {
+            "name": "Rotation",
+            "probability": 0.65,
+            "magnitude": 0.5
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.4
+          }
+        ],
+        [
+          {
+            "name": "VerticalFlip",
+            "probability": 0.45,
+            "magnitude": 0.35
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.35,
+            "magnitude": 0.25
+          }
+        ],
+        [
+          {
+            "name": "RandomResizedCrop",
+            "probability": 0.45,
+            "magnitude": 0.25
+          },
+          {
+            "name": "GaussianBlur",
+            "probability": 0.2,
+            "magnitude": 0.15
+          }
+        ],
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 0.35,
+            "magnitude": 0.2
+          },
+          {
+            "name": "RandomErasing",
+            "probability": 0.15,
+            "magnitude": 0.2
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.4,
+        "mixup_alpha": 0.2
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.509,
+      "val_macro_f1": 0.45891383215696735,
+      "val_confusion_matrix": [
+        [
+          74,
+          1,
+          0,
+          0,
+          0,
+          11,
+          0,
+          0,
+          0,
+          14
+        ],
+        [
+          0,
+          81,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          1,
+          4
+        ],
+        [
+          18,
+          0,
+          22,
+          0,
+          1,
+          7,
+          35,
+          12,
+          4,
+          1
+        ],
+        [
+          25,
+          9,
+          1,
+          4,
+          18,
+          15,
+          2,
+          11,
+          11,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          100,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          0,
+          3,
+          0,
+          3,
+          67,
+          4,
+          2,
+          0,
+          16
+        ],
+        [
+          68,
+          0,
+          1,
+          1,
+          4,
+          10,
+          8,
+          4,
+          3,
+          1
+        ],
+        [
+          4,
+          0,
+          2,
+          0,
+          34,
+          0,
+          4,
+          54,
+          2,
+          0
+        ],
+        [
+          7,
+          10,
+          2,
+          1,
+          9,
+          17,
+          1,
+          5,
+          26,
+          22
+        ],
+        [
+          2,
+          11,
+          0,
+          0,
+          0,
+          12,
+          2,
+          0,
+          0,
+          73
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.192464546203613,
+          "val_accuracy": 0.133,
+          "val_macro_f1": 0.06568218974238595
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.6838926391601563,
+          "val_accuracy": 0.217,
+          "val_macro_f1": 0.16161229511471067
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.5947070112228394,
+          "val_accuracy": 0.407,
+          "val_macro_f1": 0.33455495666334356
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.6296347799301147,
+          "val_accuracy": 0.509,
+          "val_macro_f1": 0.45891383215696735
+        }
+      ],
+      "runtime_sec": 32.07276201248169,
+      "device": "mps",
+      "policy_id": "openai_init_000",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.5464463050906968,
+      "policy_complexity": 0.7783333333333333,
+      "distortion_proxy": 0.251671875
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_cross_000",
+      "source": "openai_ranked_crossover",
+      "parent_ids": [
+        "seed_06_conservative",
+        "seed_02_standard_color",
+        "seed_03_standard_erasing"
+      ],
+      "notes": "Baseline reference strongly favors no augmentation, while ranked search suggests only very light erasing/color perturbations help among augmented policies. Compact child keeps augmentation optional and low-distortion, avoiding sample mixing and heavy geometric transforms.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.06,
+            "magnitude": 0.06
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.12,
+            "magnitude": 0.06
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.575,
+      "val_macro_f1": 0.5490190636429281,
+      "val_confusion_matrix": [
+        [
+          49,
+          1,
+          1,
+          0,
+          0,
+          8,
+          5,
+          0,
+          2,
+          34
+        ],
+        [
+          0,
+          74,
+          0,
+          0,
+          0,
+          4,
+          1,
+          0,
+          0,
+          21
+        ],
+        [
+          8,
+          3,
+          35,
+          4,
+          8,
+          1,
+          15,
+          8,
+          2,
+          16
+        ],
+        [
+          4,
+          10,
+          1,
+          26,
+          17,
+          5,
+          14,
+          14,
+          2,
+          7
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          98,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          4,
+          4,
+          6,
+          0,
+          0,
+          70,
+          1,
+          0,
+          0,
+          15
+        ],
+        [
+          7,
+          1,
+          8,
+          8,
+          7,
+          6,
+          42,
+          6,
+          3,
+          12
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          23,
+          0,
+          2,
+          75,
+          0,
+          0
+        ],
+        [
+          4,
+          18,
+          1,
+          3,
+          2,
+          7,
+          3,
+          2,
+          16,
+          44
+        ],
+        [
+          0,
+          5,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          90
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.9450004987716676,
+          "val_accuracy": 0.232,
+          "val_macro_f1": 0.14716337206153557
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.2161451892852784,
+          "val_accuracy": 0.408,
+          "val_macro_f1": 0.3017147027483774
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.065167742729187,
+          "val_accuracy": 0.418,
+          "val_macro_f1": 0.376132166182377
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.9841520023345948,
+          "val_accuracy": 0.575,
+          "val_macro_f1": 0.5490190636429281
+        }
+      ],
+      "runtime_sec": 32.191165924072266,
+      "device": "mps",
+      "policy_id": "gen01_cross_000",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.6279533563642927,
+      "policy_complexity": 0.30833333333333335,
+      "distortion_proxy": 0.0065699999999999995
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_mut_001",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_06_conservative",
+        "seed_02_standard_color",
+        "seed_03_standard_erasing"
+      ],
+      "notes": "Mutation from the strongest low-distortion erasing parent, with baseline_reference showing no augmentation as the strongest prior. Keeps the standard EuroSAT spatial invariances but slightly relaxes crop probability and adds only very rare small erasing plus very mild color jitter to improve robustness without sample mixing or heavy distortion.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 0.75,
+            "magnitude": 0.2
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.45,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.45,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.06,
+            "magnitude": 0.06
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.12,
+            "magnitude": 0.06
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.56,
+      "val_macro_f1": 0.530941893277338,
+      "val_confusion_matrix": [
+        [
+          51,
+          1,
+          1,
+          6,
+          0,
+          10,
+          6,
+          0,
+          0,
+          25
+        ],
+        [
+          0,
+          86,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          9,
+          1,
+          35,
+          4,
+          8,
+          1,
+          10,
+          8,
+          2,
+          22
+        ],
+        [
+          6,
+          2,
+          5,
+          23,
+          20,
+          4,
+          3,
+          23,
+          8,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          99,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          6,
+          0,
+          0,
+          74,
+          1,
+          0,
+          1,
+          16
+        ],
+        [
+          11,
+          1,
+          9,
+          16,
+          7,
+          4,
+          36,
+          7,
+          0,
+          9
+        ],
+        [
+          0,
+          0,
+          6,
+          1,
+          31,
+          0,
+          0,
+          61,
+          0,
+          1
+        ],
+        [
+          2,
+          18,
+          2,
+          13,
+          5,
+          12,
+          2,
+          3,
+          17,
+          26
+        ],
+        [
+          0,
+          11,
+          1,
+          0,
+          0,
+          10,
+          0,
+          0,
+          0,
+          78
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.9961728858947754,
+          "val_accuracy": 0.28,
+          "val_macro_f1": 0.1724616178675213
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.2151558589935303,
+          "val_accuracy": 0.395,
+          "val_macro_f1": 0.3284181297839923
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.045099962234497,
+          "val_accuracy": 0.506,
+          "val_macro_f1": 0.46207831455951415
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.0054267845153808,
+          "val_accuracy": 0.56,
+          "val_macro_f1": 0.530941893277338
+        }
+      ],
+      "runtime_sec": 32.48395895957947,
+      "device": "mps",
+      "policy_id": "gen01_mut_001",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.6094797693277338,
+      "policy_complexity": 0.5208333333333334,
+      "distortion_proxy": 0.032628000000000004
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_mut_002",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_06_conservative",
+        "seed_02_standard_color",
+        "seed_03_standard_erasing"
+      ],
+      "notes": "Mutates the strongest erasing parent toward the baseline_reference prior that no mixing/very low distortion is best on EuroSAT. Keeps the useful mild crop+flip invariance, slightly reduces crop magnitude, and adds only a tiny color jitter alongside very rare light erasing to improve spectral robustness without materially increasing distortion.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 0.9,
+            "magnitude": 0.22
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.06,
+            "magnitude": 0.08
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.12,
+            "magnitude": 0.08
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.597,
+      "val_macro_f1": 0.5603872177271626,
+      "val_confusion_matrix": [
+        [
+          55,
+          2,
+          1,
+          1,
+          0,
+          7,
+          8,
+          0,
+          4,
+          22
+        ],
+        [
+          0,
+          83,
+          0,
+          0,
+          0,
+          3,
+          0,
+          1,
+          0,
+          13
+        ],
+        [
+          10,
+          2,
+          31,
+          1,
+          4,
+          2,
+          10,
+          22,
+          3,
+          15
+        ],
+        [
+          7,
+          10,
+          3,
+          14,
+          15,
+          3,
+          10,
+          30,
+          7,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          95,
+          0,
+          0,
+          5,
+          0,
+          0
+        ],
+        [
+          4,
+          3,
+          4,
+          1,
+          0,
+          75,
+          1,
+          0,
+          0,
+          12
+        ],
+        [
+          9,
+          1,
+          14,
+          2,
+          4,
+          4,
+          43,
+          18,
+          4,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          9,
+          0,
+          0,
+          87,
+          0,
+          0
+        ],
+        [
+          4,
+          20,
+          2,
+          6,
+          4,
+          10,
+          0,
+          7,
+          24,
+          23
+        ],
+        [
+          0,
+          6,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          90
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.9641604299545288,
+          "val_accuracy": 0.231,
+          "val_macro_f1": 0.13831890309070785
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.1761228618621826,
+          "val_accuracy": 0.365,
+          "val_macro_f1": 0.298081636828587
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.004546118736267,
+          "val_accuracy": 0.471,
+          "val_macro_f1": 0.4136922657058948
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.9918289670944214,
+          "val_accuracy": 0.597,
+          "val_macro_f1": 0.5603872177271626
+        }
+      ],
+      "runtime_sec": 32.62213706970215,
+      "device": "mps",
+      "policy_id": "gen01_mut_002",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.6500171617727163,
+      "policy_complexity": 0.39583333333333337,
+      "distortion_proxy": 0.043104
+    },
+    "full_result": {
+      "val_accuracy": 0.726,
+      "val_macro_f1": 0.7208813756755224,
+      "val_confusion_matrix": [
+        [
+          77,
+          1,
+          1,
+          0,
+          0,
+          2,
+          13,
+          0,
+          0,
+          6
+        ],
+        [
+          0,
+          75,
+          2,
+          0,
+          0,
+          10,
+          0,
+          0,
+          1,
+          12
+        ],
+        [
+          6,
+          4,
+          56,
+          2,
+          1,
+          0,
+          11,
+          9,
+          7,
+          4
+        ],
+        [
+          6,
+          2,
+          1,
+          56,
+          3,
+          5,
+          11,
+          4,
+          11,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          3,
+          93,
+          0,
+          1,
+          3,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          7,
+          0,
+          0,
+          82,
+          0,
+          3,
+          0,
+          5
+        ],
+        [
+          10,
+          0,
+          17,
+          2,
+          0,
+          3,
+          66,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          15,
+          3,
+          3,
+          1,
+          78,
+          0,
+          0
+        ],
+        [
+          9,
+          2,
+          5,
+          13,
+          2,
+          13,
+          5,
+          1,
+          47,
+          3
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          96
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.9253009853363037,
+          "val_accuracy": 0.257,
+          "val_macro_f1": 0.13965345385463288
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.3588400917053223,
+          "val_accuracy": 0.221,
+          "val_macro_f1": 0.16605392234852126
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.2042881937026977,
+          "val_accuracy": 0.48,
+          "val_macro_f1": 0.42335474697808745
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.017491581916809,
+          "val_accuracy": 0.46,
+          "val_macro_f1": 0.4175558010050753
+        },
+        {
+          "epoch": 5,
+          "train_loss": 1.21133642578125,
+          "val_accuracy": 0.639,
+          "val_macro_f1": 0.6266434740078978
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.9723353033065796,
+          "val_accuracy": 0.639,
+          "val_macro_f1": 0.6163990149749068
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.8424644322395325,
+          "val_accuracy": 0.628,
+          "val_macro_f1": 0.615861463530021
+        },
+        {
+          "epoch": 8,
+          "train_loss": 1.0097586326599122,
+          "val_accuracy": 0.597,
+          "val_macro_f1": 0.5660173324977723
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.7786966342926025,
+          "val_accuracy": 0.657,
+          "val_macro_f1": 0.6456034466045165
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.7401890821456909,
+          "val_accuracy": 0.656,
+          "val_macro_f1": 0.6390657547083582
+        },
+        {
+          "epoch": 11,
+          "train_loss": 0.6686046819686889,
+          "val_accuracy": 0.726,
+          "val_macro_f1": 0.7208813756755224
+        },
+        {
+          "epoch": 12,
+          "train_loss": 0.6378113026618958,
+          "val_accuracy": 0.694,
+          "val_macro_f1": 0.6743152108977185
+        }
+      ],
+      "runtime_sec": 86.71340894699097,
+      "device": "mps",
+      "test_accuracy": 0.7245,
+      "test_macro_f1": 0.7083032206126122,
+      "test_confusion_matrix": [
+        [
+          208,
+          0,
+          6,
+          0,
+          0,
+          8,
+          17,
+          0,
+          4,
+          11
+        ],
+        [
+          0,
+          142,
+          2,
+          0,
+          0,
+          31,
+          0,
+          0,
+          5,
+          40
+        ],
+        [
+          17,
+          6,
+          137,
+          12,
+          2,
+          5,
+          26,
+          9,
+          7,
+          9
+        ],
+        [
+          19,
+          1,
+          9,
+          64,
+          9,
+          14,
+          42,
+          6,
+          27,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          7,
+          163,
+          0,
+          2,
+          7,
+          1,
+          0
+        ],
+        [
+          3,
+          0,
+          12,
+          0,
+          0,
+          101,
+          3,
+          6,
+          0,
+          2
+        ],
+        [
+          11,
+          0,
+          21,
+          4,
+          2,
+          2,
+          132,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          28,
+          0,
+          2,
+          1,
+          201,
+          0,
+          0
+        ],
+        [
+          20,
+          1,
+          5,
+          18,
+          2,
+          17,
+          6,
+          0,
+          87,
+          2
+        ],
+        [
+          1,
+          9,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          2,
+          214
+        ]
+      ],
+      "policy_id": "gen01_mut_002",
+      "stage": "full",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 12,
+      "objective_score": 0.7950665775675523,
+      "policy_complexity": 0.39583333333333337,
+      "distortion_proxy": 0.043104
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_cross_003",
+      "source": "openai_ranked_crossover",
+      "parent_ids": [
+        "seed_06_conservative",
+        "seed_02_standard_color",
+        "seed_03_standard_erasing"
+      ],
+      "notes": "Crossover keeps the strongest standard_erasing backbone with mild crop/flip invariance, adds only a very small color perturbation from the next strongest parent, and avoids sample mixing since baseline_reference strongly favors no mixing for EuroSAT.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 0.9,
+            "magnitude": 0.22
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.06,
+            "magnitude": 0.07
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.12,
+            "magnitude": 0.08
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.544,
+      "val_macro_f1": 0.5191915828811167,
+      "val_confusion_matrix": [
+        [
+          44,
+          0,
+          1,
+          6,
+          0,
+          7,
+          20,
+          1,
+          1,
+          20
+        ],
+        [
+          0,
+          84,
+          1,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          10
+        ],
+        [
+          2,
+          2,
+          33,
+          2,
+          7,
+          2,
+          11,
+          25,
+          0,
+          16
+        ],
+        [
+          5,
+          7,
+          4,
+          17,
+          27,
+          4,
+          5,
+          26,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          98,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          7,
+          2,
+          1,
+          78,
+          0,
+          1,
+          0,
+          8
+        ],
+        [
+          3,
+          1,
+          12,
+          4,
+          5,
+          1,
+          43,
+          29,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          56,
+          0,
+          6,
+          37,
+          0,
+          0
+        ],
+        [
+          1,
+          16,
+          2,
+          14,
+          5,
+          11,
+          0,
+          7,
+          27,
+          17
+        ],
+        [
+          0,
+          6,
+          0,
+          0,
+          2,
+          9,
+          0,
+          0,
+          0,
+          83
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.0000038442611694,
+          "val_accuracy": 0.144,
+          "val_macro_f1": 0.07177948717948718
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.200778636932373,
+          "val_accuracy": 0.388,
+          "val_macro_f1": 0.3040532186533341
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.0591871528625487,
+          "val_accuracy": 0.451,
+          "val_macro_f1": 0.40821455029828047
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.018663246154785,
+          "val_accuracy": 0.544,
+          "val_macro_f1": 0.5191915828811167
+        }
+      ],
+      "runtime_sec": 32.71559381484985,
+      "device": "mps",
+      "policy_id": "gen01_cross_003",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.5921500282881117,
+      "policy_complexity": 0.5208333333333334,
+      "distortion_proxy": 0.042942
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_mut_004",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_06_conservative",
+        "seed_02_standard_color",
+        "seed_03_standard_erasing"
+      ],
+      "notes": "Mutation from strongest standard_erasing parent, guided by baseline reference where no augmentation is strongest. Keeps only mild EuroSAT-safe geometric invariance plus very low-probability erasing; reduces always-on crop strength to avoid removing land-use context in low-data training.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 0.65,
+            "magnitude": 0.18
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.45,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.45,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "Rotation",
+            "probability": 0.18,
+            "magnitude": 0.1
+          },
+          {
+            "name": "RandomErasing",
+            "probability": 0.06,
+            "magnitude": 0.06
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.0
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.55,
+      "val_macro_f1": 0.5220845678538335,
+      "val_confusion_matrix": [
+        [
+          49,
+          4,
+          9,
+          2,
+          0,
+          6,
+          11,
+          1,
+          0,
+          18
+        ],
+        [
+          0,
+          64,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0,
+          29
+        ],
+        [
+          5,
+          2,
+          77,
+          1,
+          0,
+          0,
+          6,
+          1,
+          2,
+          6
+        ],
+        [
+          6,
+          10,
+          28,
+          9,
+          8,
+          4,
+          6,
+          15,
+          8,
+          6
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          89,
+          0,
+          1,
+          7,
+          2,
+          0
+        ],
+        [
+          2,
+          3,
+          11,
+          0,
+          0,
+          67,
+          0,
+          0,
+          1,
+          16
+        ],
+        [
+          3,
+          1,
+          52,
+          3,
+          0,
+          5,
+          24,
+          5,
+          5,
+          2
+        ],
+        [
+          0,
+          0,
+          22,
+          0,
+          2,
+          1,
+          6,
+          66,
+          1,
+          2
+        ],
+        [
+          1,
+          18,
+          12,
+          6,
+          0,
+          5,
+          2,
+          3,
+          18,
+          35
+        ],
+        [
+          0,
+          5,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          87
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.9758069591522216,
+          "val_accuracy": 0.252,
+          "val_macro_f1": 0.1634980512325189
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.3023295288085937,
+          "val_accuracy": 0.34,
+          "val_macro_f1": 0.2633317919250912
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.1222392902374267,
+          "val_accuracy": 0.483,
+          "val_macro_f1": 0.4266959303688518
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.0177373371124268,
+          "val_accuracy": 0.55,
+          "val_macro_f1": 0.5220845678538335
+        }
+      ],
+      "runtime_sec": 32.245447874069214,
+      "device": "mps",
+      "policy_id": "gen01_mut_004",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.5994138767853834,
+      "policy_complexity": 0.39583333333333337,
+      "distortion_proxy": 0.027971999999999997
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_mut_005",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_06_conservative",
+        "seed_02_standard_color",
+        "seed_03_standard_erasing"
+      ],
+      "notes": "Mutated from the strongest erasing parent while respecting the baseline_reference prior that no mixing and minimal augmentation are strongest for this low-data EuroSAT setting. Keeps mild crop/flip invariance, slightly lowers crop strength, and adds a very small color jitter branch to improve spectral robustness without stacking heavy distortions.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 0.85,
+            "magnitude": 0.2
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.06,
+            "magnitude": 0.07
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.12,
+            "magnitude": 0.08
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.54,
+      "val_macro_f1": 0.5053582601001145,
+      "val_confusion_matrix": [
+        [
+          39,
+          1,
+          2,
+          0,
+          0,
+          9,
+          6,
+          0,
+          0,
+          43
+        ],
+        [
+          0,
+          83,
+          1,
+          0,
+          0,
+          10,
+          0,
+          0,
+          0,
+          6
+        ],
+        [
+          6,
+          1,
+          54,
+          0,
+          1,
+          0,
+          7,
+          3,
+          0,
+          28
+        ],
+        [
+          9,
+          5,
+          28,
+          3,
+          11,
+          5,
+          8,
+          19,
+          7,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          86,
+          0,
+          0,
+          14,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0,
+          0,
+          75,
+          0,
+          2,
+          1,
+          16
+        ],
+        [
+          22,
+          1,
+          28,
+          2,
+          1,
+          3,
+          20,
+          5,
+          1,
+          17
+        ],
+        [
+          0,
+          0,
+          29,
+          0,
+          1,
+          0,
+          0,
+          70,
+          0,
+          0
+        ],
+        [
+          4,
+          13,
+          14,
+          4,
+          1,
+          12,
+          1,
+          8,
+          27,
+          16
+        ],
+        [
+          0,
+          7,
+          0,
+          0,
+          0,
+          10,
+          0,
+          0,
+          0,
+          83
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.0738250541687013,
+          "val_accuracy": 0.175,
+          "val_macro_f1": 0.08724502331305095
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.175048544883728,
+          "val_accuracy": 0.424,
+          "val_macro_f1": 0.32187127967369483
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.0333631467819213,
+          "val_accuracy": 0.455,
+          "val_macro_f1": 0.41607520059952907
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.2355238132476807,
+          "val_accuracy": 0.54,
+          "val_macro_f1": 0.5053582601001145
+        }
+      ],
+      "runtime_sec": 32.33089995384216,
+      "device": "mps",
+      "policy_id": "gen01_mut_005",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.5868506960100115,
+      "policy_complexity": 0.5208333333333334,
+      "distortion_proxy": 0.037342
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_cross_000",
+      "source": "openai_ranked_crossover",
+      "parent_ids": [
+        "seed_02_standard_color",
+        "gen01_mut_002",
+        "seed_03_standard_erasing"
+      ],
+      "notes": "Crossover keeps the strongest standard_erasing crop/flip prior, but softens crop probability and magnitude toward the low-distortion gen01 winners. Adds only rare light erasing plus a small color-jitter branch from the strong color parent; avoids sample mixing and heavy rotations/crops because baseline_reference favors none and weak parents show higher distortion hurts.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 0.88,
+            "magnitude": 0.22
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.07,
+            "magnitude": 0.07
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.14,
+            "magnitude": 0.07
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.496,
+      "val_macro_f1": 0.464430248517348,
+      "val_confusion_matrix": [
+        [
+          72,
+          0,
+          3,
+          0,
+          0,
+          1,
+          3,
+          2,
+          3,
+          16
+        ],
+        [
+          0,
+          11,
+          1,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          84
+        ],
+        [
+          9,
+          1,
+          51,
+          1,
+          1,
+          3,
+          11,
+          14,
+          2,
+          7
+        ],
+        [
+          8,
+          2,
+          7,
+          16,
+          1,
+          3,
+          0,
+          25,
+          21,
+          17
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          84,
+          0,
+          0,
+          15,
+          0,
+          0
+        ],
+        [
+          3,
+          6,
+          5,
+          0,
+          0,
+          25,
+          0,
+          0,
+          1,
+          60
+        ],
+        [
+          30,
+          0,
+          13,
+          0,
+          1,
+          0,
+          37,
+          13,
+          5,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          2,
+          92,
+          4,
+          0
+        ],
+        [
+          4,
+          2,
+          8,
+          5,
+          3,
+          5,
+          1,
+          2,
+          15,
+          55
+        ],
+        [
+          6,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          93
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.0066719331741334,
+          "val_accuracy": 0.193,
+          "val_macro_f1": 0.10106693541646775
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.2744917316436768,
+          "val_accuracy": 0.315,
+          "val_macro_f1": 0.2519468114125372
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.1457355155944824,
+          "val_accuracy": 0.408,
+          "val_macro_f1": 0.3591114814148435
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.028105647087097,
+          "val_accuracy": 0.496,
+          "val_macro_f1": 0.464430248517348
+        }
+      ],
+      "runtime_sec": 33.366793155670166,
+      "device": "mps",
+      "policy_id": "gen02_cross_000",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.5386835698517347,
+      "policy_complexity": 0.5208333333333334,
+      "distortion_proxy": 0.042297
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_mut_001",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_02_standard_color",
+        "gen01_mut_002",
+        "seed_03_standard_erasing"
+      ],
+      "notes": "Mutates the strongest standard_erasing parent toward the baseline_reference prior that no augmentation is best on low-data EuroSAT. Keeps only mild translation/flip invariance with slightly reduced crop probability, preserves rare light erasing, and adds a very small independent color jitter for spectral robustness while avoiding mixing and heavy geometric distortion.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 0.85,
+            "magnitude": 0.22
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.07,
+            "magnitude": 0.07
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.1,
+            "magnitude": 0.06
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.476,
+      "val_macro_f1": 0.4466760890914073,
+      "val_confusion_matrix": [
+        [
+          67,
+          1,
+          3,
+          1,
+          2,
+          1,
+          1,
+          2,
+          2,
+          20
+        ],
+        [
+          0,
+          38,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          61
+        ],
+        [
+          15,
+          2,
+          50,
+          1,
+          0,
+          3,
+          6,
+          11,
+          1,
+          11
+        ],
+        [
+          8,
+          6,
+          11,
+          18,
+          1,
+          5,
+          2,
+          21,
+          19,
+          9
+        ],
+        [
+          3,
+          0,
+          1,
+          0,
+          59,
+          0,
+          0,
+          35,
+          2,
+          0
+        ],
+        [
+          0,
+          6,
+          3,
+          0,
+          0,
+          24,
+          0,
+          0,
+          1,
+          66
+        ],
+        [
+          49,
+          0,
+          16,
+          3,
+          0,
+          2,
+          17,
+          7,
+          4,
+          2
+        ],
+        [
+          2,
+          0,
+          5,
+          1,
+          0,
+          1,
+          2,
+          89,
+          0,
+          0
+        ],
+        [
+          6,
+          6,
+          9,
+          10,
+          1,
+          5,
+          0,
+          1,
+          15,
+          47
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          99
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.0154083414077757,
+          "val_accuracy": 0.243,
+          "val_macro_f1": 0.14875206203383534
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.2701388206481934,
+          "val_accuracy": 0.335,
+          "val_macro_f1": 0.2736699884568223
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.1301695890426635,
+          "val_accuracy": 0.47,
+          "val_macro_f1": 0.4264447953305016
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.0055324840545654,
+          "val_accuracy": 0.476,
+          "val_macro_f1": 0.4466760890914073
+        }
+      ],
+      "runtime_sec": 32.776365756988525,
+      "device": "mps",
+      "policy_id": "gen02_mut_001",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.5169410639091406,
+      "policy_complexity": 0.5208333333333334,
+      "distortion_proxy": 0.040103
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_mut_002",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_02_standard_color",
+        "gen01_mut_002",
+        "seed_03_standard_erasing"
+      ],
+      "notes": "Mutation from the strongest standard_erasing and gen01_mut_002 evidence, but pulled toward the baseline_reference where no augmentation is best. Keeps only mild crop/flip geometry, slightly relaxes crop probability to preserve native EuroSAT context, retains rare light erasing, and uses a tiny low-probability color jitter as spectral regularization without sample mixing.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 0.8,
+            "magnitude": 0.22
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.07,
+            "magnitude": 0.07
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.08,
+            "magnitude": 0.05
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.481,
+      "val_macro_f1": 0.4471003018844651,
+      "val_confusion_matrix": [
+        [
+          49,
+          0,
+          0,
+          0,
+          15,
+          1,
+          15,
+          1,
+          3,
+          16
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0,
+          90
+        ],
+        [
+          4,
+          0,
+          38,
+          6,
+          4,
+          3,
+          24,
+          10,
+          1,
+          10
+        ],
+        [
+          2,
+          1,
+          3,
+          27,
+          10,
+          6,
+          4,
+          12,
+          11,
+          24
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          95,
+          0,
+          0,
+          5,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          1,
+          0,
+          0,
+          43,
+          0,
+          0,
+          2,
+          51
+        ],
+        [
+          7,
+          0,
+          1,
+          6,
+          19,
+          2,
+          48,
+          11,
+          4,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          20,
+          2,
+          0,
+          74,
+          3,
+          0
+        ],
+        [
+          7,
+          0,
+          4,
+          7,
+          6,
+          2,
+          3,
+          0,
+          11,
+          60
+        ],
+        [
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          94
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.0394930725097655,
+          "val_accuracy": 0.238,
+          "val_macro_f1": 0.17703357900510816
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.3126208324432374,
+          "val_accuracy": 0.416,
+          "val_macro_f1": 0.3535571967209654
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.1908980436325074,
+          "val_accuracy": 0.439,
+          "val_macro_f1": 0.4077123525314425
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.3019643363952638,
+          "val_accuracy": 0.481,
+          "val_macro_f1": 0.4471003018844651
+        }
+      ],
+      "runtime_sec": 32.314656019210815,
+      "device": "mps",
+      "policy_id": "gen02_mut_002",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.5220233851884465,
+      "policy_complexity": 0.5208333333333334,
+      "distortion_proxy": 0.037443000000000004
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_cross_003",
+      "source": "openai_ranked_crossover",
+      "parent_ids": [
+        "seed_02_standard_color",
+        "gen01_mut_002",
+        "seed_03_standard_erasing"
+      ],
+      "notes": "Crossover favors the strongest standard_erasing parent while respecting the baseline prior that no augmentation is best. Keeps only mild crop/flip invariance plus rare light erasing, and adds a very small color jitter from the strong color parent; avoids rotation, blur, aggressive crops, and all sample mixing seen in weaker policies.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 0.85,
+            "magnitude": 0.22
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.07,
+            "magnitude": 0.07
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.1,
+            "magnitude": 0.05
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.508,
+      "val_macro_f1": 0.4810652736611301,
+      "val_confusion_matrix": [
+        [
+          71,
+          1,
+          3,
+          1,
+          0,
+          1,
+          1,
+          2,
+          2,
+          18
+        ],
+        [
+          0,
+          34,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          65
+        ],
+        [
+          11,
+          2,
+          53,
+          3,
+          0,
+          2,
+          6,
+          12,
+          0,
+          11
+        ],
+        [
+          10,
+          5,
+          7,
+          16,
+          1,
+          8,
+          2,
+          22,
+          19,
+          10
+        ],
+        [
+          3,
+          0,
+          0,
+          2,
+          79,
+          0,
+          1,
+          14,
+          1,
+          0
+        ],
+        [
+          0,
+          8,
+          3,
+          0,
+          0,
+          24,
+          0,
+          0,
+          3,
+          62
+        ],
+        [
+          39,
+          1,
+          17,
+          7,
+          0,
+          0,
+          24,
+          8,
+          3,
+          1
+        ],
+        [
+          1,
+          0,
+          5,
+          1,
+          0,
+          1,
+          4,
+          88,
+          0,
+          0
+        ],
+        [
+          6,
+          6,
+          9,
+          7,
+          2,
+          5,
+          0,
+          1,
+          20,
+          44
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          99
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.0148703117370603,
+          "val_accuracy": 0.25,
+          "val_macro_f1": 0.16392107189038319
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.261052502632141,
+          "val_accuracy": 0.373,
+          "val_macro_f1": 0.30453594640300696
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.1198515720367432,
+          "val_accuracy": 0.466,
+          "val_macro_f1": 0.4253829268727209
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.022129482269287,
+          "val_accuracy": 0.508,
+          "val_macro_f1": 0.4810652736611301
+        }
+      ],
+      "runtime_sec": 32.328437089920044,
+      "device": "mps",
+      "policy_id": "gen02_cross_003",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.552383432366113,
+      "policy_complexity": 0.5208333333333334,
+      "distortion_proxy": 0.039873000000000006
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_mut_004",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_02_standard_color",
+        "gen01_mut_002",
+        "seed_03_standard_erasing"
+      ],
+      "notes": "Mutation from the strongest erasing/color/crop evidence while respecting the baseline_reference showing no augmentation is strongest. Keeps the successful EuroSAT prior of mild crop plus bidirectional flips, trims crop probability/magnitude slightly below the best erasing baseline to reduce low-data distortion, and retains only rare light erasing as the specific regularizer that ranked best; color jitter is reduced to a very small optional spectral perturbation rather than a main branch.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 0.85,
+            "magnitude": 0.22
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.07,
+            "magnitude": 0.07
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.08,
+            "magnitude": 0.05
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.0
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.493,
+      "val_macro_f1": 0.46691837081486404,
+      "val_confusion_matrix": [
+        [
+          72,
+          1,
+          0,
+          0,
+          1,
+          2,
+          1,
+          2,
+          2,
+          19
+        ],
+        [
+          0,
+          21,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          78
+        ],
+        [
+          9,
+          2,
+          44,
+          1,
+          1,
+          3,
+          14,
+          11,
+          2,
+          13
+        ],
+        [
+          14,
+          5,
+          3,
+          22,
+          1,
+          7,
+          3,
+          11,
+          17,
+          17
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          84,
+          0,
+          1,
+          14,
+          0,
+          0
+        ],
+        [
+          0,
+          8,
+          3,
+          0,
+          0,
+          25,
+          0,
+          0,
+          2,
+          62
+        ],
+        [
+          43,
+          1,
+          11,
+          4,
+          1,
+          2,
+          26,
+          6,
+          4,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          4,
+          88,
+          1,
+          3
+        ],
+        [
+          7,
+          6,
+          6,
+          6,
+          2,
+          5,
+          0,
+          1,
+          12,
+          55
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          99
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.0165452604293823,
+          "val_accuracy": 0.301,
+          "val_macro_f1": 0.2058273299854397
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.293476484298706,
+          "val_accuracy": 0.317,
+          "val_macro_f1": 0.23704454858525378
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.1357476167678833,
+          "val_accuracy": 0.418,
+          "val_macro_f1": 0.35453397660922326
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.021411828994751,
+          "val_accuracy": 0.493,
+          "val_macro_f1": 0.46691837081486404
+        }
+      ],
+      "runtime_sec": 31.468828916549683,
+      "device": "mps",
+      "policy_id": "gen02_mut_004",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.5359721920814864,
+      "policy_complexity": 0.5208333333333334,
+      "distortion_proxy": 0.039643
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_mut_005_try1",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_02_standard_color",
+        "gen01_mut_002",
+        "seed_03_standard_erasing"
+      ],
+      "notes": "Mutation anchored on the strongest standard_erasing parent and the baseline_reference prior that minimal/no augmentation dominates in this low-data EuroSAT setting. Keeps only mild crop and flip invariance, slightly relaxes crop probability/magnitude to reduce context loss, and uses rare light erasing as the sole non-geometric regularizer; avoids color jitter and sample mixing because top evidence favors erasing over heavier spectral or mixing perturbations.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 0.85,
+            "magnitude": 0.22
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "VerticalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.07,
+            "magnitude": 0.07
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.582,
+      "val_macro_f1": 0.556080462154247,
+      "val_confusion_matrix": [
+        [
+          65,
+          0,
+          3,
+          0,
+          0,
+          8,
+          2,
+          2,
+          3,
+          17
+        ],
+        [
+          0,
+          50,
+          1,
+          0,
+          0,
+          11,
+          0,
+          0,
+          0,
+          38
+        ],
+        [
+          9,
+          0,
+          55,
+          0,
+          1,
+          7,
+          10,
+          11,
+          0,
+          7
+        ],
+        [
+          6,
+          8,
+          12,
+          18,
+          0,
+          10,
+          5,
+          19,
+          16,
+          6
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          63,
+          0,
+          1,
+          33,
+          1,
+          0
+        ],
+        [
+          0,
+          7,
+          1,
+          0,
+          0,
+          82,
+          0,
+          1,
+          0,
+          9
+        ],
+        [
+          20,
+          0,
+          13,
+          2,
+          1,
+          9,
+          43,
+          7,
+          4,
+          1
+        ],
+        [
+          0,
+          0,
+          3,
+          1,
+          0,
+          0,
+          4,
+          92,
+          0,
+          0
+        ],
+        [
+          4,
+          6,
+          13,
+          4,
+          1,
+          12,
+          0,
+          1,
+          18,
+          41
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          96
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.0176032056808473,
+          "val_accuracy": 0.255,
+          "val_macro_f1": 0.17398515424333136
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.2458381333351136,
+          "val_accuracy": 0.346,
+          "val_macro_f1": 0.27620588371949617
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.1232093362808226,
+          "val_accuracy": 0.45,
+          "val_macro_f1": 0.4169564507347815
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.9858904008865357,
+          "val_accuracy": 0.582,
+          "val_macro_f1": 0.556080462154247
+        }
+      ],
+      "runtime_sec": 30.465768814086914,
+      "device": "mps",
+      "policy_id": "gen02_mut_005_try1",
+      "stage": "rough",
+      "train_size": 1000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "objective_score": 0.6346819899654247,
+      "policy_complexity": 0.36666666666666664,
+      "distortion_proxy": 0.04840375
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  }
+]

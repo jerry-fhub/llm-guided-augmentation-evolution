@@ -1,0 +1,2 @@
+method,valid,policy_id,source,stage,train_size,val_size,test_size,epochs,val_accuracy,val_macro_f1,runtime_sec,device,test_accuracy,test_macro_f1
+one_shot_llm,True,one_shot_000,one_shot_heuristic_llm,one_shot,510,1020,2040,20,0.12156862745098039,0.14290121301773215,206.88107419013977,mps,0.08529411764705883,0.0605654778012058

@@ -1,0 +1,7 @@
+policy_id,generation,source,parent_ids,status,rough_val_accuracy,full_val_accuracy,full_test_accuracy
+seed_00_standard,0,baseline_seed:standard,,full_evaluated,0.451,0.457,0.4345
+seed_01_randaugment,0,baseline_seed:randaugment,,full_evaluated,0.473,0.593,0.5695
+seed_02_trivialaugment,0,baseline_seed:trivialaugment,,rough_evaluated,0.431,,
+init_supervised_llm_gen02_mut_005,0,supervised_openai_ranked_policy,gen01_cross_003_try2;gen01_cross_000;seed_03_standard_mixup,full_evaluated,0.465,0.1,0.0975
+fm_gen01_cross_000,1,openai_ranked_mutation,seed_00_standard;init_supervised_llm_gen02_mut_005;seed_01_randaugment,invalid,,,
+fm_gen01_mut_001,1,openai_ranked_mutation,seed_00_standard;init_supervised_llm_gen02_mut_005;seed_01_randaugment,invalid,,,

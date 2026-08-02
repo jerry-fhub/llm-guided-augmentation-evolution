@@ -1,0 +1,44 @@
+experiment_name: smoke_adaptive_evolution
+output_root: results
+seed: 19
+seeds: [19]
+
+llm:
+  provider: heuristic
+
+dataset:
+  name: fake
+  root: data/raw/image_datasets
+  image_size: 32
+  download: false
+  train_per_class: 8
+  val_per_class: 4
+  max_train: 80
+  max_val: 40
+  max_test: 40
+
+training:
+  model_name: tinycnn
+  pretrained: false
+  epochs: 3
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  optimizer: adamw
+  device: auto
+  num_workers: 0
+  evaluate_test: true
+  save_model: false
+
+adaptive:
+  enabled: false
+  epochs: 3
+  update_interval: 1
+  initial_seed_policy: standard
+  ranked_feedback: true
+  allow_discouraged: true
+  objective:
+    accuracy_weight: 1.0
+    macro_f1_weight: 0.10
+    distortion_weight: 0.02
+    complexity_weight: 0.01

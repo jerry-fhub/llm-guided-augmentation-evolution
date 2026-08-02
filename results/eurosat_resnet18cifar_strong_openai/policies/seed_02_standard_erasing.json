@@ -1,0 +1,36 @@
+{
+  "policy_id": "seed_02_standard_erasing",
+  "source": "baseline_seed:standard_erasing",
+  "parent_ids": [],
+  "notes": "Baseline-seeded parent approximating standard_erasing.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.25
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "VerticalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "RandomErasing",
+        "probability": 0.08,
+        "magnitude": 0.08
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

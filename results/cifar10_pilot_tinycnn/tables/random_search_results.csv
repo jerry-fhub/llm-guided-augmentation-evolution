@@ -1,0 +1,5 @@
+method,valid,policy_id,source,stage,train_size,val_size,test_size,epochs,val_accuracy,val_macro_f1,runtime_sec,device,test_accuracy,test_macro_f1
+random_search,True,random_000,random_search,random_rough,100,100,200,1,0.08,0.02744360902255639,0.0750126838684082,mps,,
+random_search,True,random_001,random_search,random_rough,100,100,200,1,0.1,0.03765264586160109,0.1163170337677002,mps,,
+random_search,True,random_002,random_search,random_rough,100,100,200,1,0.1,0.01886792452830189,0.08366107940673828,mps,,
+random_search_full,True,random_001,random_search,random_full,100,100,200,1,0.12,0.04294688749286122,0.09179329872131348,mps,0.1,0.03650485436893204

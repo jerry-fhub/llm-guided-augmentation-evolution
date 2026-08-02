@@ -1,0 +1,6 @@
+method,policy_id,generation,source,valid,rough_val_accuracy,rough_val_macro_f1,full_val_accuracy,full_test_accuracy,full_test_macro_f1,runtime_sec
+llm_guided_evolution,heuristic_init_000,0,heuristic,True,0.12,0.05731162196679438,,,,0.12315011024475098
+llm_guided_evolution,heuristic_init_001,0,heuristic,True,0.09,0.03678646934460888,,,,0.0777120590209961
+llm_guided_evolution,heuristic_init_002,0,heuristic,True,0.1,0.01818181818181818,,,,0.08748531341552734
+llm_guided_evolution,gen01_mut_000,1,heuristic_feedback,True,0.14,0.0474671669793621,0.11,0.18,0.12498711510506144,0.22564125061035156
+llm_guided_evolution,gen01_mut_001,1,heuristic_feedback,True,0.1,0.01818181818181818,,,,0.11272406578063965

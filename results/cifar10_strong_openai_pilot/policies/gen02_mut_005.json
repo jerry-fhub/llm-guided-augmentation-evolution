@@ -1,0 +1,50 @@
+{
+  "policy_id": "gen02_mut_005",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "seed_02_standard_erasing",
+    "gen01_mut_001",
+    "gen01_cross_003"
+  ],
+  "notes": "Conservative gen02 mutation: preserve the strongest compact crop/flip prior, keep light erasing but soften it slightly, reduce cutmix relative to the best crossover, and lean toward the external standard_mixup signal which has the best reference accuracy/F1. Color remains low-probability and weak to avoid over-distortion in low-data CIFAR-10.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.33
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.11,
+        "magnitude": 0.075
+      }
+    ],
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.9,
+        "magnitude": 0.29
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.1,
+        "magnitude": 0.075
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0.05,
+    "mixup_alpha": 0.22
+  }
+}

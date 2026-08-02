@@ -1,0 +1,40 @@
+{
+  "policy_id": "gen02_mut_005_try1",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "seed_02_standard_color",
+    "gen01_mut_002",
+    "seed_03_standard_erasing"
+  ],
+  "notes": "Mutation anchored on the strongest standard_erasing parent and the baseline_reference prior that minimal/no augmentation dominates in this low-data EuroSAT setting. Keeps only mild crop and flip invariance, slightly relaxes crop probability/magnitude to reduce context loss, and uses rare light erasing as the sole non-geometric regularizer; avoids color jitter and sample mixing because top evidence favors erasing over heavier spectral or mixing perturbations.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.85,
+        "magnitude": 0.22
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "VerticalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "RandomErasing",
+        "probability": 0.07,
+        "magnitude": 0.07
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0,
+    "mixup_alpha": 0
+  }
+}

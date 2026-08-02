@@ -1,0 +1,26 @@
+{
+  "policy_id": "random_000",
+  "source": "random_search",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "GaussianBlur",
+        "probability": 0.52,
+        "magnitude": 0.3
+      }
+    ],
+    [
+      {
+        "name": "Affine",
+        "probability": 0.76,
+        "magnitude": 0.67
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

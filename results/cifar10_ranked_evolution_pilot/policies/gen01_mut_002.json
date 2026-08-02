@@ -1,0 +1,62 @@
+{
+  "policy_id": "gen01_mut_002",
+  "source": "heuristic_ranked_mutation",
+  "parent_ids": [
+    "seed_02_randaugment"
+  ],
+  "notes": "Ranked-population mutation from seed_02_randaugment.",
+  "sub_policies": [
+    [
+      {
+        "name": "GaussianBlur",
+        "probability": 0.59,
+        "magnitude": 0.29
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.55,
+        "magnitude": 0.35
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.45,
+        "magnitude": 0.3
+      }
+    ],
+    [
+      {
+        "name": "Affine",
+        "probability": 0.35,
+        "magnitude": 0.3
+      },
+      {
+        "name": "Solarize",
+        "probability": 0.2,
+        "magnitude": 0.3
+      }
+    ],
+    [
+      {
+        "name": "Posterize",
+        "probability": 0.15,
+        "magnitude": 0.25
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.2,
+        "magnitude": 0.2
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

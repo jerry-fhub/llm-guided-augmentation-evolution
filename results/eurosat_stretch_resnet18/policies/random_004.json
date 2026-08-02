@@ -1,0 +1,24 @@
+{
+  "policy_id": "random_004",
+  "source": "random_search",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.78,
+        "magnitude": 0.69
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.95,
+        "magnitude": 0.79
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

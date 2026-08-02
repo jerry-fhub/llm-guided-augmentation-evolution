@@ -1,0 +1,30 @@
+{
+  "policy_id": "gen01_cross_000",
+  "source": "openai_ranked_crossover",
+  "parent_ids": [
+    "seed_06_conservative",
+    "seed_02_standard_color",
+    "seed_03_standard_erasing"
+  ],
+  "notes": "Baseline reference strongly favors no augmentation, while ranked search suggests only very light erasing/color perturbations help among augmented policies. Compact child keeps augmentation optional and low-distortion, avoiding sample mixing and heavy geometric transforms.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomErasing",
+        "probability": 0.06,
+        "magnitude": 0.06
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.12,
+        "magnitude": 0.06
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

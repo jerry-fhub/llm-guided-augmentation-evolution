@@ -1,0 +1,2 @@
+method,val_accuracy_mean,val_accuracy_std,val_accuracy_count,val_macro_f1_mean,val_macro_f1_std,val_macro_f1_count,test_accuracy_mean,test_accuracy_std,test_accuracy_count,test_macro_f1_mean,test_macro_f1_std,test_macro_f1_count,runtime_sec_mean,runtime_sec_std,runtime_sec_count
+adaptive_ranked_llm_evolution,0.17,,1,0.09136404697380307,,1,0.125,,1,0.06884478046199964,,1,,,0

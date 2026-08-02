@@ -1,0 +1,7 @@
+method,val_accuracy_mean,val_accuracy_std,val_accuracy_count,val_macro_f1_mean,val_macro_f1_std,val_macro_f1_count,test_accuracy_mean,test_accuracy_std,test_accuracy_count,test_macro_f1_mean,test_macro_f1_std,test_macro_f1_count,runtime_sec_mean,runtime_sec_std,runtime_sec_count
+llm_guided_evolution,0.11,,1,,,0,0.18,,1,0.1249871151050614,,1,0.2256412506103515,,1
+none,0.1,,1,0.0181818181818181,,1,0.09,,1,0.016589861751152,,1,1.9794471263885496,,1
+one_shot_llm,0.07,,1,0.0289115646258503,,1,0.1,,1,0.0286192869107441,,1,0.1206519603729248,,1
+randaugment,0.1,,1,0.0437806637806637,,1,0.105,,1,0.0310162002945508,,1,0.0865688323974609,,1
+random_search_full,0.12,,1,0.0429468874928612,,1,0.1,,1,0.036504854368932,,1,0.0917932987213134,,1
+standard,0.15,,1,0.0705361305361305,,1,0.16,,1,0.0792195453926772,,1,0.089141845703125,,1

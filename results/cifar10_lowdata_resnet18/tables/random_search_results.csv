@@ -1,0 +1,16 @@
+method,valid,policy_id,source,stage,train_size,val_size,test_size,epochs,val_accuracy,val_macro_f1,runtime_sec,device,test_accuracy,test_macro_f1
+random_search,True,random_000,random_search,random_rough,1000,1000,2000,5,0.32,0.29085780004515105,3.3198630809783936,mps,,
+random_search,True,random_001,random_search,random_rough,1000,1000,2000,5,0.253,0.21895702974924797,3.762763023376465,mps,,
+random_search,True,random_002,random_search,random_rough,1000,1000,2000,5,0.289,0.25963499722749284,3.6928021907806396,mps,,
+random_search,True,random_003,random_search,random_rough,1000,1000,2000,5,0.318,0.30842364613836015,3.6091220378875732,mps,,
+random_search,True,random_004,random_search,random_rough,1000,1000,2000,5,0.324,0.3206601527760612,3.2802059650421143,mps,,
+random_search,True,random_005,random_search,random_rough,1000,1000,2000,5,0.283,0.251980831804633,4.057434797286987,mps,,
+random_search,True,random_006,random_search,random_rough,1000,1000,2000,5,0.271,0.24483000970247842,3.7657887935638428,mps,,
+random_search,True,random_007,random_search,random_rough,1000,1000,2000,5,0.304,0.28416893350483674,3.844681978225708,mps,,
+random_search,True,random_008,random_search,random_rough,1000,1000,2000,5,0.329,0.31600632283458835,4.471102952957153,mps,,
+random_search,True,random_009,random_search,random_rough,1000,1000,2000,5,0.203,0.1320186112226711,3.4710259437561035,mps,,
+random_search,True,random_010,random_search,random_rough,1000,1000,2000,5,0.207,0.15811113275137603,4.466671705245972,mps,,
+random_search,True,random_011,random_search,random_rough,1000,1000,2000,5,0.312,0.3028627495128841,3.5444841384887695,mps,,
+random_search_full,True,random_008,random_search,random_full,1000,1000,2000,30,0.419,0.41027879071278556,25.47954297065735,mps,0.409,0.3953913500627301
+random_search_full,True,random_004,random_search,random_full,1000,1000,2000,30,0.378,0.37626939217078015,18.04678726196289,mps,0.401,0.3948228617207249
+random_search_full,True,random_000,random_search,random_full,1000,1000,2000,30,0.367,0.36220545233646695,18.26835036277771,mps,0.376,0.37053365098454666

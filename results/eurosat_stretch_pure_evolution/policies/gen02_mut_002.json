@@ -1,0 +1,29 @@
+{
+  "policy_id": "gen02_mut_002",
+  "source": "pure_evolution_mutation",
+  "parent_ids": [
+    "gen01_cross_003"
+  ],
+  "notes": "Mutated from gen01_cross_003 without LLM-style feedback.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.77,
+        "magnitude": 0.32
+      }
+    ],
+    [
+      {
+        "name": "Grayscale",
+        "probability": 0.78,
+        "magnitude": 0.75
+      }
+    ],
+    []
+  ],
+  "mixing": {
+    "mixup_alpha": 0.26,
+    "cutmix_alpha": 0.0
+  }
+}

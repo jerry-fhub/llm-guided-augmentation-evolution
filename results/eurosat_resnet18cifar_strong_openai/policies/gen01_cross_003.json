@@ -1,0 +1,47 @@
+{
+  "policy_id": "gen01_cross_003",
+  "source": "openai_ranked_crossover",
+  "parent_ids": [
+    "seed_06_conservative",
+    "seed_02_standard_color",
+    "seed_03_standard_erasing"
+  ],
+  "notes": "Crossover keeps the strongest standard_erasing backbone with mild crop/flip invariance, adds only a very small color perturbation from the next strongest parent, and avoids sample mixing since baseline_reference strongly favors no mixing for EuroSAT.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.9,
+        "magnitude": 0.22
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "VerticalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "RandomErasing",
+        "probability": 0.06,
+        "magnitude": 0.07
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.12,
+        "magnitude": 0.08
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0,
+    "mixup_alpha": 0
+  }
+}

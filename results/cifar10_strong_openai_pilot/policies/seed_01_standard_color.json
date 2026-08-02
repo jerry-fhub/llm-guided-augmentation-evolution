@@ -1,0 +1,29 @@
+{
+  "policy_id": "seed_01_standard_color",
+  "source": "baseline_seed:standard_color",
+  "parent_ids": [],
+  "notes": "Baseline-seeded parent approximating standard_color.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.35
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.3,
+        "magnitude": 0.16
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

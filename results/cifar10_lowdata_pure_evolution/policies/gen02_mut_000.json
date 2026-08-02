@@ -1,0 +1,46 @@
+{
+  "policy_id": "gen02_mut_000",
+  "source": "pure_evolution_mutation",
+  "parent_ids": [
+    "gen01_mut_001"
+  ],
+  "notes": "Mutated from gen01_mut_001 without LLM-style feedback.",
+  "sub_policies": [
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.66,
+        "magnitude": 0.72
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.08,
+        "magnitude": 0.58
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.74,
+        "magnitude": 0.39
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.92,
+        "magnitude": 0.39
+      }
+    ],
+    [
+      {
+        "name": "Posterize",
+        "probability": 0.87,
+        "magnitude": 0.27
+      }
+    ],
+    []
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

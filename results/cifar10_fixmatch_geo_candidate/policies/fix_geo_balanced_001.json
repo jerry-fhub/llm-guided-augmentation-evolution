@@ -1,0 +1,50 @@
+{
+  "policy_id": "fix_geo_balanced_001",
+  "source": "manual_fixmatch_candidate",
+  "parent_ids": [
+    "fix_llm_gen02_mut_005"
+  ],
+  "notes": "FixMatch-oriented refinement of the LLM-evolved policy. Keeps the conservative crop+flip+color prior, but adds mild rotation and affine geometry to increase strong-view diversity without using batch mixing.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.38
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.2,
+        "magnitude": 0.14
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.3,
+        "magnitude": 0.18
+      },
+      {
+        "name": "Affine",
+        "probability": 0.22,
+        "magnitude": 0.16
+      }
+    ],
+    [
+      {
+        "name": "RandomErasing",
+        "probability": 0.08,
+        "magnitude": 0.06
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

@@ -1,0 +1,7 @@
+method,policy_id,source,seed,generation,valid,train_size,val_size,test_size,epochs,runtime_sec,device,stage,is_final_comparison,val_accuracy,val_macro_f1,test_accuracy,test_macro_f1
+pure_evolution,heuristic_init_000,heuristic,,0,True,,,,,0.550678014755249,,evolution_rough,False,0.1,0.018348623853211,,
+pure_evolution,heuristic_init_001,heuristic,,0,True,,,,,0.0827429294586181,,evolution_rough,False,0.1,0.0299757281553398,,
+pure_evolution,heuristic_init_002,heuristic,,0,True,,,,,0.0998718738555908,,evolution_rough,False,0.08,0.0281351526965562,,
+pure_evolution,gen01_mut_000,pure_evolution_mutation,,1,True,,,,,0.0718047618865966,,evolution_rough,False,0.14,0.0627641176028272,,
+pure_evolution,gen01_mut_001,pure_evolution_mutation,,1,True,,,,,0.1482861042022705,,evolution_rough,False,0.22,0.1372566030460767,,
+pure_evolution,gen01_mut_001,pure_evolution_mutation,,1,True,,,,,0.1482861042022705,,evolution_full,True,0.12,,0.12,0.0565746753246753

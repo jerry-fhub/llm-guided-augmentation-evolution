@@ -1,0 +1,26 @@
+{
+  "policy_id": "gen01_mut_002",
+  "source": "heuristic_feedback",
+  "parent_ids": [
+    "heuristic_init_006"
+  ],
+  "notes": "Mutated from heuristic_init_006 using validation feedback.",
+  "sub_policies": [
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.95,
+        "magnitude": 0.52
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.36,
+        "magnitude": 0.52
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.3,
+    "cutmix_alpha": 0.0
+  }
+}

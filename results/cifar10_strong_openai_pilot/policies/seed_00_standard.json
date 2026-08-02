@@ -1,0 +1,24 @@
+{
+  "policy_id": "seed_00_standard",
+  "source": "baseline_seed:standard",
+  "parent_ids": [],
+  "notes": "Baseline-seeded parent approximating standard.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.45
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

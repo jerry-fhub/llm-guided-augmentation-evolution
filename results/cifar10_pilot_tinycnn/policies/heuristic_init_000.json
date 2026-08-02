@@ -1,0 +1,24 @@
+{
+  "policy_id": "heuristic_init_000",
+  "source": "heuristic",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.59,
+        "magnitude": 0.3
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.8,
+        "magnitude": 0.72
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

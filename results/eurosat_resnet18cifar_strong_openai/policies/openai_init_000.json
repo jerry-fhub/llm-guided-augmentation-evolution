@@ -1,0 +1,60 @@
+{
+  "policy_id": "openai_init_000",
+  "source": "openai_initial",
+  "parent_ids": [],
+  "notes": "Conservative EuroSAT initial policy emphasizing rotation/flip invariance and mild spectral/color robustness while avoiding aggressive crops that could remove land-use context.",
+  "sub_policies": [
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.65,
+        "magnitude": 0.5
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.4
+      }
+    ],
+    [
+      {
+        "name": "VerticalFlip",
+        "probability": 0.45,
+        "magnitude": 0.35
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.35,
+        "magnitude": 0.25
+      }
+    ],
+    [
+      {
+        "name": "RandomResizedCrop",
+        "probability": 0.45,
+        "magnitude": 0.25
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.2,
+        "magnitude": 0.15
+      }
+    ],
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.35,
+        "magnitude": 0.2
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.15,
+        "magnitude": 0.2
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0.4,
+    "mixup_alpha": 0.2
+  }
+}

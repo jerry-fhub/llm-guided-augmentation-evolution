@@ -1,0 +1,40 @@
+{
+  "policy_id": "gen02_cross_000",
+  "source": "openai_ranked_crossover",
+  "parent_ids": [
+    "openai_init_000",
+    "openai_init_001",
+    "gen01_cross_000"
+  ],
+  "notes": "Crossover preserves the best baseline prior, standard_mixup, and the strongest gen01 parents: standard RandomCrop plus HorizontalFlip with one Mixup mechanism. It keeps only mild color and rotation regularization, slightly increasing Mixup from 0.22 toward the baseline while avoiding CutMix stacking, erasing, blur, affine, solarize, and vertical flips that were associated with weaker or overly complex parents.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.32
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.2,
+        "magnitude": 0.12
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.12,
+        "magnitude": 0.08
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0,
+    "mixup_alpha": 0.24
+  }
+}

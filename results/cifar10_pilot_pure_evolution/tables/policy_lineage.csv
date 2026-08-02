@@ -1,0 +1,6 @@
+policy_id,generation,source,parent_ids,status,rough_val_accuracy,full_val_accuracy,full_test_accuracy
+heuristic_init_000,0,heuristic,,rough_evaluated,0.1,,
+heuristic_init_001,0,heuristic,,rough_evaluated,0.1,,
+heuristic_init_002,0,heuristic,,rough_evaluated,0.08,,
+gen01_mut_000,1,pure_evolution_mutation,heuristic_init_000,rough_evaluated,0.14,,
+gen01_mut_001,1,pure_evolution_mutation,heuristic_init_000,full_evaluated,0.22,0.12,0.12

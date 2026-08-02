@@ -1,0 +1,43 @@
+experiment_name: cifar10_fixmatch_geo_candidate
+output_root: results
+seed: 61
+
+dataset:
+  name: cifar10
+  root: data/raw/image_datasets
+  image_size: 32
+  download: true
+  download_url: https://data.brainchip.com/dataset-mirror/cifar10/cifar-10-python.tar.gz
+  archive_filename: cifar-10-python.tar.gz
+  archive_md5: c58f30108f718f92721af3b95e74349a
+  train_per_class: 100
+  val_per_class: 100
+  max_test: 2000
+  max_unlabeled: 10000
+
+training:
+  model_name: resnet18_cifar
+  pretrained: false
+  epochs: 15
+  batch_size: 64
+  eval_batch_size: 128
+  lr: 0.001
+  weight_decay: 0.0001
+  optimizer: adamw
+  device: auto
+  num_workers: 0
+  evaluate_test: true
+  save_model: false
+
+fixmatch:
+  enabled: true
+  threshold: 0.8
+  lambda_u: 1.0
+  mu: 2
+  max_steps_per_epoch: 80
+  named_strong_transforms: []
+  policy_files:
+    - path: fixmatch_geo_candidate_policy.json
+      policy_id: fix_geo_balanced_001
+      method: fixmatch_llm_geo_refined_candidate
+      source: manual_fixmatch_candidate

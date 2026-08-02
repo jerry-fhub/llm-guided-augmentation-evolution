@@ -1,0 +1,9 @@
+generation,source,operation,count,mean_probability,mean_magnitude
+0,heuristic,ColorJitter,1,0.61,0.44
+0,heuristic,GaussianBlur,2,0.5650000000000001,0.335
+0,heuristic,Grayscale,1,0.43,0.45
+0,heuristic,HorizontalFlip,1,0.38,0.23
+0,heuristic,RandomCrop,2,0.79,0.48
+0,heuristic,RandomErasing,2,0.69,0.305
+0,heuristic,Rotation,1,0.44,0.18
+1,pure_evolution_mutation,RandomCrop,2,0.68,0.46

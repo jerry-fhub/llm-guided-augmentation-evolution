@@ -1,0 +1,48 @@
+{
+  "policy_id": "openai_init_001",
+  "source": "openai_initial",
+  "parent_ids": [],
+  "notes": "Conservative EuroSAT initial policy emphasizing rotation/flip invariance and mild color robustness for multispectral-like land-cover imagery, with limited destructive transforms for low-data stability.",
+  "sub_policies": [
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.6,
+        "magnitude": 0.5
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.45
+      }
+    ],
+    [
+      {
+        "name": "VerticalFlip",
+        "probability": 0.35,
+        "magnitude": 0.35
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.35,
+        "magnitude": 0.25
+      }
+    ],
+    [
+      {
+        "name": "RandomResizedCrop",
+        "probability": 0.35,
+        "magnitude": 0.2
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.15,
+        "magnitude": 0.15
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0.4,
+    "mixup_alpha": 0.15
+  }
+}

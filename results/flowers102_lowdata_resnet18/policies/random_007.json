@@ -1,0 +1,26 @@
+{
+  "policy_id": "random_007",
+  "source": "random_search",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "Affine",
+        "probability": 0.85,
+        "magnitude": 0.44
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.53,
+        "magnitude": 0.19
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

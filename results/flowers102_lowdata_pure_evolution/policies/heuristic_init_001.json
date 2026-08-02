@@ -1,0 +1,41 @@
+{
+  "policy_id": "heuristic_init_001",
+  "source": "heuristic",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.25,
+        "magnitude": 0.71
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.74,
+        "magnitude": 0.39
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.36,
+        "magnitude": 0.82
+      }
+    ],
+    [
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.52,
+        "magnitude": 0.4
+      },
+      {
+        "name": "RandomResizedCrop",
+        "probability": 0.49,
+        "magnitude": 0.34
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.21,
+    "cutmix_alpha": 0.47
+  }
+}

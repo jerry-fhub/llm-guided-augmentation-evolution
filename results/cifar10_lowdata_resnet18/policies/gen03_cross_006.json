@@ -1,0 +1,44 @@
+{
+  "policy_id": "gen03_cross_006",
+  "source": "heuristic_crossover",
+  "parent_ids": [
+    "gen01_mut_001",
+    "gen01_mut_001"
+  ],
+  "notes": "Combined sub-policies from gen01_mut_001 and gen01_mut_001.",
+  "sub_policies": [
+    [
+      {
+        "name": "GaussianBlur",
+        "probability": 0.53,
+        "magnitude": 0.79
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.57,
+        "magnitude": 0.34
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.42,
+        "magnitude": 0.54
+      }
+    ],
+    [
+      {
+        "name": "Posterize",
+        "probability": 0.87,
+        "magnitude": 0.27
+      },
+      {
+        "name": "Affine",
+        "probability": 0.35,
+        "magnitude": 0.5
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

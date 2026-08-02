@@ -1,0 +1,19 @@
+{
+  "policy_id": "random_007",
+  "source": "random_search",
+  "parent_ids": [],
+  "notes": "",
+  "sub_policies": [
+    [
+      {
+        "name": "Affine",
+        "probability": 0.93,
+        "magnitude": 0.67
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

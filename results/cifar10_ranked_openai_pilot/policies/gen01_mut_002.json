@@ -1,0 +1,52 @@
+{
+  "policy_id": "gen01_mut_002",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "seed_01_conservative",
+    "openai_init_000",
+    "seed_00_standard"
+  ],
+  "notes": "Conservative mutation emphasizing the strongest standard crop/flip prior while reducing over-complex weak-policy transforms. Adds only mild color jitter and rare small erasing for low-data CIFAR-10 regularization; avoids vertical flips and mixing after weak mixed parents underperformed.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.38
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.9,
+        "magnitude": 0.3
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.22,
+        "magnitude": 0.12
+      }
+    ],
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.85,
+        "magnitude": 0.28
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.12,
+        "magnitude": 0.08
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

@@ -1,0 +1,8 @@
+generation,source,operation,count,mean_probability,mean_magnitude
+0,heuristic,ColorJitter,2,0.45999999999999996,0.5599999999999999
+0,heuristic,GaussianBlur,1,0.8,0.72
+0,heuristic,Grayscale,1,0.48,0.5
+0,heuristic,RandomCrop,2,0.595,0.36500000000000005
+1,heuristic_feedback,ColorJitter,1,0.59,0.3
+1,heuristic_feedback,GaussianBlur,2,0.73,0.7749999999999999
+1,heuristic_feedback,Posterize,1,0.81,0.31

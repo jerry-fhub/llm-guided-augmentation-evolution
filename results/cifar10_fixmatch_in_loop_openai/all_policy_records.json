@@ -1,0 +1,551 @@
+[
+  {
+    "policy": {
+      "policy_id": "seed_00_standard",
+      "source": "baseline_seed:standard",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.45
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "method": "fixmatch_ranked_llm_evolution",
+      "stage": "fixmatch",
+      "policy_id": "seed_00_standard",
+      "source": "baseline_seed:standard",
+      "seed": 61,
+      "valid": true,
+      "train_size": 1000,
+      "unlabeled_size": 10000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "threshold": 0.8,
+      "lambda_u": 1.0,
+      "val_accuracy": 0.451,
+      "val_macro_f1": 0.44921477018259415,
+      "runtime_sec": 53.670571088790894,
+      "device": "mps",
+      "final_pseudo_mask_rate": 0.13683035714285716,
+      "final_pseudo_confidence": 0.538328070299966,
+      "best_epoch": 4,
+      "best_pseudo_mask_rate": 0.13683035714285716,
+      "best_pseudo_confidence": 0.538328070299966,
+      "best_unsupervised_loss": 0.03554860470550401,
+      "test_accuracy": 0.4345,
+      "test_macro_f1": 0.4287641265788492,
+      "objective_score": 0.48395384828127425,
+      "policy_complexity": 0.18333333333333332,
+      "distortion_proxy": 0.225
+    },
+    "full_result": {
+      "method": "fixmatch_ranked_llm_evolution",
+      "stage": "fixmatch",
+      "policy_id": "seed_00_standard",
+      "source": "baseline_seed:standard",
+      "seed": 61,
+      "valid": true,
+      "train_size": 1000,
+      "unlabeled_size": 10000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 15,
+      "threshold": 0.8,
+      "lambda_u": 1.0,
+      "val_accuracy": 0.457,
+      "val_macro_f1": 0.43910753638863137,
+      "runtime_sec": 431.87441086769104,
+      "device": "mps",
+      "final_pseudo_mask_rate": 0.0,
+      "final_pseudo_confidence": 0.1242559597087212,
+      "best_epoch": 2,
+      "best_pseudo_mask_rate": 0.1323116987179487,
+      "best_pseudo_confidence": 0.5291947588706628,
+      "best_unsupervised_loss": 0.034463261492932454,
+      "test_accuracy": 0.4345,
+      "test_macro_f1": 0.41449171792261996,
+      "objective_score": 0.4891452695777572,
+      "policy_complexity": 0.18333333333333332,
+      "distortion_proxy": 0.225
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_01_randaugment",
+      "source": "baseline_seed:randaugment",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating randaugment.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.45
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.55,
+            "magnitude": 0.35
+          },
+          {
+            "name": "Rotation",
+            "probability": 0.45,
+            "magnitude": 0.3
+          }
+        ],
+        [
+          {
+            "name": "Affine",
+            "probability": 0.35,
+            "magnitude": 0.3
+          },
+          {
+            "name": "Solarize",
+            "probability": 0.2,
+            "magnitude": 0.3
+          }
+        ],
+        [
+          {
+            "name": "Posterize",
+            "probability": 0.15,
+            "magnitude": 0.25
+          },
+          {
+            "name": "GaussianBlur",
+            "probability": 0.2,
+            "magnitude": 0.2
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "method": "fixmatch_ranked_llm_evolution",
+      "stage": "fixmatch",
+      "policy_id": "seed_01_randaugment",
+      "source": "baseline_seed:randaugment",
+      "seed": 61,
+      "valid": true,
+      "train_size": 1000,
+      "unlabeled_size": 10000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "threshold": 0.8,
+      "lambda_u": 1.0,
+      "val_accuracy": 0.473,
+      "val_macro_f1": 0.46306021710451584,
+      "runtime_sec": 56.41129398345947,
+      "device": "mps",
+      "final_pseudo_mask_rate": 0.1,
+      "final_pseudo_confidence": 0.4966852537223271,
+      "best_epoch": 4,
+      "best_pseudo_mask_rate": 0.1,
+      "best_pseudo_confidence": 0.4966852537223271,
+      "best_unsupervised_loss": 0.032850599927561626,
+      "test_accuracy": 0.4705,
+      "test_macro_f1": 0.4632449054084356,
+      "objective_score": 0.505735546535028,
+      "policy_complexity": 0.7333333333333333,
+      "distortion_proxy": 0.13759375000000001
+    },
+    "full_result": {
+      "method": "fixmatch_ranked_llm_evolution",
+      "stage": "fixmatch",
+      "policy_id": "seed_01_randaugment",
+      "source": "baseline_seed:randaugment",
+      "seed": 61,
+      "valid": true,
+      "train_size": 1000,
+      "unlabeled_size": 10000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 15,
+      "threshold": 0.8,
+      "lambda_u": 1.0,
+      "val_accuracy": 0.593,
+      "val_macro_f1": 0.5933854156696916,
+      "runtime_sec": 433.9453489780426,
+      "device": "mps",
+      "final_pseudo_mask_rate": 0.0,
+      "final_pseudo_confidence": 0.16404080792115286,
+      "best_epoch": 13,
+      "best_pseudo_mask_rate": 0.6440304487179487,
+      "best_pseudo_confidence": 0.8269931521171179,
+      "best_unsupervised_loss": 0.2113682703138926,
+      "test_accuracy": 0.5695,
+      "test_macro_f1": 0.5647467103749273,
+      "objective_score": 0.636161562420242,
+      "policy_complexity": 0.7333333333333333,
+      "distortion_proxy": 0.13759375000000001
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_02_trivialaugment",
+      "source": "baseline_seed:trivialaugment",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating trivialaugment.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.4
+          }
+        ],
+        [
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.55,
+            "magnitude": 0.3
+          }
+        ],
+        [
+          {
+            "name": "Rotation",
+            "probability": 0.4,
+            "magnitude": 0.25
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "method": "fixmatch_ranked_llm_evolution",
+      "stage": "fixmatch",
+      "policy_id": "seed_02_trivialaugment",
+      "source": "baseline_seed:trivialaugment",
+      "seed": 61,
+      "valid": true,
+      "train_size": 1000,
+      "unlabeled_size": 10000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "threshold": 0.8,
+      "lambda_u": 1.0,
+      "val_accuracy": 0.431,
+      "val_macro_f1": 0.41130081312901556,
+      "runtime_sec": 56.82811903953552,
+      "device": "mps",
+      "final_pseudo_mask_rate": 0.16651785714285713,
+      "final_pseudo_confidence": 0.5538108331816537,
+      "best_epoch": 4,
+      "best_pseudo_mask_rate": 0.16651785714285713,
+      "best_pseudo_confidence": 0.5538108331816537,
+      "best_unsupervised_loss": 0.03433200589248112,
+      "test_accuracy": 0.39,
+      "test_macro_f1": 0.36954094961782175,
+      "objective_score": 0.45971302338365455,
+      "policy_complexity": 0.6166666666666667,
+      "distortion_proxy": 0.17243750000000002
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "init_supervised_llm_gen02_mut_005",
+      "source": "supervised_openai_ranked_policy",
+      "parent_ids": [
+        "gen01_cross_003_try2",
+        "gen01_cross_000",
+        "seed_03_standard_mixup"
+      ],
+      "notes": "Strongest baseline reference is standard_mixup, and the strongest ranked policies cluster around crop+flip, light ColorJitter, and Mixup alpha 0.2. Preserve that prior, avoid CutMix and VerticalFlip, and make a narrow mutation by slightly lowering ColorJitter probability while keeping magnitude at the stronger ranked value to reduce low-data over-perturbation without losing color invariance.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.16,
+            "magnitude": 0.12
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "method": "fixmatch_ranked_llm_evolution",
+      "stage": "fixmatch",
+      "policy_id": "init_supervised_llm_gen02_mut_005",
+      "source": "supervised_openai_ranked_policy",
+      "seed": 61,
+      "valid": true,
+      "train_size": 1000,
+      "unlabeled_size": 10000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 4,
+      "threshold": 0.8,
+      "lambda_u": 1.0,
+      "val_accuracy": 0.465,
+      "val_macro_f1": 0.4516480339175379,
+      "runtime_sec": 57.068355083465576,
+      "device": "mps",
+      "final_pseudo_mask_rate": 0.15446428571428572,
+      "final_pseudo_confidence": 0.545628069128309,
+      "best_epoch": 4,
+      "best_pseudo_mask_rate": 0.15446428571428572,
+      "best_pseudo_confidence": 0.545628069128309,
+      "best_unsupervised_loss": 0.03549933337739536,
+      "test_accuracy": 0.4495,
+      "test_macro_f1": 0.42791430401347236,
+      "objective_score": 0.49914157604673637,
+      "policy_complexity": 0.2125,
+      "distortion_proxy": 0.11402666666666667
+    },
+    "full_result": {
+      "method": "fixmatch_ranked_llm_evolution",
+      "stage": "fixmatch",
+      "policy_id": "init_supervised_llm_gen02_mut_005",
+      "source": "supervised_openai_ranked_policy",
+      "seed": 61,
+      "valid": true,
+      "train_size": 1000,
+      "unlabeled_size": 10000,
+      "val_size": 1000,
+      "test_size": 2000,
+      "epochs": 15,
+      "threshold": 0.8,
+      "lambda_u": 1.0,
+      "val_accuracy": 0.1,
+      "val_macro_f1": 0.01818181818181818,
+      "runtime_sec": 434.9369831085205,
+      "device": "mps",
+      "final_pseudo_mask_rate": 0.0,
+      "final_pseudo_confidence": 0.1205473733253968,
+      "best_epoch": 1,
+      "best_pseudo_mask_rate": 0.0035056089743589745,
+      "best_pseudo_confidence": 0.23504985907138923,
+      "best_unsupervised_loss": 0.0008359828744477665,
+      "test_accuracy": 0.0975,
+      "test_macro_f1": 0.01776765375854214,
+      "objective_score": 0.0994642787878788,
+      "policy_complexity": 0.2125,
+      "distortion_proxy": 0.11402666666666667
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "fm_gen01_cross_000",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_00_standard",
+        "init_supervised_llm_gen02_mut_005",
+        "seed_01_randaugment"
+      ],
+      "notes": "FixMatch strong-branch mutation using full-eval randaugment as primary prior, but tempered to reduce pseudo-label noise: keep crop/flip, add mild color/geometric/intensity perturbations, and disable Mixup/CutMix.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.4
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.32,
+            "magnitude": 0.18
+          }
+        ],
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.4
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "Rotation",
+            "probability": 0.22,
+            "magnitude": 0.16
+          },
+          {
+            "name": "Solarize",
+            "probability": 0.1,
+            "magnitude": 0.18
+          }
+        ],
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.4
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "Affine",
+            "probability": 0.16,
+            "magnitude": 0.14
+          },
+          {
+            "name": "GaussianBlur",
+            "probability": 0.1,
+            "magnitude": 0.1
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 1,
+    "validation_ok": false,
+    "validation_errors": [
+      "Sub-policy 1 has too many ops: 4",
+      "Sub-policy 2 has too many ops: 4"
+    ],
+    "validation_warnings": [],
+    "rough_result": null,
+    "full_result": null,
+    "status": "invalid"
+  },
+  {
+    "policy": {
+      "policy_id": "fm_gen01_mut_001",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_00_standard",
+        "init_supervised_llm_gen02_mut_005",
+        "seed_01_randaugment"
+      ],
+      "notes": "FixMatch strong-branch mutation using fixmatch_randaugment as primary prior: keep crop/flip and moderate RA-style color/geometric signal, but lower destructive solarize/posterize/blur probabilities to protect pseudo-label quality; mixup/cutmix disabled.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.42
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.42,
+            "magnitude": 0.24
+          },
+          {
+            "name": "Rotation",
+            "probability": 0.32,
+            "magnitude": 0.2
+          },
+          {
+            "name": "Affine",
+            "probability": 0.22,
+            "magnitude": 0.18
+          },
+          {
+            "name": "Solarize",
+            "probability": 0.1,
+            "magnitude": 0.18
+          },
+          {
+            "name": "GaussianBlur",
+            "probability": 0.1,
+            "magnitude": 0.12
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 1,
+    "validation_ok": false,
+    "validation_errors": [
+      "Sub-policy 0 has too many ops: 7"
+    ],
+    "validation_warnings": [],
+    "rough_result": null,
+    "full_result": null,
+    "status": "invalid"
+  }
+]

@@ -1,0 +1,7 @@
+method,val_accuracy_mean,val_accuracy_std,val_accuracy_count,val_macro_f1_mean,val_macro_f1_std,val_macro_f1_count,test_accuracy_mean,test_accuracy_std,test_accuracy_count,test_macro_f1_mean,test_macro_f1_std,test_macro_f1_count,runtime_sec_mean,runtime_sec_std,runtime_sec_count
+none,0.424,,1,0.4185579187145353,,1,0.4065,,1,0.3976470724090447,,1,31.80767798423767,,1
+randaugment,0.433,,1,0.4045047959192313,,1,0.4435,,1,0.4072408977429361,,1,32.36139106750488,,1
+standard,0.43,,1,0.4398748172047201,,1,0.41,,1,0.408257008070665,,1,31.39149785041809,,1
+standard_cutmix,0.466,,1,0.4625247691914294,,1,0.4825,,1,0.469652845315191,,1,31.51024103164673,,1
+standard_mixup,0.474,,1,0.4581421707376097,,1,0.485,,1,0.4629617666554119,,1,31.531550884246823,,1
+trivialaugment,0.397,,1,0.382677815537622,,1,0.3975,,1,0.3837960590843182,,1,31.649296045303345,,1

@@ -1,0 +1,31 @@
+{
+  "policy_id": "seed_05_conservative",
+  "source": "baseline_seed:conservative",
+  "parent_ids": [],
+  "notes": "Baseline-seeded parent approximating conservative.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.3
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.25,
+        "magnitude": 0.15
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

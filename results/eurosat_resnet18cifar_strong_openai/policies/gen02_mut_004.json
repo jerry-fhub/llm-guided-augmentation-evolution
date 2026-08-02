@@ -1,0 +1,47 @@
+{
+  "policy_id": "gen02_mut_004",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "seed_02_standard_color",
+    "gen01_mut_002",
+    "seed_03_standard_erasing"
+  ],
+  "notes": "Mutation from the strongest erasing/color/crop evidence while respecting the baseline_reference showing no augmentation is strongest. Keeps the successful EuroSAT prior of mild crop plus bidirectional flips, trims crop probability/magnitude slightly below the best erasing baseline to reduce low-data distortion, and retains only rare light erasing as the specific regularizer that ranked best; color jitter is reduced to a very small optional spectral perturbation rather than a main branch.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 0.85,
+        "magnitude": 0.22
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "VerticalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      }
+    ],
+    [
+      {
+        "name": "RandomErasing",
+        "probability": 0.07,
+        "magnitude": 0.07
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.08,
+        "magnitude": 0.05
+      }
+    ]
+  ],
+  "mixing": {
+    "cutmix_alpha": 0.0,
+    "mixup_alpha": 0.0
+  }
+}

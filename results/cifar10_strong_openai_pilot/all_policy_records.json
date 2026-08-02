@@ -1,0 +1,5422 @@
+[
+  {
+    "policy": {
+      "policy_id": "seed_00_standard",
+      "source": "baseline_seed:standard",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.45
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.135,
+      "val_macro_f1": 0.050706722605134355,
+      "val_confusion_matrix": [
+        [
+          18,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          12,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          7,
+          0,
+          0
+        ],
+        [
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          11,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          8,
+          0,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          13,
+          0,
+          0
+        ],
+        [
+          12,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0
+        ],
+        [
+          17,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.0655033874511717,
+          "val_accuracy": 0.13,
+          "val_macro_f1": 0.06868152229392886
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.0860029172897339,
+          "val_accuracy": 0.135,
+          "val_macro_f1": 0.050706722605134355
+        }
+      ],
+      "runtime_sec": 0.8050570487976074,
+      "device": "mps",
+      "policy_id": "seed_00_standard",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.13559567226051347,
+      "policy_complexity": 0.18333333333333332,
+      "distortion_proxy": 0.225
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_01_standard_color",
+      "source": "baseline_seed:standard_color",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard_color.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.35
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.3,
+            "magnitude": 0.16
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.065,
+      "val_macro_f1": 0.02425873958537275,
+      "val_confusion_matrix": [
+        [
+          11,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          17,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          18,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          19,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          19,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          15,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.8937404727935792,
+          "val_accuracy": 0.065,
+          "val_macro_f1": 0.02425873958537275
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.6815381002426149,
+          "val_accuracy": 0.065,
+          "val_macro_f1": 0.030680114488210442
+        }
+      ],
+      "runtime_sec": 0.2573518753051758,
+      "device": "mps",
+      "policy_id": "seed_01_standard_color",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.06412487395853728,
+      "policy_complexity": 0.2125,
+      "distortion_proxy": 0.13506666666666667
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_02_standard_erasing",
+      "source": "baseline_seed:standard_erasing",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard_erasing.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.35
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "RandomErasing",
+            "probability": 0.15,
+            "magnitude": 0.1
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.095,
+      "val_macro_f1": 0.017674418604651163,
+      "val_confusion_matrix": [
+        [
+          19,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          18,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          19,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          19,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.9530101203918457,
+          "val_accuracy": 0.06,
+          "val_macro_f1": 0.02860305958132045
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.3718977451324463,
+          "val_accuracy": 0.095,
+          "val_macro_f1": 0.017674418604651163
+        }
+      ],
+      "runtime_sec": 0.23568105697631836,
+      "device": "mps",
+      "policy_id": "seed_02_standard_erasing",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.09364119186046511,
+      "policy_complexity": 0.2125,
+      "distortion_proxy": 0.12341666666666666
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_03_standard_mixup",
+      "source": "baseline_seed:standard_mixup",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard_mixup.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.18,
+            "magnitude": 0.1
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.2,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.175,
+      "val_macro_f1": 0.0786353626174553,
+      "val_confusion_matrix": [
+        [
+          12,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          10,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          12,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          13,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          16,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          19,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          11,
+          9,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.820893907546997,
+          "val_accuracy": 0.175,
+          "val_macro_f1": 0.0786353626174553
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.897119870185852,
+          "val_accuracy": 0.16,
+          "val_macro_f1": 0.0833346579980607
+        }
+      ],
+      "runtime_sec": 0.2675631046295166,
+      "device": "mps",
+      "policy_id": "seed_03_standard_mixup",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.1791950362617455,
+      "policy_complexity": 0.22749999999999998,
+      "distortion_proxy": 0.15356666666666668
+    },
+    "full_result": {
+      "val_accuracy": 0.205,
+      "val_macro_f1": 0.13881512605042015,
+      "val_confusion_matrix": [
+        [
+          12,
+          0,
+          5,
+          0,
+          0,
+          0,
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          6,
+          3,
+          4,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          8,
+          0,
+          1,
+          0,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          1,
+          4,
+          0,
+          2,
+          0,
+          9,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          4,
+          0,
+          4,
+          0,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          4,
+          0,
+          1,
+          0,
+          14,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          4,
+          0,
+          13,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          7,
+          0,
+          2,
+          0,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          4,
+          1,
+          0,
+          0,
+          0,
+          3,
+          0,
+          1,
+          1
+        ],
+        [
+          4,
+          4,
+          5,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.2130192279815675,
+          "val_accuracy": 0.14,
+          "val_macro_f1": 0.08323232323232324
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.9641690421104432,
+          "val_accuracy": 0.18,
+          "val_macro_f1": 0.11592922994647936
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.9314607620239257,
+          "val_accuracy": 0.205,
+          "val_macro_f1": 0.13881512605042015
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.2717484092712403,
+          "val_accuracy": 0.195,
+          "val_macro_f1": 0.12571312427409986
+        },
+        {
+          "epoch": 5,
+          "train_loss": 1.539421763420105,
+          "val_accuracy": 0.18,
+          "val_macro_f1": 0.1045241647383591
+        }
+      ],
+      "runtime_sec": 0.5530779361724854,
+      "device": "mps",
+      "test_accuracy": 0.184,
+      "test_macro_f1": 0.12611511408192383,
+      "test_confusion_matrix": [
+        [
+          26,
+          3,
+          18,
+          0,
+          2,
+          0,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          14,
+          4,
+          0,
+          0,
+          0,
+          11,
+          0,
+          3,
+          1
+        ],
+        [
+          13,
+          2,
+          11,
+          0,
+          12,
+          0,
+          13,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          4,
+          11,
+          0,
+          3,
+          0,
+          26,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          0,
+          8,
+          0,
+          6,
+          1,
+          16,
+          0,
+          0,
+          0
+        ],
+        [
+          7,
+          2,
+          17,
+          0,
+          7,
+          0,
+          15,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          8,
+          0,
+          10,
+          0,
+          33,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          7,
+          20,
+          0,
+          3,
+          0,
+          15,
+          0,
+          0,
+          0
+        ],
+        [
+          35,
+          1,
+          14,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          2
+        ],
+        [
+          14,
+          14,
+          13,
+          0,
+          0,
+          2,
+          10,
+          0,
+          1,
+          2
+        ]
+      ],
+      "policy_id": "seed_03_standard_mixup",
+      "stage": "full",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 5,
+      "objective_score": 0.215213012605042,
+      "policy_complexity": 0.22749999999999998,
+      "distortion_proxy": 0.15356666666666668
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_04_standard_cutmix",
+      "source": "baseline_seed:standard_cutmix",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating standard_cutmix.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.4
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.15,
+      "val_macro_f1": 0.07269071508201944,
+      "val_confusion_matrix": [
+        [
+          10,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          7,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          0
+        ],
+        [
+          4,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          14,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          18,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          17,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          19,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19,
+          0,
+          0
+        ],
+        [
+          7,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          11,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          18,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.966821322441101,
+          "val_accuracy": 0.15,
+          "val_macro_f1": 0.07269071508201944
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.3245676136016846,
+          "val_accuracy": 0.15,
+          "val_macro_f1": 0.07468871252204586
+        }
+      ],
+      "runtime_sec": 0.21801280975341797,
+      "device": "mps",
+      "policy_id": "seed_04_standard_cutmix",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.15238907150820194,
+      "policy_complexity": 0.21333333333333332,
+      "distortion_proxy": 0.24000000000000002
+    },
+    "full_result": {
+      "val_accuracy": 0.21,
+      "val_macro_f1": 0.12542627778528326,
+      "val_confusion_matrix": [
+        [
+          18,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          2,
+          0,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          2,
+          0,
+          2,
+          0,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          1,
+          0,
+          1,
+          0,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          0,
+          4,
+          0,
+          11,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          2,
+          0,
+          1,
+          0,
+          13,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          1,
+          0,
+          2,
+          0,
+          15,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          0,
+          1,
+          0,
+          2,
+          1,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          15,
+          2,
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          2,
+          0,
+          0,
+          0,
+          1,
+          4,
+          0,
+          0,
+          1
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.24211088180542,
+          "val_accuracy": 0.15,
+          "val_macro_f1": 0.10429715492265612
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.918711814880371,
+          "val_accuracy": 0.185,
+          "val_macro_f1": 0.105910633213859
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.892144627571106,
+          "val_accuracy": 0.2,
+          "val_macro_f1": 0.11113201629394978
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.6929225063323974,
+          "val_accuracy": 0.195,
+          "val_macro_f1": 0.11127946098697086
+        },
+        {
+          "epoch": 5,
+          "train_loss": 1.2764100551605224,
+          "val_accuracy": 0.21,
+          "val_macro_f1": 0.12542627778528326
+        }
+      ],
+      "runtime_sec": 0.5054528713226318,
+      "device": "mps",
+      "test_accuracy": 0.21,
+      "test_macro_f1": 0.1303166195422545,
+      "test_confusion_matrix": [
+        [
+          46,
+          1,
+          1,
+          0,
+          1,
+          1,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          24,
+          4,
+          0,
+          0,
+          0,
+          1,
+          11,
+          0,
+          0,
+          1
+        ],
+        [
+          19,
+          0,
+          8,
+          0,
+          9,
+          0,
+          15,
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          1,
+          7,
+          0,
+          3,
+          1,
+          25,
+          0,
+          0,
+          0
+        ],
+        [
+          11,
+          0,
+          5,
+          0,
+          10,
+          1,
+          12,
+          0,
+          1,
+          0
+        ],
+        [
+          21,
+          0,
+          5,
+          0,
+          0,
+          1,
+          21,
+          0,
+          0,
+          0
+        ],
+        [
+          7,
+          1,
+          2,
+          0,
+          8,
+          1,
+          35,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          2,
+          5,
+          0,
+          3,
+          1,
+          16,
+          0,
+          0,
+          0
+        ],
+        [
+          52,
+          0,
+          1,
+          0,
+          3,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          39,
+          3,
+          1,
+          0,
+          0,
+          2,
+          10,
+          0,
+          0,
+          1
+        ]
+      ],
+      "policy_id": "seed_04_standard_cutmix",
+      "stage": "full",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 5,
+      "objective_score": 0.21766262777852832,
+      "policy_complexity": 0.21333333333333332,
+      "distortion_proxy": 0.24000000000000002
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "seed_05_conservative",
+      "source": "baseline_seed:conservative",
+      "parent_ids": [],
+      "notes": "Baseline-seeded parent approximating conservative.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.3
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.25,
+            "magnitude": 0.15
+          }
+        ]
+      ],
+      "mixing": {
+        "mixup_alpha": 0.0,
+        "cutmix_alpha": 0.0
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.175,
+      "val_macro_f1": 0.11475475475475475,
+      "val_confusion_matrix": [
+        [
+          16,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          3,
+          8,
+          0,
+          0,
+          0,
+          0,
+          1,
+          8,
+          0,
+          0
+        ],
+        [
+          9,
+          0,
+          2,
+          0,
+          0,
+          0,
+          1,
+          8,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          8,
+          0,
+          0
+        ],
+        [
+          7,
+          0,
+          1,
+          0,
+          0,
+          0,
+          2,
+          10,
+          0,
+          0
+        ],
+        [
+          8,
+          0,
+          2,
+          0,
+          0,
+          0,
+          2,
+          8,
+          0,
+          0
+        ],
+        [
+          5,
+          1,
+          1,
+          0,
+          0,
+          0,
+          2,
+          11,
+          0,
+          0
+        ],
+        [
+          8,
+          3,
+          0,
+          0,
+          0,
+          0,
+          2,
+          7,
+          0,
+          0
+        ],
+        [
+          15,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          3,
+          0,
+          0
+        ],
+        [
+          10,
+          2,
+          0,
+          0,
+          0,
+          0,
+          2,
+          6,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.849923973083496,
+          "val_accuracy": 0.17,
+          "val_macro_f1": 0.09787337662337663
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.458224720954895,
+          "val_accuracy": 0.175,
+          "val_macro_f1": 0.11475475475475475
+        }
+      ],
+      "runtime_sec": 0.22371602058410645,
+      "device": "mps",
+      "policy_id": "seed_05_conservative",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.18273485047547547,
+      "policy_complexity": 0.3375,
+      "distortion_proxy": 0.114375
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "openai_init_000",
+      "source": "openai_initial",
+      "parent_ids": [],
+      "notes": "Conservative CIFAR-10 initial policy: geometry-preserving crops/flips with light color and blur regularization; avoids vertical flips.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomResizedCrop",
+            "probability": 0.9,
+            "magnitude": 0.18
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.12
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.55,
+            "magnitude": 0.2
+          },
+          {
+            "name": "Rotation",
+            "probability": 0.25,
+            "magnitude": 0.08
+          }
+        ],
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 0.65,
+            "magnitude": 0.12
+          },
+          {
+            "name": "GaussianBlur",
+            "probability": 0.15,
+            "magnitude": 0.15
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.25,
+            "magnitude": 0.2
+          },
+          {
+            "name": "Solarize",
+            "probability": 0.1,
+            "magnitude": 0.1
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.6,
+        "mixup_alpha": 0.2
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.205,
+      "val_macro_f1": 0.10545349222111884,
+      "val_confusion_matrix": [
+        [
+          11,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          0,
+          18,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          6,
+          7,
+          0,
+          0,
+          1,
+          0,
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          11,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          0,
+          0,
+          1,
+          0,
+          0,
+          9,
+          0,
+          0
+        ],
+        [
+          0,
+          8,
+          0,
+          0,
+          1,
+          0,
+          0,
+          11,
+          0,
+          0
+        ],
+        [
+          1,
+          13,
+          0,
+          0,
+          1,
+          0,
+          0,
+          5,
+          0,
+          0
+        ],
+        [
+          1,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          11,
+          0,
+          0
+        ],
+        [
+          11,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.1415105438232422,
+          "val_accuracy": 0.205,
+          "val_macro_f1": 0.10545349222111884
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.369404172897339,
+          "val_accuracy": 0.115,
+          "val_macro_f1": 0.03816747572815534
+        }
+      ],
+      "runtime_sec": 0.24312710762023926,
+      "device": "mps",
+      "policy_id": "openai_init_000",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.2073134117221119,
+      "policy_complexity": 0.7933333333333332,
+      "distortion_proxy": 0.23146250000000002
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "openai_init_001",
+      "source": "openai_initial",
+      "parent_ids": [],
+      "notes": "Conservative CIFAR-10 initial policy emphasizing translation/scale invariance, mild color robustness, and occlusion regularization while avoiding vertical flips.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 0.8,
+            "magnitude": 0.15
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.5
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.35,
+            "magnitude": 0.2
+          },
+          {
+            "name": "Rotation",
+            "probability": 0.25,
+            "magnitude": 0.1
+          }
+        ],
+        [
+          {
+            "name": "RandomResizedCrop",
+            "probability": 0.3,
+            "magnitude": 0.25
+          },
+          {
+            "name": "GaussianBlur",
+            "probability": 0.15,
+            "magnitude": 0.12
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.25,
+            "magnitude": 0.2
+          },
+          {
+            "name": "Affine",
+            "probability": 0.25,
+            "magnitude": 0.15
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.5,
+        "mixup_alpha": 0.2
+      }
+    },
+    "generation": 0,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.205,
+      "val_macro_f1": 0.11344279077092682,
+      "val_confusion_matrix": [
+        [
+          13,
+          4,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          14,
+          0,
+          0,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          3,
+          0,
+          0,
+          11,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          8,
+          0,
+          0,
+          6,
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          5,
+          1,
+          0,
+          0,
+          10,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          2,
+          5,
+          0,
+          0,
+          7,
+          0,
+          0,
+          6,
+          0,
+          0
+        ],
+        [
+          1,
+          5,
+          0,
+          0,
+          10,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          12,
+          0,
+          0,
+          3,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          11,
+          5,
+          0,
+          0,
+          3,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          5,
+          7,
+          0,
+          0,
+          5,
+          0,
+          0,
+          3,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.253714075088501,
+          "val_accuracy": 0.205,
+          "val_macro_f1": 0.11344279077092682
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.0943218803405763,
+          "val_accuracy": 0.17,
+          "val_macro_f1": 0.0845876415541458
+        }
+      ],
+      "runtime_sec": 0.22127008438110352,
+      "device": "mps",
+      "policy_id": "openai_init_001",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.20824565407709267,
+      "policy_complexity": 0.7858333333333333,
+      "distortion_proxy": 0.22557499999999997
+    },
+    "full_result": {
+      "val_accuracy": 0.22,
+      "val_macro_f1": 0.1326412796796072,
+      "val_confusion_matrix": [
+        [
+          17,
+          0,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          11,
+          6,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          1,
+          4,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          11,
+          2,
+          1,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          4,
+          2,
+          0,
+          0,
+          0,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          5,
+          4,
+          0,
+          0,
+          0,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0,
+          0
+        ],
+        [
+          7,
+          1,
+          5,
+          0,
+          0,
+          0,
+          6,
+          1,
+          0,
+          0
+        ],
+        [
+          14,
+          4,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          13,
+          4,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.5636433029174805,
+          "val_accuracy": 0.105,
+          "val_macro_f1": 0.046236168581542156
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.2516197395324706,
+          "val_accuracy": 0.155,
+          "val_macro_f1": 0.07756963978162135
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.6632860779762269,
+          "val_accuracy": 0.21,
+          "val_macro_f1": 0.10672987143575378
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.7060493755340576,
+          "val_accuracy": 0.22,
+          "val_macro_f1": 0.1326412796796072
+        },
+        {
+          "epoch": 5,
+          "train_loss": 1.808456645011902,
+          "val_accuracy": 0.185,
+          "val_macro_f1": 0.09968283162330435
+        }
+      ],
+      "runtime_sec": 0.5423188209533691,
+      "device": "mps",
+      "test_accuracy": 0.196,
+      "test_macro_f1": 0.10502940546043996,
+      "test_confusion_matrix": [
+        [
+          45,
+          4,
+          3,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          24,
+          11,
+          1,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          23,
+          4,
+          6,
+          0,
+          0,
+          0,
+          18,
+          0,
+          0,
+          0
+        ],
+        [
+          14,
+          10,
+          8,
+          0,
+          0,
+          0,
+          17,
+          0,
+          0,
+          0
+        ],
+        [
+          18,
+          2,
+          5,
+          0,
+          0,
+          0,
+          15,
+          0,
+          0,
+          0
+        ],
+        [
+          19,
+          5,
+          10,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          6,
+          4,
+          0,
+          0,
+          0,
+          35,
+          0,
+          0,
+          0
+        ],
+        [
+          17,
+          8,
+          9,
+          0,
+          0,
+          0,
+          12,
+          1,
+          0,
+          0
+        ],
+        [
+          53,
+          1,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          40,
+          7,
+          4,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0
+        ]
+      ],
+      "policy_id": "openai_init_001",
+      "stage": "full",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 5,
+      "objective_score": 0.22516550296796073,
+      "policy_complexity": 0.7858333333333333,
+      "distortion_proxy": 0.22557499999999997
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_cross_000",
+      "source": "openai_ranked_crossover",
+      "parent_ids": [
+        "seed_05_conservative",
+        "openai_init_000",
+        "openai_init_001"
+      ],
+      "notes": "Crossover keeps the strongest baseline prior from standard_mixup and the best ranked parents: mild crop/flip with light color regularization. Drops stacked CutMix+Mixup and heavier blur/erasing/affine branches from complex parents because evidence favors simple Mixup over CutMix and weak parents show erasing/color-only variants underperform.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.22,
+            "magnitude": 0.12
+          }
+        ],
+        [
+          {
+            "name": "Rotation",
+            "probability": 0.15,
+            "magnitude": 0.08
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0.22
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.21,
+      "val_macro_f1": 0.12002334910720429,
+      "val_confusion_matrix": [
+        [
+          0,
+          3,
+          10,
+          0,
+          0,
+          0,
+          0,
+          0,
+          7,
+          0
+        ],
+        [
+          0,
+          11,
+          1,
+          0,
+          0,
+          2,
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          3,
+          16,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          4,
+          13,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          15,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          6,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          6,
+          11,
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          8,
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          3,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13,
+          0
+        ],
+        [
+          0,
+          13,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.2567459106445313,
+          "val_accuracy": 0.21,
+          "val_macro_f1": 0.12002334910720429
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.4398988056182862,
+          "val_accuracy": 0.21,
+          "val_macro_f1": 0.11660331538380317
+        }
+      ],
+      "runtime_sec": 0.25487303733825684,
+      "device": "mps",
+      "policy_id": "gen01_cross_000",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.21768448491072043,
+      "policy_complexity": 0.38316666666666666,
+      "distortion_proxy": 0.13459000000000002
+    },
+    "full_result": {
+      "val_accuracy": 0.2,
+      "val_macro_f1": 0.13635185145985917,
+      "val_confusion_matrix": [
+        [
+          12,
+          1,
+          5,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          4,
+          7,
+          4,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          1,
+          7,
+          0,
+          1,
+          0,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          4,
+          5,
+          0,
+          1,
+          0,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          3,
+          4,
+          0,
+          3,
+          0,
+          8,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          4,
+          4,
+          0,
+          1,
+          0,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          3,
+          2,
+          0,
+          4,
+          0,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          7,
+          0,
+          2,
+          0,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          5,
+          2,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1
+        ],
+        [
+          2,
+          6,
+          6,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          1
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.17733913898468,
+          "val_accuracy": 0.14,
+          "val_macro_f1": 0.08500542188610084
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.104859046936035,
+          "val_accuracy": 0.175,
+          "val_macro_f1": 0.10611567232256887
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.312667486667633,
+          "val_accuracy": 0.2,
+          "val_macro_f1": 0.13635185145985917
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.6338214731216432,
+          "val_accuracy": 0.18,
+          "val_macro_f1": 0.10658590369620233
+        },
+        {
+          "epoch": 5,
+          "train_loss": 1.9845392513275146,
+          "val_accuracy": 0.155,
+          "val_macro_f1": 0.09642857142857143
+        }
+      ],
+      "runtime_sec": 0.5294439792633057,
+      "device": "mps",
+      "test_accuracy": 0.178,
+      "test_macro_f1": 0.12222063738157651,
+      "test_confusion_matrix": [
+        [
+          23,
+          8,
+          20,
+          0,
+          1,
+          0,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          19,
+          9,
+          0,
+          2,
+          0,
+          5,
+          0,
+          1,
+          0
+        ],
+        [
+          19,
+          7,
+          9,
+          0,
+          5,
+          0,
+          10,
+          0,
+          1,
+          0
+        ],
+        [
+          7,
+          8,
+          10,
+          0,
+          2,
+          0,
+          22,
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          3,
+          7,
+          0,
+          4,
+          0,
+          12,
+          0,
+          1,
+          1
+        ],
+        [
+          8,
+          6,
+          20,
+          0,
+          3,
+          0,
+          11,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          5,
+          6,
+          0,
+          7,
+          0,
+          31,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          8,
+          22,
+          0,
+          2,
+          0,
+          11,
+          0,
+          0,
+          0
+        ],
+        [
+          35,
+          5,
+          13,
+          0,
+          0,
+          0,
+          3,
+          0,
+          1,
+          0
+        ],
+        [
+          9,
+          22,
+          17,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0,
+          2
+        ]
+      ],
+      "policy_id": "gen01_cross_000",
+      "stage": "full",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 5,
+      "objective_score": 0.20931733514598594,
+      "policy_complexity": 0.38316666666666666,
+      "distortion_proxy": 0.13459000000000002
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_mut_001",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_05_conservative",
+        "openai_init_000",
+        "openai_init_001"
+      ],
+      "notes": "Mutation biased toward the strongest baseline prior, standard_mixup: keep mild CIFAR-safe crop/flip and a single sample-mixing mechanism, reduce over-complex stacked policies, and add only light color plus low-probability erasing for low-data robustness.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.34
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.22,
+            "magnitude": 0.12
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.12,
+            "magnitude": 0.12
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0.24
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.185,
+      "val_macro_f1": 0.09598944802350669,
+      "val_confusion_matrix": [
+        [
+          0,
+          6,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          13,
+          0
+        ],
+        [
+          0,
+          19,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          13,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          6,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          11,
+          7,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          15,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          14,
+          4,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          16,
+          3,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          8,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          11,
+          0
+        ],
+        [
+          0,
+          19,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.804102325439453,
+          "val_accuracy": 0.185,
+          "val_macro_f1": 0.09598944802350669
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.9653516912460327,
+          "val_accuracy": 0.135,
+          "val_macro_f1": 0.06597426470588234
+        }
+      ],
+      "runtime_sec": 0.23821687698364258,
+      "device": "mps",
+      "policy_id": "gen01_mut_001",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.19010919480235067,
+      "policy_complexity": 0.38466666666666666,
+      "distortion_proxy": 0.14545000000000002
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_mut_002",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_05_conservative",
+        "openai_init_000",
+        "openai_init_001"
+      ],
+      "notes": "Mutation biased toward the strongest baseline_reference standard_mixup: keep mild RandomCrop/HorizontalFlip and single sample-mixing mechanism, add only light low-probability color and erasing regularization while dropping heavier dual-mixing/geometry stacks from complex parents.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.22,
+            "magnitude": 0.12
+          },
+          {
+            "name": "RandomErasing",
+            "probability": 0.12,
+            "magnitude": 0.08
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0.22
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.19,
+      "val_macro_f1": 0.11136714528331018,
+      "val_confusion_matrix": [
+        [
+          10,
+          1,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          4,
+          10,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          3,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          3,
+          14,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          1,
+          16,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          6,
+          12,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          7,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          4,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          8,
+          4,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          6,
+          9,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.8297613048553467,
+          "val_accuracy": 0.19,
+          "val_macro_f1": 0.11136714528331018
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.3890587043762208,
+          "val_accuracy": 0.185,
+          "val_macro_f1": 0.1316866519747645
+        }
+      ],
+      "runtime_sec": 0.2245497703552246,
+      "device": "mps",
+      "policy_id": "gen01_mut_002",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.196815264528331,
+      "policy_complexity": 0.38316666666666666,
+      "distortion_proxy": 0.13483
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_cross_003",
+      "source": "openai_ranked_crossover",
+      "parent_ids": [
+        "seed_05_conservative",
+        "openai_init_000",
+        "openai_init_001"
+      ],
+      "notes": "Crossover keeps the strongest baseline prior from standard_mixup: mild RandomCrop plus HorizontalFlip with a single Mixup mechanism. It borrows only conservative color/rotation cues from stronger openai parents while dropping stacked CutMix, heavy multi-branch complexity, erasing, blur, affine, solarize, and discouraged flips.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.22,
+            "magnitude": 0.12
+          }
+        ],
+        [
+          {
+            "name": "Rotation",
+            "probability": 0.18,
+            "magnitude": 0.08
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.22
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.2,
+      "val_macro_f1": 0.10801771871539315,
+      "val_confusion_matrix": [
+        [
+          0,
+          6,
+          4,
+          0,
+          0,
+          1,
+          0,
+          0,
+          6,
+          3
+        ],
+        [
+          0,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          9,
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          7,
+          11,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          6,
+          12,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          11,
+          9,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          9,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          14,
+          5,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          8,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          9,
+          0
+        ],
+        [
+          0,
+          18,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.284335994720459,
+          "val_accuracy": 0.2,
+          "val_macro_f1": 0.10801771871539315
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.6130173587799073,
+          "val_accuracy": 0.19,
+          "val_macro_f1": 0.09202627449948483
+        }
+      ],
+      "runtime_sec": 0.2328202724456787,
+      "device": "mps",
+      "policy_id": "gen01_cross_003",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.20647492187153932,
+      "policy_complexity": 0.38316666666666666,
+      "distortion_proxy": 0.13519
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_mut_004",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_05_conservative",
+        "openai_init_000",
+        "openai_init_001"
+      ],
+      "notes": "Mutation from the strongest initial policies toward the baseline-supported standard_mixup prior: retain mild crop/flip geometry and light color robustness, remove stacked CutMix, and reduce high-complexity distortions for low-data CIFAR-10 generalisation.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.28
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.28,
+            "magnitude": 0.12
+          },
+          {
+            "name": "Rotation",
+            "probability": 0.15,
+            "magnitude": 0.06
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.12,
+            "magnitude": 0.14
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.22
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.18,
+      "val_macro_f1": 0.09408757828606995,
+      "val_confusion_matrix": [
+        [
+          1,
+          4,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          0
+        ],
+        [
+          5,
+          12,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          2,
+          6,
+          9,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          1,
+          7,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          3,
+          5,
+          9,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          1,
+          8,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          12,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          9,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6,
+          0
+        ],
+        [
+          3,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          0
+        ],
+        [
+          2,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.0102625036239625,
+          "val_accuracy": 0.18,
+          "val_macro_f1": 0.09408757828606995
+        },
+        {
+          "epoch": 2,
+          "train_loss": 2.1699530410766603,
+          "val_accuracy": 0.14,
+          "val_macro_f1": 0.04849067771530039
+        }
+      ],
+      "runtime_sec": 0.2250537872314453,
+      "device": "mps",
+      "policy_id": "gen01_mut_004",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.18447379782860698,
+      "policy_complexity": 0.5373333333333333,
+      "distortion_proxy": 0.114064
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen01_mut_005",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "seed_05_conservative",
+        "openai_init_000",
+        "openai_init_001"
+      ],
+      "notes": "Mutation from the strongest openai initial policies and the standard_mixup baseline prior: keeps CIFAR-10-safe crop/flip invariance, removes stacked CutMix, lowers policy complexity, and uses only light color/rotation/erasing regularization for low-data generalisation.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.28
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          }
+        ],
+        [
+          {
+            "name": "ColorJitter",
+            "probability": 0.28,
+            "magnitude": 0.14
+          },
+          {
+            "name": "Rotation",
+            "probability": 0.15,
+            "magnitude": 0.06
+          }
+        ],
+        [
+          {
+            "name": "RandomErasing",
+            "probability": 0.18,
+            "magnitude": 0.14
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.18
+      }
+    },
+    "generation": 1,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.185,
+      "val_macro_f1": 0.11208373229244373,
+      "val_confusion_matrix": [
+        [
+          1,
+          0,
+          10,
+          1,
+          0,
+          0,
+          1,
+          0,
+          7,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          3,
+          0,
+          14,
+          0
+        ],
+        [
+          0,
+          1,
+          15,
+          2,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          13,
+          3,
+          0,
+          0,
+          1,
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          14,
+          3,
+          0,
+          0,
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          13,
+          1,
+          0,
+          0,
+          2,
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          1,
+          10,
+          3,
+          0,
+          0,
+          4,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          11,
+          3,
+          0,
+          0,
+          2,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          5,
+          0,
+          0,
+          0,
+          1,
+          0,
+          13,
+          0
+        ],
+        [
+          0,
+          1,
+          4,
+          3,
+          0,
+          0,
+          2,
+          0,
+          10,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.2787570571899414,
+          "val_accuracy": 0.185,
+          "val_macro_f1": 0.11208373229244373
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.3124300813674927,
+          "val_accuracy": 0.145,
+          "val_macro_f1": 0.06805415359958082
+        }
+      ],
+      "runtime_sec": 0.24294829368591309,
+      "device": "mps",
+      "policy_id": "gen01_mut_005",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.1913580732292444,
+      "policy_complexity": 0.5343333333333333,
+      "distortion_proxy": 0.10962
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_cross_000",
+      "source": "openai_ranked_crossover",
+      "parent_ids": [
+        "openai_init_000",
+        "openai_init_001",
+        "gen01_cross_000"
+      ],
+      "notes": "Crossover preserves the best baseline prior, standard_mixup, and the strongest gen01 parents: standard RandomCrop plus HorizontalFlip with one Mixup mechanism. It keeps only mild color and rotation regularization, slightly increasing Mixup from 0.22 toward the baseline while avoiding CutMix stacking, erasing, blur, affine, solarize, and vertical flips that were associated with weaker or overly complex parents.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.2,
+            "magnitude": 0.12
+          }
+        ],
+        [
+          {
+            "name": "Rotation",
+            "probability": 0.12,
+            "magnitude": 0.08
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0,
+        "mixup_alpha": 0.24
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.1,
+      "val_macro_f1": 0.018518518518518517,
+      "val_confusion_matrix": [
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          19,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          18,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          19,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.5196222591400146,
+          "val_accuracy": 0.075,
+          "val_macro_f1": 0.02985347985347985
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.2735505247116088,
+          "val_accuracy": 0.1,
+          "val_macro_f1": 0.018518518518518517
+        }
+      ],
+      "runtime_sec": 0.25719618797302246,
+      "device": "mps",
+      "policy_id": "gen02_cross_000",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.09748435185185185,
+      "policy_complexity": 0.38466666666666666,
+      "distortion_proxy": 0.1373
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_mut_001",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "openai_init_000",
+        "openai_init_001",
+        "gen01_cross_000"
+      ],
+      "notes": "Mutation of the strongest crossover guided by the baseline_reference: standard_mixup is the strongest prior, so keep a single Mixup mechanism and mild CIFAR-10 crop/flip. Slightly increase Mixup over gen01_cross_000 toward the baseline signal, reduce color jitter to avoid the weak standard_color pattern, and retain only very light rotation as a secondary invariance. Avoids CutMix stacking, erasing, blur, affine, solarize, and vertical flips for low-data generalisation.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.34
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.18,
+            "magnitude": 0.1
+          }
+        ],
+        [
+          {
+            "name": "Rotation",
+            "probability": 0.12,
+            "magnitude": 0.06
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.28
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.135,
+      "val_macro_f1": 0.06951269451269451,
+      "val_confusion_matrix": [
+        [
+          15,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          18,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          9,
+          0,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          13,
+          0,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          0,
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          13,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          4
+        ],
+        [
+          7,
+          0,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          5
+        ],
+        [
+          15,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          15,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0
+        ],
+        [
+          19,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.373060655593872,
+          "val_accuracy": 0.135,
+          "val_macro_f1": 0.06951269451269451
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.6323942518234253,
+          "val_accuracy": 0.125,
+          "val_macro_f1": 0.07181985662221155
+        }
+      ],
+      "runtime_sec": 0.2218761444091797,
+      "device": "mps",
+      "policy_id": "gen02_mut_001",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.13740564445126946,
+      "policy_complexity": 0.38766666666666666,
+      "distortion_proxy": 0.14797500000000002
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_mut_002",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "openai_init_000",
+        "openai_init_001",
+        "gen01_cross_000"
+      ],
+      "notes": "Mutation from the strongest crossover and standard_mixup prior: keep simple RandomCrop+HorizontalFlip with single Mixup, slightly increase Mixup toward the baseline reference, and soften auxiliary color/rotation to reduce low-data distortion. Avoids CutMix stacking, erasing, blur, affine, solarize, and vertical flips.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.34
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.18,
+            "magnitude": 0.1
+          }
+        ],
+        [
+          {
+            "name": "Rotation",
+            "probability": 0.12,
+            "magnitude": 0.06
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.26
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.185,
+      "val_macro_f1": 0.11895977698128235,
+      "val_confusion_matrix": [
+        [
+          14,
+          1,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          3,
+          7,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          7
+        ],
+        [
+          3,
+          1,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          7
+        ],
+        [
+          7,
+          1,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          3,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          5,
+          5,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5
+        ],
+        [
+          4,
+          2,
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          8,
+          2,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          11,
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0
+        ],
+        [
+          9,
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.7403001594543457,
+          "val_accuracy": 0.185,
+          "val_macro_f1": 0.11895977698128235
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.6842816948890686,
+          "val_accuracy": 0.15,
+          "val_macro_f1": 0.0868022748579819
+        }
+      ],
+      "runtime_sec": 0.2332468032836914,
+      "device": "mps",
+      "policy_id": "gen02_mut_002",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.1924193526981282,
+      "policy_complexity": 0.38616666666666666,
+      "distortion_proxy": 0.14397500000000002
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_cross_003",
+      "source": "openai_ranked_crossover",
+      "parent_ids": [
+        "openai_init_000",
+        "openai_init_001",
+        "gen01_cross_000"
+      ],
+      "notes": "Crossover preserves the strongest standard_mixup prior and the best gen01 child structure: deterministic mild RandomCrop, HorizontalFlip, light ColorJitter, and a small Rotation branch. It slightly increases Mixup from the strongest child toward the baseline_reference winner while avoiding CutMix stacking, erasing, blur, affine, solarize, and vertical flips seen in weaker or overly complex parents.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.32
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.2,
+            "magnitude": 0.12
+          }
+        ],
+        [
+          {
+            "name": "Rotation",
+            "probability": 0.14,
+            "magnitude": 0.08
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.24
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.18,
+      "val_macro_f1": 0.11867832132968532,
+      "val_confusion_matrix": [
+        [
+          1,
+          1,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          14,
+          0
+        ],
+        [
+          2,
+          9,
+          1,
+          0,
+          0,
+          0,
+          0,
+          3,
+          3,
+          2
+        ],
+        [
+          2,
+          3,
+          7,
+          0,
+          0,
+          0,
+          0,
+          3,
+          5,
+          0
+        ],
+        [
+          1,
+          3,
+          7,
+          0,
+          0,
+          0,
+          0,
+          4,
+          5,
+          0
+        ],
+        [
+          3,
+          0,
+          10,
+          0,
+          0,
+          0,
+          0,
+          5,
+          2,
+          0
+        ],
+        [
+          1,
+          7,
+          7,
+          0,
+          0,
+          0,
+          0,
+          3,
+          2,
+          0
+        ],
+        [
+          2,
+          1,
+          7,
+          0,
+          0,
+          0,
+          0,
+          10,
+          0,
+          0
+        ],
+        [
+          3,
+          7,
+          3,
+          0,
+          0,
+          0,
+          0,
+          6,
+          1,
+          0
+        ],
+        [
+          2,
+          2,
+          3,
+          0,
+          0,
+          0,
+          0,
+          1,
+          12,
+          0
+        ],
+        [
+          2,
+          9,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6,
+          1
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.7564341163635253,
+          "val_accuracy": 0.1,
+          "val_macro_f1": 0.060861015056375686
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.879284074306488,
+          "val_accuracy": 0.18,
+          "val_macro_f1": 0.11867832132968532
+        }
+      ],
+      "runtime_sec": 0.24031710624694824,
+      "device": "mps",
+      "policy_id": "gen02_cross_003",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.18749433213296854,
+      "policy_complexity": 0.38466666666666666,
+      "distortion_proxy": 0.1377
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_mut_004",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "openai_init_000",
+        "openai_init_001",
+        "gen01_cross_000"
+      ],
+      "notes": "Mutation from the strongest compact Mixup policy, using standard_mixup as the main prior. Keeps crop/flip and single sample-mixing, slightly strengthens Mixup toward the best baseline, trims rotation probability, and adds only very light color jitter to improve robustness without the heavier CutMix, erasing, blur, affine, or multi-branch complexity seen in weaker evidence.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.34
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.2,
+            "magnitude": 0.1
+          }
+        ],
+        [
+          {
+            "name": "Rotation",
+            "probability": 0.12,
+            "magnitude": 0.06
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.26
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.225,
+      "val_macro_f1": 0.16453937755290937,
+      "val_confusion_matrix": [
+        [
+          17,
+          0,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          4,
+          5,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          4
+        ],
+        [
+          4,
+          0,
+          12,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          1
+        ],
+        [
+          8,
+          1,
+          10,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          13,
+          0,
+          2,
+          0,
+          3,
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          2,
+          11,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          3
+        ],
+        [
+          2,
+          0,
+          14,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          1
+        ],
+        [
+          6,
+          0,
+          11,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2
+        ],
+        [
+          15,
+          0,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          10,
+          1,
+          2,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          6
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.2368757629394533,
+          "val_accuracy": 0.185,
+          "val_macro_f1": 0.09890066922324987
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.6635658359527588,
+          "val_accuracy": 0.225,
+          "val_macro_f1": 0.16453937755290937
+        }
+      ],
+      "runtime_sec": 0.2524747848510742,
+      "device": "mps",
+      "policy_id": "gen02_mut_004",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.23696868775529092,
+      "policy_complexity": 0.38616666666666666,
+      "distortion_proxy": 0.14455
+    },
+    "full_result": {
+      "val_accuracy": 0.195,
+      "val_macro_f1": 0.11209817028756874,
+      "val_confusion_matrix": [
+        [
+          19,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          13,
+          0,
+          1,
+          0,
+          0,
+          1,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          0,
+          0,
+          0,
+          0,
+          1,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          0,
+          2,
+          0,
+          2,
+          1,
+          10,
+          0,
+          0,
+          0
+        ],
+        [
+          10,
+          0,
+          1,
+          0,
+          0,
+          2,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          0,
+          2,
+          0,
+          1,
+          0,
+          14,
+          0,
+          0,
+          0
+        ],
+        [
+          13,
+          0,
+          1,
+          0,
+          0,
+          1,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          19,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          17,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.8112530899047852,
+          "val_accuracy": 0.165,
+          "val_macro_f1": 0.09849962773715185
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.6199678421020507,
+          "val_accuracy": 0.175,
+          "val_macro_f1": 0.12833026622500304
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.9661938095092772,
+          "val_accuracy": 0.185,
+          "val_macro_f1": 0.14011442092736134
+        },
+        {
+          "epoch": 4,
+          "train_loss": 1.76259539604187,
+          "val_accuracy": 0.18,
+          "val_macro_f1": 0.11670484425048318
+        },
+        {
+          "epoch": 5,
+          "train_loss": 1.8832930469512938,
+          "val_accuracy": 0.195,
+          "val_macro_f1": 0.11209817028756874
+        }
+      ],
+      "runtime_sec": 0.5415890216827393,
+      "device": "mps",
+      "test_accuracy": 0.192,
+      "test_macro_f1": 0.09540778668750398,
+      "test_confusion_matrix": [
+        [
+          53,
+          0,
+          0,
+          0,
+          0,
+          1,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          35,
+          0,
+          0,
+          0,
+          0,
+          1,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          26,
+          0,
+          4,
+          0,
+          2,
+          1,
+          18,
+          0,
+          0,
+          0
+        ],
+        [
+          22,
+          1,
+          3,
+          0,
+          1,
+          1,
+          21,
+          0,
+          0,
+          0
+        ],
+        [
+          18,
+          0,
+          4,
+          0,
+          2,
+          2,
+          14,
+          0,
+          0,
+          0
+        ],
+        [
+          31,
+          0,
+          3,
+          0,
+          0,
+          3,
+          11,
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          0,
+          1,
+          0,
+          6,
+          1,
+          34,
+          0,
+          0,
+          0
+        ],
+        [
+          30,
+          2,
+          3,
+          0,
+          1,
+          2,
+          9,
+          0,
+          0,
+          0
+        ],
+        [
+          56,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          52,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0
+        ]
+      ],
+      "policy_id": "gen02_mut_004",
+      "stage": "full",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 5,
+      "objective_score": 0.20172456702875685,
+      "policy_complexity": 0.38616666666666666,
+      "distortion_proxy": 0.14455
+    },
+    "status": "full_evaluated"
+  },
+  {
+    "policy": {
+      "policy_id": "gen02_mut_005_try2",
+      "source": "openai_ranked_mutation",
+      "parent_ids": [
+        "openai_init_000",
+        "openai_init_001",
+        "gen01_cross_000"
+      ],
+      "notes": "Mutation from the strongest gen01 crossover and standard_mixup prior: preserve mild crop/flip plus single Mixup, slightly strengthen Mixup toward the best baseline, reduce color jitter probability to avoid low-data over-distortion, and keep only a very light rotation cue. Avoids CutMix stacking, erasing, blur, affine, solarize, and vertical flips.",
+      "sub_policies": [
+        [
+          {
+            "name": "RandomCrop",
+            "probability": 1.0,
+            "magnitude": 0.34
+          },
+          {
+            "name": "HorizontalFlip",
+            "probability": 0.5,
+            "magnitude": 0.0
+          },
+          {
+            "name": "ColorJitter",
+            "probability": 0.18,
+            "magnitude": 0.1
+          }
+        ],
+        [
+          {
+            "name": "Rotation",
+            "probability": 0.12,
+            "magnitude": 0.06
+          }
+        ]
+      ],
+      "mixing": {
+        "cutmix_alpha": 0.0,
+        "mixup_alpha": 0.28
+      }
+    },
+    "generation": 2,
+    "validation_ok": true,
+    "validation_errors": [],
+    "validation_warnings": [],
+    "rough_result": {
+      "val_accuracy": 0.17,
+      "val_macro_f1": 0.08512342823499727,
+      "val_confusion_matrix": [
+        [
+          14,
+          2,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          13,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          7,
+          6,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          5,
+          5,
+          8,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          7,
+          1,
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          5,
+          11,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          3,
+          14,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          6,
+          7,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          13,
+          5,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          4,
+          13,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.3062993276119232,
+          "val_accuracy": 0.17,
+          "val_macro_f1": 0.08512342823499727
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.7594467544555663,
+          "val_accuracy": 0.11,
+          "val_macro_f1": 0.035624012638230645
+        }
+      ],
+      "runtime_sec": 0.2196657657623291,
+      "device": "mps",
+      "policy_id": "gen02_mut_005_try2",
+      "stage": "rough",
+      "train_size": 200,
+      "val_size": 200,
+      "test_size": 500,
+      "epochs": 2,
+      "objective_score": 0.17396671782349973,
+      "policy_complexity": 0.38766666666666666,
+      "distortion_proxy": 0.14797500000000002
+    },
+    "full_result": null,
+    "status": "rough_evaluated"
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "policy_id": "adaptive_policy_001",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "adaptive_policy_000"
+  ],
+  "notes": "Conservative CIFAR-10 mutation preserving crop/flip baseline while adding mild color and erasing regularization for low-data generalisation.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.38
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.25,
+        "magnitude": 0.18
+      }
+    ],
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.35
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "RandomErasing",
+        "probability": 0.15,
+        "magnitude": 0.12
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.1,
+    "cutmix_alpha": 0
+  }
+}

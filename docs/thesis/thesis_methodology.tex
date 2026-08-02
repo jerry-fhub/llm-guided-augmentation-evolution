@@ -1,0 +1,153 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\onehalfspacing
+
+\title{Methodology\\
+\large LLM-Guided Evolutionary Search for Data Augmentation Policy Optimization in Low-Data Image Recognition}
+\author{Yushun Feng}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\chapter{Methodology}
+
+\section{Research Design}
+
+This dissertation uses an experimental computer science research design. The project develops a reproducible software framework, applies it to low-data image classification tasks, and evaluates whether large language models (LLMs) can function as constrained evolutionary variation operators for data augmentation policy search. The central idea is to separate candidate generation from candidate acceptance. The LLM proposes augmentation policies, while policy validation, model training, validation metrics, and evolutionary selection determine which policies survive.
+
+The methodology is organised around two learning settings. The first setting is supervised low-data classification, where each candidate augmentation policy is evaluated by training a classifier on a small labelled training set. This setting provides a controlled environment for developing the search pipeline and comparing LLM-guided evolution with conventional augmentation baselines. The second setting is semi-supervised learning with FixMatch \citep{sohn2020fixmatch}. This setting is used because FixMatch directly depends on the relationship between weak and strong augmentation views, making the strong augmentation policy a core part of the learning objective.
+
+The final method therefore has three layers. The representation layer defines legal augmentation policies as structured JSON objects. The generation layer uses baseline-seeded ranked LLM mutation and crossover to propose candidate policies. The evaluation layer trains image classifiers under supervised or FixMatch objectives and returns validation feedback to the evolutionary loop.
+
+\section{Datasets and Data Splits}
+
+The main dataset is CIFAR-10 \citep{krizhevsky2009learning}, which is used for rapid and controlled experimentation in natural image classification. Additional supervised experiments use Oxford Flowers102 \citep{nilsback2008automated} and EuroSAT \citep{helber2019eurosat} to test whether augmentation preferences vary across fine-grained and remote-sensing domains. All datasets are publicly available and contain no human-participant research data in the context of this project.
+
+For the supervised CIFAR-10 experiments, the data split uses 100 labelled training images per class, 100 validation images per class, and a 2,000-image test subset. For EuroSAT, the formal supervised setting also uses 100 training images per class, 100 validation images per class, and a 2,000-image test subset. For Flowers102, the experiments use the available training and validation partitions with low-data training emphasis.
+
+For the FixMatch experiments on CIFAR-10, the labelled split uses 100 labelled images per class. The validation split uses 100 images per class. The unlabelled split uses 10,000 additional CIFAR-10 training images without labels during the unsupervised consistency loss. The test subset contains 2,000 images. The split procedure is deterministic and stratified where class labels are available, so that competing methods are evaluated on the same data partitions.
+
+\section{Classifier Architecture and Training Protocol}
+
+The main classifier is a CIFAR-adapted ResNet18 \citep{he2016deep}. The original ImageNet-style ResNet18 stem uses a large $7 \times 7$ convolution with stride 2 and max pooling, which is unnecessarily aggressive for $32 \times 32$ CIFAR images. The project therefore uses a $3 \times 3$ stride-1 stem and removes the initial max pooling layer for CIFAR-10 experiments. This keeps the backbone simple and widely recognisable while making it more suitable for low-resolution images.
+
+The supervised experiments use AdamW optimisation, cross-entropy loss, and a compact epoch budget so that multiple candidate policies can be evaluated within the available local compute budget. The formal strong CIFAR-10 runs use 15 epochs. The EuroSAT strong runs use 12 epochs. The project records validation accuracy, validation macro-F1, test accuracy, test macro-F1, runtime, and policy metadata for each method.
+
+The local compute environment is Apple Silicon with the PyTorch MPS backend. This constraint is important for interpreting the results. The experiments are designed for repeatable master-level research under a local compute budget. External SOTA values are used as context, while the main empirical claims are based on local baselines trained under the same codebase, splits, model, and epoch budget.
+
+\section{Augmentation Policy Representation}
+
+Each augmentation policy is represented as a JSON genotype. A policy consists of one or more sub-policies. Each sub-policy contains a short sequence of operations, and each operation has three required fields:
+
+\begin{itemize}[leftmargin=*]
+    \item \texttt{name}: the augmentation operation selected from an allowed whitelist.
+    \item \texttt{probability}: the probability of applying the operation.
+    \item \texttt{magnitude}: a normalised transformation strength.
+\end{itemize}
+
+Policies may also contain a \texttt{mixing} field with \texttt{mixup\_alpha} and \texttt{cutmix\_alpha}. This allows conventional sample-mixing baselines such as Mixup \citep{zhang2018mixup} and CutMix \citep{yun2019cutmix} to be represented in the same policy format as LLM-generated candidates.
+
+The operation whitelist includes common geometric and photometric transformations such as random crop, horizontal flip, rotation, affine transformation, colour jitter, grayscale conversion, Gaussian blur, random erasing, and related safe image augmentations. The search space is intentionally constrained. The LLM generates policies inside a machine-readable interface, and the local code decides whether the policy is executable.
+
+\section{Policy Validation and Repair}
+
+LLM-generated outputs are passed through a validator before they are evaluated. The validator checks that each operation belongs to the allowed operation set, probabilities lie in legal ranges, magnitudes are bounded, sub-policy lengths respect the local search-space limit, and optional mixing parameters are valid. Invalid policies are rejected or repaired depending on the experiment mode.
+
+The repair layer was added after FixMatch-in-the-loop experiments showed that the LLM could generate semantically reasonable children that exceeded the local constraint on the number of operations per sub-policy. The repair procedure trims overlong sub-policies and preserves the highest-priority operations in the generated order. This keeps the LLM's semantic intent while returning a policy that the local evaluator can execute.
+
+The validator and repair layer are central to the methodology because they make the LLM interface auditable. The LLM has freedom to propose candidate strategies, and the experimental framework enforces legality, reproducibility, and compatibility with the training pipeline.
+
+\section{Baseline Policies}
+
+The initial search population includes strong baseline seeds. The supervised experiments include no augmentation, standard crop/flip augmentation, RandAugment \citep{cubuk2020randaugment}, TrivialAugment \citep{muller2021trivialaugment}, Mixup, CutMix, and dataset-specific conservative variants. Baseline seeding was introduced after early experiments showed that search from weak random policies or unconstrained one-shot LLM outputs was unstable.
+
+Baseline seeding serves two purposes. First, it ensures that the LLM receives useful empirical reference points. Second, it positions the LLM as a semantic local-search operator around known strong augmentation priors. The resulting research question becomes more precise: can the LLM modify, combine, simplify, or specialise strong augmentation priors using ranked validation feedback?
+
+\section{LLM-Guided Evolutionary Search}
+
+The evolutionary search loop maintains a population of policies. Each candidate is evaluated, assigned a fitness score, and ranked. The ranked population is then summarised in the LLM prompt. The prompt includes policy JSON, validation accuracy, macro-F1, objective score, complexity information, distortion warnings, and notes about strong baseline references. The LLM is asked to generate a mutation or crossover child in the same JSON schema.
+
+Two LLM variation operators are used:
+
+\begin{itemize}[leftmargin=*]
+    \item Ranked mutation: the LLM modifies one promising parent while taking account of weaker and stronger policies in the ranked population.
+    \item Ranked crossover: the LLM combines two parent policies and is instructed to preserve useful components while avoiding harmful over-combination.
+\end{itemize}
+
+The implementation uses an OpenAI-compatible API configuration with \texttt{gpt-5.5}. For formal LLM experiments, the system uses structured JSON parsing or chat-based JSON mode depending on endpoint stability. Heuristic fallback is disabled for formal runs so that LLM-generated policies can be clearly distinguished from hand-coded candidates.
+
+\section{Fitness Function and Rough-to-Full Evaluation}
+
+The supervised fitness score combines validation accuracy, macro-F1, policy complexity, and a distortion proxy:
+
+\begin{equation}
+J(p) = A_{\mathrm{val}}(p) + \alpha F1_{\mathrm{val}}(p) - \beta D(p) - \gamma C(p),
+\end{equation}
+
+where $p$ is a candidate policy, $A_{\mathrm{val}}$ is validation accuracy, $F1_{\mathrm{val}}$ is validation macro-F1, $D(p)$ is a distortion proxy, and $C(p)$ is a complexity penalty. The weights $\alpha$, $\beta$, and $\gamma$ are configuration parameters. This objective discourages policies that gain noisy validation accuracy by using excessive transformation strength or unnecessary complexity.
+
+The rough-to-full mechanism controls computational cost. Rough evaluation trains candidate policies with a shorter budget and filters out weak candidates. Full evaluation is reserved for selected top policies and important baseline seeds. The experiments record both rough and full results so that the reliability of rough ranking can be analysed. This is important because augmentation policy evaluation can be noisy, especially in low-data and semi-supervised settings.
+
+\section{Supervised Experimental Procedure}
+
+The supervised procedure has five steps. First, the dataset split and model configuration are fixed. Second, local augmentation baselines are evaluated under the same training budget. Third, the initial population is constructed from baseline seeds and any valid LLM-generated policies. Fourth, the evolutionary loop evaluates the population, prompts the LLM with ranked feedback, validates or repairs generated children, and adds valid candidates to the next generation. Fifth, top candidates and key baseline seeds are fully evaluated and compared on the held-out test set.
+
+The supervised experiments serve two purposes. They test whether baseline-seeded ranked LLM evolution improves over earlier weak LLM search, and they identify how augmentation preferences vary across datasets. CIFAR-10 provides the main positive supervised case, while EuroSAT provides a dataset-sensitivity case in which conservative or no augmentation is highly competitive.
+
+\section{FixMatch Experimental Procedure}
+
+The FixMatch experiments follow the standard weak/strong consistency idea \citep{sohn2020fixmatch}. For a labelled batch $(x_b, y_b)$, the model is trained with supervised cross-entropy. For an unlabelled image $u_b$, a weakly augmented view is used to produce a pseudo-label:
+
+\begin{equation}
+\hat{q}_b = \arg\max_y p_\theta(y \mid \mathrm{weak}(u_b)).
+\end{equation}
+
+The pseudo-label is used when the confidence is above a threshold $\tau$. The strongly augmented view is then trained to match the pseudo-label. The total loss is:
+
+\begin{equation}
+\mathcal{L} = \mathcal{L}_s + \lambda_u \frac{1}{B_u}\sum_b \mathbf{1}(\max q_b \geq \tau)
+H(\hat{q}_b, p_\theta(y \mid \mathrm{strong}(u_b))),
+\end{equation}
+
+where $\mathcal{L}_s$ is supervised loss, $\lambda_u$ controls the unsupervised loss weight, $B_u$ is the unlabelled batch size, and $H$ is cross-entropy. The local experiments use $\tau = 0.8$, $\lambda_u = 1.0$, and a 15-epoch training budget. The threshold is lower than the canonical FixMatch value of 0.95 because the local runs are short and a high threshold produced too few pseudo-labels early in training.
+
+In the FixMatch policy-reuse experiment, the best supervised LLM-evolved CIFAR-10 policy is placed in the strong branch and compared with standard, RandAugment, and TrivialAugment strong branches. In the FixMatch-in-the-loop experiment, candidate strong-branch policies are evaluated directly under FixMatch rough training, ranked, and fed back to the LLM for mutation or crossover.
+
+\section{FixMatch-in-the-Loop LLM Evolution}
+
+The FixMatch-in-the-loop experiment is the most advanced version of the method. Its population contains canonical strong augmentation baselines and the previous supervised LLM-evolved policy. Each policy is evaluated using FixMatch rough training. The ranked feedback includes validation accuracy, macro-F1, pseudo-label mask rate, pseudo-label confidence, unsupervised loss, and policy metadata. The LLM then generates child policies for the strong augmentation branch.
+
+Generated children pass through validation and repair before evaluation. The best repaired children are then evaluated using the full FixMatch budget. This loop tests whether the LLM can use semi-supervised feedback that is specific to pseudo-label consistency and the strong-augmentation branch.
+
+\section{Evaluation Protocol}
+
+The main local evaluation compares all methods within the same codebase, model, data split, and epoch budget. The primary metrics are test accuracy and test macro-F1. Validation accuracy and validation macro-F1 are used during search. For FixMatch, additional diagnostic metrics include pseudo-label mask rate, pseudo-label confidence, and unsupervised loss. Runtime is recorded to support discussion of computational cost.
+
+The local experiments are also interpreted against external SOTA context. AutoAugment and Population Based Augmentation report approximately 98.5\% CIFAR-10 accuracy in full supervised settings with much larger training and search budgets \citep{cubuk2019autoaugment,ho2019population}. UDA and FixMatch report approximately 94.57\% and 94.93\% CIFAR-10 accuracy respectively under 250-label semi-supervised protocols \citep{xie2020uda,sohn2020fixmatch}. Recent methods such as FlexMatch, FreeMatch, and SoftMatch show that semi-supervised learning has continued to improve through better thresholding and pseudo-label selection \citep{zhang2021flexmatch,wang2023freematch,chen2023softmatch}. These papers provide context for the performance gap and motivate future extensions. The dissertation's main empirical comparison is the local strong-baseline comparison, because the external papers use different architectures, training schedules, augmentation spaces, and compute budgets.
+
+\section{Reproducibility and Artefacts}
+
+Each experiment is run from a YAML configuration file. The resolved configuration is saved with the results so that dataset settings, model settings, training hyperparameters, search parameters, and API settings can be inspected later. Policies are saved as JSON files. Result tables are written as CSV files, and visualisations are generated from the saved results. The main artefacts include baseline result tables, evolution records, policy files, combined method summaries, and figures for method comparison, policy behaviour, and experiment timelines.
+
+The core implementation modules are the dataset loaders, augmentation policy classes, transform builder, policy validator, OpenAI policy generator, supervised evolutionary search loop, FixMatch trainer, FixMatch policy runner, and FixMatch evolutionary search loop. This modular design allows future experiments to replace the backbone, add datasets, extend the augmentation search space, or introduce stronger semi-supervised learners.
+
+\section{Methodological Limitations}
+
+The main limitation is compute budget. Many formal runs are single-seed experiments, and several comparisons involve small accuracy differences. The dissertation therefore treats small differences cautiously and emphasises effect size, consistency, and mechanism analysis. A second limitation is that the JSON policy space approximates some canonical augmentation methods, while torchvision's built-in RandAugment and TrivialAugment include implementation details that can be stronger than the local approximation. A third limitation is rough-evaluation noise. Rough evaluation is useful for filtering weak policies, but final ranking can change under full evaluation, especially in FixMatch where pseudo-label dynamics are sensitive to early training behaviour.
+
+These limitations are addressed through careful reporting. The dissertation distinguishes local strong-baseline results from external SOTA context, includes negative and boundary cases, analyses policy validity and repair, and proposes multi-seed experiments, larger FixMatch search budgets, macro-operation search, and stronger pseudo-label diagnostics as future work.
+
+\bibliographystyle{plainnat}
+\bibliography{thesis_intro_background_references}
+
+\end{document}

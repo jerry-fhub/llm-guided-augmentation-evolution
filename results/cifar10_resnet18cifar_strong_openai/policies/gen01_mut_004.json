@@ -1,0 +1,33 @@
+{
+  "policy_id": "gen01_mut_004",
+  "source": "openai_ranked_mutation",
+  "parent_ids": [
+    "seed_01_standard_color",
+    "seed_02_standard_erasing",
+    "seed_03_standard_mixup"
+  ],
+  "notes": "Strongest baseline and ranked parent both favor standard_mixup. Preserves Mixup, avoids CutMix, and makes a conservative improvement by slightly reducing crop strength while keeping only light color jitter.",
+  "sub_policies": [
+    [
+      {
+        "name": "RandomCrop",
+        "probability": 1.0,
+        "magnitude": 0.3
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.0
+      },
+      {
+        "name": "ColorJitter",
+        "probability": 0.2,
+        "magnitude": 0.1
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.2,
+    "cutmix_alpha": 0.0
+  }
+}

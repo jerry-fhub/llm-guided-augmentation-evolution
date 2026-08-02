@@ -1,0 +1,49 @@
+{
+  "policy_id": "gen03_cross_006",
+  "source": "pure_evolution_crossover",
+  "parent_ids": [
+    "gen01_cross_003",
+    "gen01_cross_003"
+  ],
+  "notes": "Combined sub-policies from gen01_cross_003 and gen01_cross_003.",
+  "sub_policies": [
+    [
+      {
+        "name": "GaussianBlur",
+        "probability": 0.93,
+        "magnitude": 0.68
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.61,
+        "magnitude": 0.22
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.69,
+        "magnitude": 0.74
+      }
+    ],
+    [
+      {
+        "name": "GaussianBlur",
+        "probability": 0.51,
+        "magnitude": 0.26
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.92,
+        "magnitude": 0.8
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.89,
+        "magnitude": 0.57
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.21
+  }
+}

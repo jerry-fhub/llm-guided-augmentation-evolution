@@ -1,0 +1,55 @@
+{
+  "policy_id": "gen01_mut_004",
+  "source": "heuristic_feedback",
+  "parent_ids": [
+    "heuristic_init_005"
+  ],
+  "notes": "Mutated from heuristic_init_005 using validation feedback.",
+  "sub_policies": [
+    [
+      {
+        "name": "Affine",
+        "probability": 0.6,
+        "magnitude": 0.77
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.7,
+        "magnitude": 0.25
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.35,
+        "magnitude": 0.67
+      }
+    ],
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.55,
+        "magnitude": 0.56
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.5,
+        "magnitude": 0.85
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.35,
+        "magnitude": 0.5
+      }
+    ],
+    [
+      {
+        "name": "ColorJitter",
+        "probability": 0.9,
+        "magnitude": 0.6
+      }
+    ]
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

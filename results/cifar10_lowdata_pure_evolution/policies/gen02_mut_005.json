@@ -1,0 +1,56 @@
+{
+  "policy_id": "gen02_mut_005",
+  "source": "pure_evolution_mutation",
+  "parent_ids": [
+    "gen01_mut_002"
+  ],
+  "notes": "Mutated from gen01_mut_002 without LLM-style feedback.",
+  "sub_policies": [
+    [
+      {
+        "name": "Rotation",
+        "probability": 0.41,
+        "magnitude": 0.17
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.47,
+        "magnitude": 0.34
+      },
+      {
+        "name": "HorizontalFlip",
+        "probability": 0.4,
+        "magnitude": 0.81
+      }
+    ],
+    [
+      {
+        "name": "GaussianBlur",
+        "probability": 0.53,
+        "magnitude": 0.79
+      },
+      {
+        "name": "Rotation",
+        "probability": 0.57,
+        "magnitude": 0.34
+      },
+      {
+        "name": "GaussianBlur",
+        "probability": 0.34,
+        "magnitude": 0.28
+      }
+    ],
+    [
+      {
+        "name": "Affine",
+        "probability": 0.35,
+        "magnitude": 0.5
+      }
+    ],
+    []
+  ],
+  "mixing": {
+    "mixup_alpha": 0.0,
+    "cutmix_alpha": 0.0
+  }
+}

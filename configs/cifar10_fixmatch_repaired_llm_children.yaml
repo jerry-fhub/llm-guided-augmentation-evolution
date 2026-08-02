@@ -1,0 +1,47 @@
+experiment_name: cifar10_fixmatch_repaired_llm_children
+output_root: results
+seed: 61
+
+dataset:
+  name: cifar10
+  root: data/raw/image_datasets
+  image_size: 32
+  download: true
+  download_url: https://data.brainchip.com/dataset-mirror/cifar10/cifar-10-python.tar.gz
+  archive_filename: cifar-10-python.tar.gz
+  archive_md5: c58f30108f718f92721af3b95e74349a
+  train_per_class: 100
+  val_per_class: 100
+  max_test: 2000
+  max_unlabeled: 10000
+
+training:
+  model_name: resnet18_cifar
+  pretrained: false
+  epochs: 15
+  batch_size: 64
+  eval_batch_size: 128
+  lr: 0.001
+  weight_decay: 0.0001
+  optimizer: adamw
+  device: auto
+  num_workers: 0
+  evaluate_test: true
+  save_model: false
+
+fixmatch:
+  enabled: true
+  threshold: 0.8
+  lambda_u: 1.0
+  mu: 2
+  max_steps_per_epoch: 80
+  named_strong_transforms: []
+  policy_files:
+    - path: results/cifar10_fixmatch_in_loop_openai/repaired_policies/fm_gen01_cross_000_repaired.json
+      policy_id: fm_gen01_cross_000_repaired
+      method: fixmatch_llm_repaired_cross_000
+      source: repaired_openai_ranked_mutation
+    - path: results/cifar10_fixmatch_in_loop_openai/repaired_policies/fm_gen01_mut_001_repaired.json
+      policy_id: fm_gen01_mut_001_repaired
+      method: fixmatch_llm_repaired_mut_001
+      source: repaired_openai_ranked_mutation

@@ -72,8 +72,39 @@ python scripts/generate_augmentation_explainer_assets.py
 
 The smoke suite is lightweight and should run on CPU or Apple Silicon MPS. The real experiments are more expensive because they train image classifiers repeatedly during policy search. A CUDA GPU or Apple Silicon MPS is recommended for the full experiments. CPU execution is possible for small smoke or pilot runs but will be slow for repeated FixMatch or multi-seed experiments.
 
-## API Keys
+## LLM API Configuration
 
 OpenAI-backed policy generation is optional. Offline heuristic generation works without network access or credentials. To run OpenAI-backed configs, set `OPENAI_API_KEY` in your shell or environment. If using the default OpenAI endpoint, leave `OPENAI_BASE_URL` unset.
+
+The repository includes `.env.example` as a template. A real `.env` file is intentionally ignored by Git:
+
+```bash
+cp .env.example .env
+```
+
+Fill in `.env`:
+
+```bash
+OPENAI_API_KEY=
+OPENAI_BASE_URL=
+```
+
+Load the variables before running OpenAI-backed configs:
+
+```bash
+set -a
+source .env
+set +a
+```
+
+If you use an OpenAI-compatible endpoint rather than the default OpenAI endpoint, set `OPENAI_BASE_URL` to that provider's base URL. The model name is controlled by each YAML config under `llm.model`, for example:
+
+```yaml
+llm:
+  provider: openai
+  model: gpt-5.5
+```
+
+See `docs/LLM_CONFIGURATION.md` for the full setup guide and troubleshooting notes.
 
 No key, `.env`, or private endpoint is included in this repository.

@@ -36,6 +36,35 @@ python experiments/run_suite.py --suite smoke
 
 The smoke suite does not require downloaded datasets or an API key.
 
+## LLM API Configuration
+
+LLM-backed policy generation is optional. Offline heuristic experiments and the standard smoke suite run without any API key. Only configs with `llm.provider: openai` call the OpenAI-compatible client.
+
+Create a private local environment file:
+
+```bash
+cp .env.example .env
+```
+
+Edit `.env` locally:
+
+```bash
+OPENAI_API_KEY=
+OPENAI_BASE_URL=
+```
+
+Then load it before running OpenAI-backed experiments:
+
+```bash
+set -a
+source .env
+set +a
+```
+
+If you use the default OpenAI endpoint, leave `OPENAI_BASE_URL` blank or unset. If you use an OpenAI-compatible provider, set `OPENAI_BASE_URL` to that provider's base URL. The model is configured in each YAML file under `llm.model`; change that field if your endpoint uses a different model name.
+
+For more details, including `api_mode: responses` versus `api_mode: chat`, see `docs/LLM_CONFIGURATION.md`.
+
 ## Running Real Experiments
 
 Validate CIFAR-10 loading and the deterministic low-data split:

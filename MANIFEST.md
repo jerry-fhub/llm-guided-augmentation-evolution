@@ -1,7 +1,7 @@
 # Release Manifest
 
-- File count: 932
-- Total size: 30.26 MiB
+- File count: 933
+- Total size: 30.27 MiB
 - Raw datasets: excluded
 - Model checkpoints: excluded
 - API keys and `.env`: excluded
@@ -45,6 +45,7 @@
 - `configs/smoke_pure_evolution.yaml`
 - `configs/smoke_ranked_evolution.yaml`
 - `data/README.md`
+- `docs/LLM_CONFIGURATION.md`
 - `docs/assets/augmentation_examples/README.md`
 - `docs/assets/augmentation_examples/cifar10_core_seed20260802/augmentation_grid.png`
 - `docs/assets/augmentation_examples/cifar10_core_seed20260802/individual/sample_00_ship_cutmix.png`

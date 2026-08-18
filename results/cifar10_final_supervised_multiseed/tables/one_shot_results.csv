@@ -1,0 +1,4 @@
+method,valid,policy_id,source,seed,stage,train_size,val_size,test_size,epochs,val_accuracy,val_macro_f1,runtime_sec,device,test_accuracy,test_macro_f1
+supervised_llm_evolved_best,True,gen02_mut_005,openai_ranked_mutation,47,one_shot,1000,1000,2000,15,0.477,0.469484995182171,31.45910906791687,mps,0.4625,0.4479805647426782
+supervised_llm_evolved_best,True,gen02_mut_005,openai_ranked_mutation,48,one_shot,1000,1000,2000,15,0.473,0.4593655738532546,30.668571949005127,mps,0.4545,0.44143319426903405
+supervised_llm_evolved_best,True,gen02_mut_005,openai_ranked_mutation,49,one_shot,1000,1000,2000,15,0.441,0.4319353136833194,30.808689832687378,mps,0.428,0.4158895746513239

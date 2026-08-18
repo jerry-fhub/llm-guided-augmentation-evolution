@@ -97,25 +97,36 @@ Run FixMatch-in-the-loop LLM evolution:
 python experiments/run_experiment.py --config configs/cifar10_fixmatch_in_loop_openai.yaml --mode fixmatch_evolution
 ```
 
+Run the final multi-seed thesis comparisons:
+
+```bash
+python experiments/run_experiment.py --config configs/cifar10_final_supervised_multiseed.yaml --mode baselines
+python experiments/run_experiment.py --config configs/cifar10_final_supervised_multiseed.yaml --mode policies
+python experiments/run_experiment.py --config configs/cifar10_final_fixmatch_multiseed.yaml --mode fixmatch
+python scripts/summarize_final_experiments.py
+```
+
 OpenAI/LLM configs require `OPENAI_API_KEY` to be set in the local shell or environment. If using the default OpenAI endpoint, leave `OPENAI_BASE_URL` unset. No API key is included in this repository.
 
 ## Current Findings
 
-The current local experiments support a focused claim: baseline-seeded ranked LLM evolution can generate valid and interpretable augmentation policies, but stronger semi-supervised baselines such as FixMatch RandAugment remain ahead under the current student-scale search budget.
+The current local experiments support a focused claim: baseline-seeded ranked LLM evolution can generate valid and interpretable augmentation policies, but stronger semi-supervised baselines such as FixMatch RandAugment remain ahead under the current student-scale search budget. The latest thesis-facing results are based on three matched seeds.
 
 Key CIFAR-10 results:
 
-- Supervised Mixup baseline: 48.50% test accuracy.
-- Best supervised LLM-evolved policy: 48.45% test accuracy and 47.22% macro-F1.
-- FixMatch standard: 56.75% test accuracy.
-- FixMatch reused LLM policy: 59.00% test accuracy.
-- FixMatch repaired in-loop LLM child: 59.05% test accuracy.
-- FixMatch TrivialAugment: 61.50% test accuracy.
-- FixMatch RandAugment: 62.05% test accuracy.
+- Supervised CutMix baseline: 45.70% +/- 1.13% test accuracy.
+- Supervised LLM-evolved policy: 44.83% +/- 1.81% test accuracy.
+- FixMatch RandAugment: 61.85% +/- 1.41% test accuracy.
+- FixMatch reused LLM policy: 57.27% +/- 2.19% test accuracy.
+- FixMatch repaired in-loop LLM child: 48.15% +/- 9.75% test accuracy.
 
 See `RESULTS.md` for a fuller summary and links to visual outputs.
 
 ## Useful Visuals
+
+![Final supervised multi-seed accuracy](results/combined/final_multiseed/supervised_multiseed_accuracy.png)
+
+![Final FixMatch multi-seed accuracy](results/combined/final_multiseed/fixmatch_multiseed_accuracy.png)
 
 ![Augmentation method examples](results/combined/completed_experiment_visuals/augmentation_method_examples_cifar10.png)
 

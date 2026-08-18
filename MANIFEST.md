@@ -1,7 +1,7 @@
 # Release Manifest
 
-- File count: 933
-- Total size: 30.27 MiB
+- File count: 980
+- Total size: 30.93 MiB
 - Raw datasets: excluded
 - Model checkpoints: excluded
 - API keys and `.env`: excluded
@@ -10,12 +10,15 @@
 
 - `.env.example`
 - `.gitignore`
+- `FINAL_Multiseed_Experiment_Report.md`
 - `MANIFEST.md`
 - `README.md`
 - `REPRODUCIBILITY.md`
 - `RESULTS.md`
 - `configs/cifar10_adaptive_llm_evolution.yaml`
 - `configs/cifar10_adaptive_openai_pilot.yaml`
+- `configs/cifar10_final_fixmatch_multiseed.yaml`
+- `configs/cifar10_final_supervised_multiseed.yaml`
 - `configs/cifar10_fixmatch_geo_candidate.yaml`
 - `configs/cifar10_fixmatch_in_loop_openai.yaml`
 - `configs/cifar10_fixmatch_llm_strong_policy.yaml`
@@ -173,6 +176,43 @@
 - `results/cifar10_adaptive_openai_pilot/tables/adaptive_history.csv`
 - `results/cifar10_adaptive_openai_pilot/tables/all_methods_results.csv`
 - `results/cifar10_adaptive_openai_pilot/tables/method_summary.csv`
+- `results/cifar10_final_fixmatch_multiseed/config_resolved.json`
+- `results/cifar10_final_fixmatch_multiseed/figures/fixmatch_accuracy.png`
+- `results/cifar10_final_fixmatch_multiseed/figures/method_comparison_accuracy.png`
+- `results/cifar10_final_fixmatch_multiseed/policies/fix_llm_gen02_mut_005.json`
+- `results/cifar10_final_fixmatch_multiseed/policies/fm_gen01_mut_001_repaired.json`
+- `results/cifar10_final_fixmatch_multiseed/tables/all_methods_results.csv`
+- `results/cifar10_final_fixmatch_multiseed/tables/fixmatch_results.csv`
+- `results/cifar10_final_fixmatch_multiseed/tables/fixmatch_summary.csv`
+- `results/cifar10_final_fixmatch_multiseed/tables/method_summary.csv`
+- `results/cifar10_final_supervised_multiseed/config_resolved.json`
+- `results/cifar10_final_supervised_multiseed/figures/baseline_accuracy.png`
+- `results/cifar10_final_supervised_multiseed/figures/method_comparison_accuracy.png`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_none_seed47.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_none_seed48.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_none_seed49.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_randaugment_seed47.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_randaugment_seed48.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_randaugment_seed49.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_standard_cutmix_seed47.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_standard_cutmix_seed48.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_standard_cutmix_seed49.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_standard_mixup_seed47.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_standard_mixup_seed48.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_standard_mixup_seed49.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_standard_seed47.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_standard_seed48.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_standard_seed49.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_trivialaugment_seed47.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_trivialaugment_seed48.json`
+- `results/cifar10_final_supervised_multiseed/logs/baseline_trivialaugment_seed49.json`
+- `results/cifar10_final_supervised_multiseed/policies/gen02_mut_005.json`
+- `results/cifar10_final_supervised_multiseed/tables/all_methods_results.csv`
+- `results/cifar10_final_supervised_multiseed/tables/baseline_results.csv`
+- `results/cifar10_final_supervised_multiseed/tables/baseline_summary.csv`
+- `results/cifar10_final_supervised_multiseed/tables/method_summary.csv`
+- `results/cifar10_final_supervised_multiseed/tables/one_shot_results.csv`
+- `results/cifar10_final_supervised_multiseed/tables/random_search_results.csv`
 - `results/cifar10_fixmatch_geo_candidate/config_resolved.json`
 - `results/cifar10_fixmatch_geo_candidate/figures/fixmatch_accuracy.png`
 - `results/cifar10_fixmatch_geo_candidate/figures/method_comparison_accuracy.png`
@@ -584,6 +624,12 @@
 - `results/combined/completed_experiment_visuals/updated_project_gantt.png`
 - `results/combined/cross_experiment_method_accuracy.png`
 - `results/combined/final_accuracy_pivot.csv`
+- `results/combined/final_multiseed/combined_multiseed_summary.csv`
+- `results/combined/final_multiseed/fixmatch_mask_vs_accuracy.png`
+- `results/combined/final_multiseed/fixmatch_multiseed_accuracy.png`
+- `results/combined/final_multiseed/fixmatch_multiseed_summary.csv`
+- `results/combined/final_multiseed/supervised_multiseed_accuracy.png`
+- `results/combined/final_multiseed/supervised_multiseed_summary.csv`
 - `results/eurosat_resnet18cifar_strong_openai/all_policy_records.json`
 - `results/eurosat_resnet18cifar_strong_openai/config_resolved.json`
 - `results/eurosat_resnet18cifar_strong_openai/evolution_log.jsonl`
@@ -906,6 +952,7 @@
 - `scripts/build_supervisor_progress_report.py`
 - `scripts/export_augmentation_examples.py`
 - `scripts/generate_augmentation_explainer_assets.py`
+- `scripts/summarize_final_experiments.py`
 - `src/image_aug_evolution/__init__.py`
 - `src/image_aug_evolution/analysis/__init__.py`
 - `src/image_aug_evolution/analysis/reporting.py`

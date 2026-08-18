@@ -30,9 +30,34 @@ def run_baselines(config: dict, output_dir: str | Path) -> list[dict]:
     baselines = config.get("baselines", ["none", "standard", "randaugment", "trivialaugment"])
     seeds = config.get("seeds", [config.get("seed", 0)])
     meta = get_meta(dataset_cfg["name"], dataset_cfg.get("image_size"))
-    records: list[dict] = []
+    results_csv = output_dir / "tables" / "baseline_results.csv"
+    if results_csv.exists() and not bool(config.get("overwrite_results", False)):
+        try:
+            records: list[dict] = pd.read_csv(results_csv).to_dict(orient="records")
+        except pd.errors.EmptyDataError:
+            records = []
+    else:
+        records = []
+
+    def has_completed(method: str, seed: int) -> bool:
+        for record in records:
+            if str(record.get("method")) != str(method):
+                continue
+            try:
+                record_seed = int(record.get("seed", -1))
+            except (TypeError, ValueError):
+                continue
+            if record_seed != int(seed):
+                continue
+            if pd.notna(record.get("test_accuracy")) or pd.notna(record.get("val_accuracy")):
+                return True
+        return False
+
     for baseline in baselines:
         for seed in seeds:
+            if has_completed(str(baseline), int(seed)):
+                print(f"[baseline] skip existing method={baseline} seed={seed}", flush=True)
+                continue
             seed_everything(int(seed))
             print(f"[baseline] method={baseline} seed={seed}", flush=True)
             train_transform = build_named_baseline(baseline, meta.image_size, meta.mean, meta.std)
@@ -86,7 +111,7 @@ def run_baselines(config: dict, output_dir: str | Path) -> list[dict]:
             }
             records.append(record)
             write_json(result, output_dir / "logs" / f"baseline_{baseline}_seed{seed}.json")
-            pd.DataFrame(records).to_csv(output_dir / "tables" / "baseline_results.csv", index=False)
+            pd.DataFrame(records).to_csv(results_csv, index=False)
             print(
                 f"[baseline] completed method={baseline} seed={seed} "
                 f"val_acc={record.get('val_accuracy'):.4f} "
@@ -94,5 +119,5 @@ def run_baselines(config: dict, output_dir: str | Path) -> list[dict]:
                 flush=True,
             )
     df = pd.DataFrame(records)
-    df.to_csv(output_dir / "tables" / "baseline_results.csv", index=False)
+    df.to_csv(results_csv, index=False)
     return records

@@ -187,54 +187,90 @@ def run_fixmatch(config: dict, output_dir: str | Path) -> list[dict]:
     for subdir in ("logs", "policies", "tables", "figures", "models"):
         (output_dir / subdir).mkdir(parents=True, exist_ok=True)
     seed = int(config.get("seed", 0))
+    seeds = [int(s) for s in config.get("seeds", [seed])]
     fixmatch_cfg = config.get("fixmatch", {})
     validator = PolicyValidator(config["dataset"]["name"], allow_discouraged=True)
-    rows: list[dict] = []
+    results_csv = output_dir / "tables" / "fixmatch_results.csv"
+    if results_csv.exists() and not bool(config.get("overwrite_results", False)):
+        try:
+            rows: list[dict] = pd.read_csv(results_csv).to_dict(orient="records")
+        except pd.errors.EmptyDataError:
+            rows = []
+    else:
+        rows = []
+
+    def has_completed(method: str, policy_id: str, eval_seed: int) -> bool:
+        for record in rows:
+            if str(record.get("method")) != str(method):
+                continue
+            if str(record.get("policy_id")) != str(policy_id):
+                continue
+            try:
+                record_seed = int(record.get("seed", -1))
+            except (TypeError, ValueError):
+                continue
+            if record_seed != int(eval_seed):
+                continue
+            if pd.notna(record.get("test_accuracy")) or pd.notna(record.get("val_accuracy")):
+                return True
+        return False
 
     named_strong_transforms = list(fixmatch_cfg.get("named_strong_transforms", ["standard", "randaugment", "trivialaugment"]))
     for name in named_strong_transforms:
-        print(f"[fixmatch] named strong={name}", flush=True)
-        result = evaluate_fixmatch_policy(
-            strong_policy=None,
-            config=config,
-            output_dir=output_dir,
-            seed=seed,
-            method=f"fixmatch_{name}",
-            named_strong_transform=name,
-        )
-        rows.append(result)
-        pd.DataFrame(rows).to_csv(output_dir / "tables" / "fixmatch_results.csv", index=False)
-        print(
-            f"[fixmatch] completed {name}: val_acc={result.get('val_accuracy'):.4f} "
-            f"test_acc={result.get('test_accuracy'):.4f} mask={result.get('final_pseudo_mask_rate'):.3f}",
-            flush=True,
-        )
+        method = f"fixmatch_{name}"
+        policy_id = f"strong_{name}"
+        for eval_seed in seeds:
+            if has_completed(method, policy_id, eval_seed):
+                print(f"[fixmatch] skip existing named strong={name} seed={eval_seed}", flush=True)
+                continue
+            print(f"[fixmatch] named strong={name} seed={eval_seed}", flush=True)
+            result = evaluate_fixmatch_policy(
+                strong_policy=None,
+                config=config,
+                output_dir=output_dir,
+                seed=eval_seed,
+                method=method,
+                named_strong_transform=name,
+            )
+            rows.append(result)
+            pd.DataFrame(rows).to_csv(results_csv, index=False)
+            print(
+                f"[fixmatch] completed {name} seed={eval_seed}: val_acc={result.get('val_accuracy'):.4f} "
+                f"test_acc={result.get('test_accuracy'):.4f} mask={result.get('final_pseudo_mask_rate'):.3f}",
+                flush=True,
+            )
 
     for i, seed_name in enumerate(fixmatch_cfg.get("seed_policy_names", [])):
         policy = build_seed_policy(config["dataset"]["name"], seed_name, policy_id=f"fix_seed_{i:02d}_{seed_name.lower()}")
         policy = _zero_mixing(policy)
         vr = validator.validate(policy)
         if not vr.ok:
-            rows.append({
-                "method": _policy_to_method(policy),
-                "stage": "fixmatch",
-                "policy_id": policy.policy_id,
-                "source": policy.source,
-                "seed": seed,
-                "valid": False,
-                "errors": "; ".join(vr.errors),
-            })
+            for eval_seed in seeds:
+                rows.append({
+                    "method": _policy_to_method(policy),
+                    "stage": "fixmatch",
+                    "policy_id": policy.policy_id,
+                    "source": policy.source,
+                    "seed": eval_seed,
+                    "valid": False,
+                    "errors": "; ".join(vr.errors),
+                })
             continue
-        print(f"[fixmatch] seed policy={policy.policy_id}", flush=True)
         write_json(policy.to_dict(), output_dir / "policies" / f"{policy.policy_id}.json")
-        result = evaluate_fixmatch_policy(policy, config, output_dir, seed, method=_policy_to_method(policy))
-        rows.append(result)
-        pd.DataFrame(rows).to_csv(output_dir / "tables" / "fixmatch_results.csv", index=False)
-        print(
-            f"[fixmatch] completed {policy.policy_id}: val_acc={result.get('val_accuracy'):.4f} "
-            f"test_acc={result.get('test_accuracy'):.4f} mask={result.get('final_pseudo_mask_rate'):.3f}",
-            flush=True,
-        )
+        method = _policy_to_method(policy)
+        for eval_seed in seeds:
+            if has_completed(method, policy.policy_id, eval_seed):
+                print(f"[fixmatch] skip existing seed policy={policy.policy_id} seed={eval_seed}", flush=True)
+                continue
+            print(f"[fixmatch] seed policy={policy.policy_id} seed={eval_seed}", flush=True)
+            result = evaluate_fixmatch_policy(policy, config, output_dir, eval_seed, method=method)
+            rows.append(result)
+            pd.DataFrame(rows).to_csv(results_csv, index=False)
+            print(
+                f"[fixmatch] completed {policy.policy_id} seed={eval_seed}: val_acc={result.get('val_accuracy'):.4f} "
+                f"test_acc={result.get('test_accuracy'):.4f} mask={result.get('final_pseudo_mask_rate'):.3f}",
+                flush=True,
+            )
 
     for item in fixmatch_cfg.get("policy_files", []):
         if isinstance(item, str):
@@ -250,26 +286,31 @@ def run_fixmatch(config: dict, output_dir: str | Path) -> list[dict]:
         policy = _zero_mixing(_load_policy(path, policy_id=policy_id, source=source))
         vr = validator.validate(policy)
         if not vr.ok:
-            rows.append({
-                "method": method,
-                "stage": "fixmatch",
-                "policy_id": policy.policy_id,
-                "source": policy.source,
-                "seed": seed,
-                "valid": False,
-                "errors": "; ".join(vr.errors),
-            })
+            for eval_seed in seeds:
+                rows.append({
+                    "method": method,
+                    "stage": "fixmatch",
+                    "policy_id": policy.policy_id,
+                    "source": policy.source,
+                    "seed": eval_seed,
+                    "valid": False,
+                    "errors": "; ".join(vr.errors),
+                })
             continue
-        print(f"[fixmatch] external policy={policy.policy_id}", flush=True)
         write_json(policy.to_dict(), output_dir / "policies" / f"{policy.policy_id}.json")
-        result = evaluate_fixmatch_policy(policy, config, output_dir, seed, method=method)
-        rows.append(result)
-        pd.DataFrame(rows).to_csv(output_dir / "tables" / "fixmatch_results.csv", index=False)
-        print(
-            f"[fixmatch] completed {policy.policy_id}: val_acc={result.get('val_accuracy'):.4f} "
-            f"test_acc={result.get('test_accuracy'):.4f} mask={result.get('final_pseudo_mask_rate'):.3f}",
-            flush=True,
-        )
+        for eval_seed in seeds:
+            if has_completed(method, policy.policy_id, eval_seed):
+                print(f"[fixmatch] skip existing external policy={policy.policy_id} seed={eval_seed}", flush=True)
+                continue
+            print(f"[fixmatch] external policy={policy.policy_id} seed={eval_seed}", flush=True)
+            result = evaluate_fixmatch_policy(policy, config, output_dir, eval_seed, method=method)
+            rows.append(result)
+            pd.DataFrame(rows).to_csv(results_csv, index=False)
+            print(
+                f"[fixmatch] completed {policy.policy_id} seed={eval_seed}: val_acc={result.get('val_accuracy'):.4f} "
+                f"test_acc={result.get('test_accuracy'):.4f} mask={result.get('final_pseudo_mask_rate'):.3f}",
+                flush=True,
+            )
 
-    pd.DataFrame(rows).to_csv(output_dir / "tables" / "fixmatch_results.csv", index=False)
+    pd.DataFrame(rows).to_csv(results_csv, index=False)
     return rows

@@ -61,11 +61,22 @@ python experiments/run_experiment.py --config configs/cifar10_fixmatch_in_loop_o
 python experiments/run_experiment.py --config configs/cifar10_fixmatch_repaired_llm_children.yaml --mode fixmatch
 ```
 
-5. Rebuild combined summaries:
+5. Run the final multi-seed thesis comparisons:
+
+```bash
+python experiments/run_experiment.py --config configs/cifar10_final_supervised_multiseed.yaml --mode baselines
+python experiments/run_experiment.py --config configs/cifar10_final_supervised_multiseed.yaml --mode policies
+python experiments/run_experiment.py --config configs/cifar10_final_fixmatch_multiseed.yaml --mode fixmatch
+```
+
+The final multi-seed runners are resumable. If a method/policy/seed already has a completed validation or test result in the target CSV, it is skipped unless `overwrite_results: true` is added to the config.
+
+6. Rebuild combined summaries:
 
 ```bash
 python experiments/collect_results.py --results-root results --output-dir results/combined
 python scripts/generate_augmentation_explainer_assets.py
+python scripts/summarize_final_experiments.py
 ```
 
 ## Compute Notes

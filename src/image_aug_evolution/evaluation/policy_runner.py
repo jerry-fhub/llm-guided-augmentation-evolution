@@ -71,6 +71,7 @@ def evaluate_single_policy(
     return {
         "policy_id": policy.policy_id,
         "source": policy.source,
+        "seed": seed,
         "stage": stage,
         "train_size": bundle.train_size,
         "val_size": bundle.val_size,
@@ -93,6 +94,7 @@ def run_one_shot(config: dict, output_dir: str | Path) -> list[dict]:
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     seed = int(config.get("seed", 0))
+    seeds = [int(s) for s in config.get("seeds", [seed])]
     count = int(config.get("one_shot_count", 1))
     if count <= 0:
         pd.DataFrame().to_csv(output_dir / "tables" / "one_shot_results.csv", index=False)
@@ -104,36 +106,64 @@ def run_one_shot(config: dict, output_dir: str | Path) -> list[dict]:
     else:
         policies = [generator.random_policy("one_shot_000", source="one_shot_heuristic_llm")]
     validator = PolicyValidator(config["dataset"]["name"])
-    rows = []
+    results_csv = output_dir / "tables" / "one_shot_results.csv"
+    if results_csv.exists() and not bool(config.get("overwrite_results", False)):
+        try:
+            rows = pd.read_csv(results_csv).to_dict(orient="records")
+        except pd.errors.EmptyDataError:
+            rows = []
+    else:
+        rows = []
+
+    def has_completed(policy_id: str, eval_seed: int) -> bool:
+        for record in rows:
+            if str(record.get("policy_id")) != str(policy_id):
+                continue
+            try:
+                record_seed = int(record.get("seed", -1))
+            except (TypeError, ValueError):
+                continue
+            if record_seed != int(eval_seed):
+                continue
+            if pd.notna(record.get("test_accuracy")) or pd.notna(record.get("val_accuracy")):
+                return True
+        return False
+
+    method = str(config.get("policy_eval_method", "one_shot_llm"))
     for policy in policies[:count]:
-        print(f"[one-shot] policy={policy.policy_id}", flush=True)
-        vr = validator.validate(policy)
-        if not vr.ok:
-            rows.append({
-                "method": "one_shot_llm",
-                "policy_id": policy.policy_id,
-                "valid": False,
-                "errors": "; ".join(vr.errors),
-            })
-            continue
-        result = evaluate_single_policy(
-            policy,
-            config,
-            output_dir,
-            seed=seed,
-            stage="one_shot",
-            training_override=config.get("full_training", {}),
-        )
-        rows.append({"method": "one_shot_llm", "valid": True, **result})
         write_json(policy.to_dict(), output_dir / "policies" / f"{policy.policy_id}.json")
-        pd.DataFrame(rows).to_csv(output_dir / "tables" / "one_shot_results.csv", index=False)
-        print(
-            f"[one-shot] completed policy={policy.policy_id} "
-            f"val_acc={result.get('val_accuracy'):.4f} "
-            f"test_acc={result.get('test_accuracy'):.4f}",
-            flush=True,
-        )
-    pd.DataFrame(rows).to_csv(output_dir / "tables" / "one_shot_results.csv", index=False)
+        for eval_seed in seeds:
+            if has_completed(policy.policy_id, eval_seed):
+                print(f"[one-shot] skip existing policy={policy.policy_id} seed={eval_seed}", flush=True)
+                continue
+            print(f"[one-shot] policy={policy.policy_id} seed={eval_seed}", flush=True)
+            vr = validator.validate(policy)
+            if not vr.ok:
+                rows.append({
+                    "method": method,
+                    "policy_id": policy.policy_id,
+                    "seed": eval_seed,
+                    "valid": False,
+                    "errors": "; ".join(vr.errors),
+                })
+                continue
+            result = evaluate_single_policy(
+                policy,
+                config,
+                output_dir,
+                seed=eval_seed,
+                stage="one_shot",
+                training_override=config.get("full_training", {}),
+            )
+            rows.append({"method": method, "valid": True, **result})
+            pd.DataFrame(rows).to_csv(results_csv, index=False)
+            print(
+                f"[one-shot] completed policy={policy.policy_id} seed={eval_seed} "
+                f"val_acc={result.get('val_accuracy'):.4f} "
+                f"test_acc={result.get('test_accuracy'):.4f}",
+                flush=True,
+            )
+    pd.DataFrame(rows).to_csv(results_csv, index=False)
     return rows
 
 
